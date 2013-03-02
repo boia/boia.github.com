@@ -4,10 +4,10 @@
 
 url: http://boia.github.com
 title: boia的博客
-subtitle: A blogging framework for hackers.
+subtitle: 技术博客
 author: boia
 simple_search: http://google.com/search
-description:
+description:遨游在技术的海洋
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -19,7 +19,7 @@ date_format: "ordinal"
 subscribe_rss: /atom.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
-email:
+email: zhengwang2314@qq.com
 
 # ----------------------- #
 #    Jekyll & Plugins     #
