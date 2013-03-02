@@ -3,11 +3,11 @@
 # ----------------------- #
 
 url: http://boia.github.com
-title: boiaµÄ²©¿Í
-subtitle: ¼¼Êõ²©¿Í
+title: boiaçš„åšå®¢
+subtitle: æŠ€æœ¯åšå®¢
 author: boia
 simple_search: http://google.com/search
-description:åÛÓÎÔÚ¼¼ÊõµÄº£Ñó
+description: é¨æ¸¸åœ¨æŠ€æœ¯çš„æµ·æ´‹
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -97,3 +97,6 @@ google_analytics_tracking_id:
 
 # Facebook Like
 facebook_like: false
+
+# Duoshuo Comments
+duoshuo_show_comment_count: true
