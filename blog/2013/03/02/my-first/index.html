@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>测试版本 - boia's博客</title>
+  <title>Octopress剖析<一> - boia's博客</title>
   <meta name="author" content="boia">
 
   
@@ -97,7 +97,7 @@
   
   <header class="page-header">
     
-      <h1 class="entry-title">测试版本</h1>
+      <h1 class="entry-title">Octopress剖析<一></h1>
     
     
       <p class="meta">
@@ -120,7 +120,149 @@
   </header>
 
 
-<div class="entry-content"><p>测试，Hello World！！</p>
+<div class="entry-content"><h1>Octopress的安装</h1>
+
+<p>用github有一段时间了，也看过<a href="http://www.worldhello.net/" title="Title">蒋鑫</a>老师的<strong>git权威指南</strong>，
+可是总不能很好的理解git版本管理问题，但经过这次一折腾，总归还是懂了些，所以有些东西别只是看，
+也要踏踏实实地去做一遍，这样才能更好的去理解。</p>
+
+<p>今天我们还学习Octopress的安装，在windows下运行Octopress博客并发布到Github Pages上。</p>
+
+<h2>①安装Git</h2>
+
+<p><a href="https://code.google.com/p/msysgit/downloads/list?q=full+installer+official+git" title="title">msysgit</a>
+是一git在windows下的管理软件，这里要注意的一点是有一个<strong>SSH Keys</strong>的问题，你必须生成密钥然后
+放在<strong><a href="http://github.com" title="Title">git</a></strong>网站对应的地方，否则push的话会出现error</p>
+
+<h2>②安装Ruby</h2>
+
+<p>因为Octopress是用ruby写的，所以安装ruby也是必须的，最新的Octopress指定的Ruby版本好像是1.9.3，
+所以我也推荐大家下<strong><a href="http://rubyinstaller.org/" title="Title">ruby1.9.3</a></strong>，在windows的安装就不用我教大家了
+安装好以后，在cmd中敲击以下代码</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ruby --version</span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果出现版本号的话说明你安装正确了</p>
+
+<h2>③安装Devkit</h2>
+
+<p>接着安装Devkit，我下的是4.5.2版本，<a href="https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe" title="Title">DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe</a>
+下载到E:盘，在win的cmd窗口进入到e，然后敲击下面的命令:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd E:DevKit
+</span><span class='line'>ruby dk.rb init
+</span><span class='line'>ruby dk.rb install</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>④安装python</h2>
+
+<p>安装Python是为了博客代码加亮，在windows下最好下载<strong><a href="http://www.activestate.com/activepython/downloads" title="Title">python2.7</a>，</strong>
+别下载Python3，继续在cmd中执行下面命令:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>easy_install pygments</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>⑤下载Octopress</h2>
+
+<p>以前玩rails的时候，用gem install rails总是出现错误，然后就谷歌、百度轮番找，发现原来是网站被河蟹了，
+马上就翻墙了，自由门是最常用的，最近谷歌出了个好玩意儿，goagent(不过这东西下载前还得翻墙)，只要有一个
+google App就能每天用1G，我就一口气申请了10个App，然后每天无止境的翻墙了，而且至今没出现不稳定或者崩溃的问题。
+这里就不写goagent的教程了，大家可以百度一下，步骤还是很简单的。</p>
+
+<p>为什么这里要说vpn呢？其实是因为要安装bundler(是一个ruby的包)，所以应该需要翻墙吧。</p>
+
+<p>首先下载Octopress源码，打开cmd &lt;&lt;E回车，选择了E盘以后，输入命令:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git  octopress</span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果你ssh keys没设置对的话，估计这里也成功不了</p>
+
+<p>接着安装Octopress的依赖项，还是在cmd中敲命令</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd octopress
+</span><span class='line'>gem install bundler
+</span><span class='line'>bundle install</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>⑥创建版本库</h2>
+
+<p>登录到<a href="https://github.com/" title="Title">Github</a>，点击Create A Repository，这时候需要输入版本名，
+非常非常重要的一点版本名的格式<strong>username.github.com</strong>，你自己username不用我教吧？</p>
+
+<h2>⑦将Octopress发布到Github</h2>
+
+<p>说发布之前，咱们还要对windows环境变量配置一下为了支持中文编码</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>LANG=zh_CN.UTF-8
+</span><span class='line'>LC_ALL=zh_CN.UTF-8</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#58;&#x7a;&#104;&#101;&#x6e;&#103;&#119;&#97;&#110;&#103;&#50;&#51;&#x31;&#x34;&#x40;&#113;&#113;&#46;&#x63;&#111;&#109;">&#x7a;&#x68;&#x65;&#x6e;&#x67;&#x77;&#97;&#110;&#x67;&#50;&#x33;&#49;&#52;&#x40;&#x71;&#x71;&#46;&#99;&#x6f;&#x6d;</a></p>
+
+<p>在次打开cmd，进入到Octopress所在的目录  (cd octopress即可进入)，输入命令</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages</span></code></pre></td></tr></table></div></figure>
+
+
+<p>按提示输入刚才新建的Repo地址，类似： git@github.com:username/username.github.com 或
+git@github.com:username/username.github.com.git。</p>
+
+<p>完成以后输入命令</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake install
+</span><span class='line'>rake generate
+</span><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
+
+
+<p>对了，这里还有一个可能会遇到的错误，错误提示是关于rake版本，然后说use bundle exex可能可以解决，
+那么你只要在输rake前加上bundle exec就好了</p>
+
+<p>其中rake install是安装Octopress默认主题的，
+rake gnerate是生成静态页面的，这两个命令是必须运行的，
+而rake preview则是用来本地浏览的（运行时看屏幕上提示，按Ctrl+C并输入Y来终止批处理操作），
+运行后打开浏览器，输入 http://localhost:4000/ 就可以看到如下的界面了，
+不想预览的话也可以不运行，直接进入下一步。</p>
+
+<h2>⑧将博客发布到Github</h2>
+
+<p>cmd输入下面命令</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake deploy  </span></code></pre></td></tr></table></div></figure>
+
+
+<p>这样，生成的内容将会自动发布到master分支，并且可以使用 http://username.github.com 访问内容。</p>
+
+<h2>⑨将源文件发布到source分支下</h2>
+
+<p>可以说你的工作已经全部最好了，可你想万一其他配置文件丢失了怎么办？这时候你就要将源文件放到git中</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git add .
+</span><span class='line'>git commit -m "1st"
+</span><span class='line'>git push origin source</span></code></pre></td></tr></table></div></figure>
+
+
+<p>终于OK了，今天讲的是安装，以后会有更多惊喜。</p>
 </div>
 
 
@@ -214,7 +356,7 @@
     <li class="nav-header">最近文章</li>
     
       <li class="post">
-        <a href="/blog/2013/03/02/my-first/">测试版本</a>
+        <a href="/blog/2013/03/02/my-first/">Octopress剖析<一></a>
       </li>
     
   </ul>
