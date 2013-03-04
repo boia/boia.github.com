@@ -2,23 +2,27 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://boia.github.com/blog/2013/03/02/my-first/</loc>
-        <lastmod>2013-03-04T13:22:48+08:00</lastmod>
+        <lastmod>2013-03-04T16:03:52+08:00</lastmod>
     </url>
     <url>
         <loc>http://boia.github.com/blog/2013/03/04/octopresss-weibo/</loc>
-        <lastmod>2013-03-04T13:23:18+08:00</lastmod>
+        <lastmod>2013-03-04T16:03:52+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://boia.github.com/blog/2013/03/04/jsfiddle-for-octopress/</loc>
+        <lastmod>2013-03-04T16:03:52+08:00</lastmod>
     </url>
     <url>
         <loc>http://boia.github.com/blog/archives/</loc>
-        <lastmod>2013-03-04T13:23:18+08:00</lastmod>
+        <lastmod>2013-03-04T16:00:02+08:00</lastmod>
     </url>
     <url>
         <loc>http://boia.github.com/blog/categories/</loc>
-        <lastmod>2013-03-04T13:23:18+08:00</lastmod>
+        <lastmod>2013-03-04T16:00:02+08:00</lastmod>
     </url>
     <url>
         <loc>http://boia.github.com/</loc>
-        <lastmod>2013-03-04T13:23:18+08:00</lastmod>
+        <lastmod>2013-03-04T16:00:02+08:00</lastmod>
     </url>
     <url>
         <loc>http://boia.github.com/robots.txt</loc>

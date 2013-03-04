@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>boia's博客</title>
+  <title>在octopress中加入jsfiddle - boia's博客</title>
   <meta name="author" content="boia">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://boia.github.com">
+  <link rel="canonical" href="http://boia.github.com/blog/2013/03/04/jsfiddle-for-octopress">
   <link href="/favicon.ico" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -91,15 +91,13 @@
 </nav>
   <div class="container">
     <div class="row-fluid">
-      <div class="span9">
-  
-  
-  
-    <article>
       
+<article class="hentry span9" role="article">
+
+  
   <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2013/03/04/jsfiddle-for-octopress/">在octopress中加入jsfiddle</a></h1>
+      <h1 class="entry-title">在octopress中加入jsfiddle</h1>
     
     
       <p class="meta">
@@ -122,76 +120,68 @@
   </header>
 
 
-  <div class="entry-content"><p><strong>jsFiddle</strong>是一个web开发人员的练习场，一个可以在很多方面应用的工具。我们可以用他来在线编辑一些HTML,CSS,javascript片段。你编辑的代码可以与其他人分享，或嵌入你的博客等。使用这个工具，javascript的开发者可以很容易的发现并解决BUG问题。你还可以选择你自己熟悉的流行的各种javascript库来进行开发，对XHR的支持也非常好，还可以模拟一些响应等。</p>
+<div class="entry-content"><p><strong>jsFiddle</strong>是一个web开发人员的练习场，一个可以在很多方面应用的工具。我们可以用他来在线编辑一些HTML,CSS,javascript片段。你编辑的代码可以与其他人分享，或嵌入你的博客等。使用这个工具，javascript的开发者可以很容易的发现并解决BUG问题。你还可以选择你自己熟悉的流行的各种javascript库来进行开发，对XHR的支持也非常好，还可以模拟一些响应等。</p>
 
 <p>今天我们来学习将<strong>jsfiddle</strong>插件放入到octopress中。</p>
 
+<!-- more -->
+
+
+<h2>下载<strong>jsfiddle</strong>插件</h2>
+
+<p>先用git命令将插件下载下来</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/ShaunaGordon/octopress-jsfiddle.git</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后将里面的<code>jsfiddle.rb</code>拷贝到 <code>/plugins</code>中</p>
+
+<h2>一般语法</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&#123;% jsfiddle shorttag [tabs] [skin] [height] [width] %}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>缺省值如下:</p>
+
+<ul>
+<li>tabs: <code>js,resources,html,css,result</code></li>
+<li>skin: <code>light</code></li>
+<li>height: <code>300px</code></li>
+<li>width: <code>100%</code></li>
+</ul>
+
+
+<p>如果你就想设置height，而前面几个值都用默认的，那么填default就行了</p>
+
+<h3>举例</h3>
+
+<p>这里我直接拿<a href="http://www.cnblogs.com/iamzhanglei/archive/2011/10/07/2199306.html">张磊</a>的代码作为测试</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&#123;% LHWmv result,js,html,css presentation 500px %}</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>结果</h3>
+
+<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/LHWmv/embedded/result,js,html,css/presentation/"></iframe>
+
+
+<h2>总结</h2>
+
+<p><strong>jsFiddle</strong>以前在张磊的博客看见的时候挺新颖的，现在在自己的blog里加上这个插件还是分外激动的，以后就不用上面一段代码，下面一个演示那么墨迹了。</p>
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/03/04/jsfiddle-for-octopress/">阅读全文 &rarr;</a>
-    </footer>
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/04/octopresss-weibo/">Octopress增加新浪微博侧栏</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">boia</span></span>
 
-<time datetime="2013-03-04T10:24:00+08:00" pubdate data-updated="true">Mar 4<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><strong>Geek</strong>是在IT行业对那些智力超群且对某样技术有狂热兴趣的人的称号，随着互联网技术在中国逐渐流行起来，中国所谓的各个IT行业的<strong>Geek</strong>也越来越多。</p>
-
-<p>之所以谈这个不是我自诩为<strong>Geek</strong>，而是希望中国想搞技术的人都能够像<strong>Geek</strong>一样专心。</p>
-
-<p>今天来介绍下在Octopress增加侧栏，以新浪微博秀为例子，</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/03/04/octopresss-weibo/">阅读全文 &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/02/my-first/">Octopress初级安装</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -203,36 +193,78 @@
   
 
 
-<time datetime="2013-03-02T12:30:00+08:00" pubdate data-updated="true">Mar 2<span>nd</span>, 2013</time>
-        
-      </p>
+<time datetime="2013-03-04T14:23:00+08:00" pubdate data-updated="true">Mar 4<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/javascript/'>javascript</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>
+  
+</span>
+
+
+    </p>
+	<p>
     
-  </header>
-
-
-  <div class="entry-content"><p>用github有一段时间了，也看过<a href="http://www.worldhello.net/" title="Title">蒋鑫</a>老师的<strong>git权威指南</strong>，
-可是总不能很好的理解git版本管理问题，但经过这次一折腾，总归还是懂了些，所以有些东西别只是看，
-也要踏踏实实地去做一遍，这样才能更好的去理解。</p>
-
-<p>今天我们学习Octopress的安装，在windows下运行Octopress博客并发布到Github Pages上。</p>
-
+      <div class="sharing">
+  <!--
+  
+  -->
+	<!-- JiaThis Button BEGIN -->
+	
+	<div id="ckepop">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina">新浪微博</a>
+		<a class="jiathis_button_tqq">腾讯微博</a>
+		<a class="jiathis_button_qzone">QQ空间</a>
+		<a class="jiathis_button_renren">人人网</a>
+		<a href="http://www.jiathis.com/share?uid=1661313" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+	</div>
+	<script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1344396774557760" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/03/02/my-first/">阅读全文 &rarr;</a>
-    </footer>
-  
 
+    
+	</p>
+	<br><br>
+	<ul class="pager">
+	
+    <li class="previous"><a class="basic-alignment left"
+        href="/blog/2013/03/04/octopresss-weibo/" title="Previous Post:
+        Octopress增加新浪微博侧栏">&laquo; Octopress增加新浪微博侧栏</a></li>
+    
 
-    </article>
-  
-  <ul class="pager">
+      <li><a href="/blog/archives">所有文章</a></li>
+      -
+	</ul>
+
     
-    <li><a href="/blog/archives">所有博客</a></li>
-    
-  </ul>
-</div>
+	
+	
+	<section id="comment">
+		<br><br><br>
+		<h1 class="title">发表评论</h1>
+	   <!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"boiawang"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+	</section>
+	
+
+  </footer>
+</article>
+
 <aside class="sidebar-nav span3">
   
     <section class="well">
@@ -277,7 +309,7 @@
 <section class="well">
   <ul id="gh_repos" class="nav">
     <li class="nav-header">GitHub Repos</li>
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/boia">@boia</a> on GitHub
@@ -298,6 +330,9 @@
 
   
 </aside>
+
+
+
 
     </div>
   </div>
