@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-03-03T22:37:34+08:00</updated>
+  <updated>2013-03-04T13:23:38+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -14,13 +14,91 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Octopress剖析<一>]]></title>
+    <title type="html"><![CDATA[Octopress增加新浪微博侧栏]]></title>
+    <link href="http://boia.github.com/blog/2013/03/04/octopresss-weibo/"/>
+    <updated>2013-03-04T10:24:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/03/04/octopresss-weibo</id>
+    <content type="html"><![CDATA[<p><strong>Geek</strong>是在IT行业对那些智力超群且对某样技术有狂热兴趣的人的称号，随着互联网技术在中国逐渐流行起来，中国所谓的各个IT行业的<strong>Geek</strong>也越来越多。</p>
+
+<p>之所以谈这个不是我自诩为<strong>Geek</strong>，而是希望中国想搞技术的人都能够像<strong>Geek</strong>一样专心。</p>
+
+<p>今天来介绍下在Octopress增加侧栏，以新浪微博秀为例子，</p>
+
+<!-- more -->
+
+
+<p>首先到<a href="http://weibo.com/tool/weiboshow" title="Title">微博秀</a>设置自己喜欢的样式，设置完成以后，将代码获得，如果懂html的话应该能明白这是个内联框架</p>
+
+<p>接着在<code>\source\_includes\custom\asides</code>中新建一个<code>weibo.html</code>，最好是放在custom下，有些人喜欢在<code>\source\_includes\asides</code>中修改或者创建，一旦主题换了，那些自己改过的都会消失，这就得不偿失了，在<code>weibo.html</code>中加入以下内容</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>&lt;section class="well"&gt;
+</span><span class='line'>  &lt;h1&gt;新浪微博&lt;/h1&gt;
+</span><span class='line'>  &lt;ul id="weibo"&gt;
+</span><span class='line'>    &lt;li&gt;
+</span><span class='line'>      &lt;iframe 
+</span><span class='line'>        width="100%" 
+</span><span class='line'>        height="550" 
+</span><span class='line'>        class="share_self" 
+</span><span class='line'>        frameborder="0" 
+</span><span class='line'>        scrolling="no" 
+</span><span class='line'>        src="http://widget.weibo.com/weiboshow/index.php?width=0&height=550&ptype=1&speed=0&skin=&isTitle=0&noborder=1&isWeibo=1&isFans=&uid=2552329061&verifier=80884619"&gt;
+</span><span class='line'>      &lt;/iframe&gt;
+</span><span class='line'>    &lt;/li&gt;
+</span><span class='line'>  &lt;/ul&gt;
+</span><span class='line'>&lt;/section&gt;
+</span><span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>最后就是在<code>_config.yml</code>中配置了</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> #weibo
+</span><span class='line'> #http://weibo.com/tool/weiboshow to get your uid and verifier
+</span><span class='line'>weibo_uid: #你自己的微博id(在生成的代码中可以看见)
+</span><span class='line'>weibo_verifier: #你自己的verifier
+</span><span class='line'>weibo_fansline: 0   # How many lines for the fan list
+</span><span class='line'>weibo_show: true    # Whether you want your weibo content to be shown
+</span><span class='line'>weibo_pic: true     # Whether you want the pictures in weibo to be shown
+</span><span class='line'>weibo_skin: 10      # Please refer to http://weibo.com/tool/weiboshow
+</span><span class='line'>weibo_share: true   # Whether show the sharing button</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress初级安装]]></title>
     <link href="http://boia.github.com/blog/2013/03/02/my-first/"/>
     <updated>2013-03-02T12:30:00+08:00</updated>
     <id>http://boia.github.com/blog/2013/03/02/my-first</id>
-    <content type="html"><![CDATA[<h1>Octopress的安装</h1>
-
-<p>用github有一段时间了，也看过<a href="http://www.worldhello.net/" title="Title">蒋鑫</a>老师的<strong>git权威指南</strong>，
+    <content type="html"><![CDATA[<p>用github有一段时间了，也看过<a href="http://www.worldhello.net/" title="Title">蒋鑫</a>老师的<strong>git权威指南</strong>，
 可是总不能很好的理解git版本管理问题，但经过这次一折腾，总归还是懂了些，所以有些东西别只是看，
 也要踏踏实实地去做一遍，这样才能更好的去理解。</p>
 
@@ -111,7 +189,7 @@ google App就能每天用1G，我就一口气申请了10个App，然后每天无
 </span><span class='line'>LC_ALL=zh_CN.UTF-8</span></code></pre></td></tr></table></div></figure>
 
 
-<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#111;&#x3a;&#122;&#x68;&#x65;&#110;&#103;&#x77;&#97;&#110;&#x67;&#x32;&#x33;&#x31;&#52;&#64;&#x71;&#113;&#46;&#99;&#x6f;&#109;">&#122;&#x68;&#x65;&#x6e;&#103;&#x77;&#97;&#110;&#103;&#x32;&#x33;&#49;&#x34;&#64;&#113;&#x71;&#x2e;&#99;&#x6f;&#109;</a></p>
+<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#x7a;&#x68;&#101;&#x6e;&#103;&#119;&#x61;&#110;&#103;&#x32;&#51;&#49;&#x34;&#x40;&#x71;&#113;&#x2e;&#99;&#111;&#109;">&#122;&#x68;&#x65;&#x6e;&#x67;&#x77;&#97;&#x6e;&#x67;&#x32;&#x33;&#49;&#x34;&#64;&#x71;&#x71;&#46;&#99;&#111;&#x6d;</a></p>
 
 <p>在次打开cmd，进入到Octopress所在的目录  (cd octopress即可进入)，输入命令</p>
 
