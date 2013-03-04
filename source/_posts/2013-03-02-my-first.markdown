@@ -1,9 +1,139 @@
 ---
 layout: post
-title: "测试版本"
+title: "Octopress剖析<一>"
 date: 2013-03-02 12:30
 comments: true
-categories: 
+categories: octopress
 ---
 
-测试，Hello World！！
+#Octopress的安装
+
+用github有一段时间了，也看过[蒋鑫](http://www.worldhello.net/ "Title")老师的**git权威指南**，
+可是总不能很好的理解git版本管理问题，但经过这次一折腾，总归还是懂了些，所以有些东西别只是看，
+也要踏踏实实地去做一遍，这样才能更好的去理解。
+
+今天我们学习Octopress的安装，在windows下运行Octopress博客并发布到Github Pages上。
+
+<!-- more -->
+
+##①安装Git 
+
+[msysgit](https://code.google.com/p/msysgit/downloads/list?q=full+installer+official+git "title")
+是一git在windows下的管理软件，这里要注意的一点是有一个**SSH Keys**的问题，你必须生成密钥然后
+放在**[git](http://github.com "Title")**网站对应的地方，否则push的话会出现error
+
+##②安装Ruby
+
+因为Octopress是用ruby写的，所以安装ruby也是必须的，最新的Octopress指定的Ruby版本好像是1.9.3，
+所以我也推荐大家下**[ruby1.9.3](http://rubyinstaller.org/ "Title")**，在windows的安装就不用我教大家了
+安装好以后，在cmd中敲击以下代码
+```
+ruby --version
+```
+如果出现版本号的话说明你安装正确了
+
+
+##③安装Devkit
+
+接着安装Devkit，我下的是4.5.2版本，[DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe](https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe "Title")
+下载到E:盘，在win的cmd窗口进入到e，然后敲击下面的命令:
+
+```
+cd E:DevKit
+ruby dk.rb init
+ruby dk.rb install
+```
+
+##④安装python
+
+安装Python是为了博客代码加亮，在windows下最好下载**[python2.7](http://www.activestate.com/activepython/downloads "Title")，**
+别下载Python3，继续在cmd中执行下面命令:
+```
+easy_install pygments
+```
+
+##⑤下载Octopress
+
+以前玩rails的时候，用gem install rails总是出现错误，然后就谷歌、百度轮番找，发现原来是网站被河蟹了，
+马上就翻墙了，自由门是最常用的，最近谷歌出了个好玩意儿，goagent(不过这东西下载前还得翻墙)，只要有一个
+google App就能每天用1G，我就一口气申请了10个App，然后每天无止境的翻墙了，而且至今没出现不稳定或者崩溃的问题。
+这里就不写goagent的教程了，大家可以百度一下，步骤还是很简单的。
+
+为什么这里要说vpn呢？其实是因为要安装bundler(是一个ruby的包)，所以应该需要翻墙吧。
+
+首先下载Octopress源码，打开cmd <<E回车，选择了E盘以后，输入命令:
+```
+git clone git://github.com/imathis/octopress.git  octopress
+```
+
+如果你ssh keys没设置对的话，估计这里也成功不了
+
+接着安装Octopress的依赖项，还是在cmd中敲命令
+
+```
+cd octopress
+gem install bundler
+bundle install
+```
+
+##⑥创建版本库
+
+登录到[Github](https://github.com/ "Title")，点击Create A Repository，这时候需要输入版本名，
+非常非常重要的一点版本名的格式**username.github.com**，你自己username不用我教吧？
+
+##⑦将Octopress发布到Github
+
+说发布之前，咱们还要对windows环境变量配置一下为了支持中文编码
+```
+LANG=zh_CN.UTF-8
+LC_ALL=zh_CN.UTF-8
+```
+
+这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<zhengwang2314@qq.com>
+
+在次打开cmd，进入到Octopress所在的目录  (cd octopress即可进入)，输入命令
+```
+rake setup_github_pages
+```
+
+按提示输入刚才新建的Repo地址，类似： git@github.com:username/username.github.com 或
+git@github.com:username/username.github.com.git。
+
+完成以后输入命令
+
+```
+rake install
+rake generate
+rake preview
+```
+
+对了，这里还有一个可能会遇到的错误，错误提示是关于rake版本，然后说use bundle exex可能可以解决，
+那么你只要在输rake前加上bundle exec就好了
+
+其中rake install是安装Octopress默认主题的，
+rake gnerate是生成静态页面的，这两个命令是必须运行的，
+而rake preview则是用来本地浏览的（运行时看屏幕上提示，按Ctrl+C并输入Y来终止批处理操作），
+运行后打开浏览器，输入 http://localhost:4000/ 就可以看到如下的界面了，
+不想预览的话也可以不运行，直接进入下一步。
+
+##⑧将博客发布到Github
+
+cmd输入下面命令
+```
+rake deploy  
+```
+
+这样，生成的内容将会自动发布到master分支，并且可以使用 http://username.github.com 访问内容。
+
+##⑨将源文件发布到source分支下
+
+可以说你的工作已经全部最好了，可你想万一其他配置文件丢失了怎么办？这时候你就要将源文件放到git中
+
+```
+git add .
+git commit -m "1st"
+git push origin source
+```
+
+终于OK了，今天讲的是安装，以后会有更多惊喜。
+
