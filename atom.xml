@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-03-04T16:04:12+08:00</updated>
+  <updated>2013-03-04T21:18:33+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[map for octopress]]></title>
+    <link href="http://boia.github.com/blog/2013/03/04/map-for-octopress/"/>
+    <updated>2013-03-04T21:12:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/03/04/map-for-octopress</id>
+    <content type="html"><![CDATA[<div class='map'><div style='height:420px' id='map1'></div><div class='mapCaption'>Map Data: <a href='http://openstreetmap.org'>OpenStreetMap</a> contributors <a href='http://www.openstreetmap.org/copyright'>License</a> - Tiles Courtesy of <a href='http://www.mapquest.com/' target='_blank'>MapQuest</a><img src='http://developer.mapquest.com/content/osm/mq_logo.png'></div></div>
+
+
+<script type='text/javascript'>jQuery(document).ready(function() {initmap('map1',52.5186,13.408056,12,'','');});</script>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[在octopress中加入jsfiddle]]></title>
@@ -58,7 +71,7 @@
 <p>这里我直接拿<a href="http://www.cnblogs.com/iamzhanglei/archive/2011/10/07/2199306.html">张磊</a>的代码作为测试</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&#123;% LHWmv result,js,html,css presentation 500px %}</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&#123;% jsfiddle LHWmv result,js,html,css presentation 500px %}</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>结果</h3>
@@ -248,7 +261,7 @@ google App就能每天用1G，我就一口气申请了10个App，然后每天无
 </span><span class='line'>LC_ALL=zh_CN.UTF-8</span></code></pre></td></tr></table></div></figure>
 
 
-<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#x7a;&#104;&#x65;&#x6e;&#103;&#119;&#97;&#x6e;&#x67;&#50;&#51;&#x31;&#x34;&#x40;&#x71;&#x71;&#x2e;&#x63;&#111;&#109;">&#122;&#104;&#101;&#x6e;&#103;&#119;&#x61;&#110;&#x67;&#x32;&#x33;&#x31;&#52;&#64;&#x71;&#x71;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
+<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#58;&#x7a;&#x68;&#101;&#x6e;&#103;&#x77;&#x61;&#x6e;&#103;&#x32;&#x33;&#x31;&#52;&#64;&#x71;&#113;&#x2e;&#x63;&#111;&#x6d;">&#x7a;&#104;&#x65;&#x6e;&#x67;&#x77;&#97;&#x6e;&#103;&#x32;&#x33;&#49;&#x34;&#64;&#x71;&#113;&#x2e;&#x63;&#111;&#x6d;</a></p>
 
 <p>在次打开cmd，进入到Octopress所在的目录  (cd octopress即可进入)，输入命令</p>
 

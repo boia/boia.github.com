@@ -45,7 +45,17 @@
   <script src="/javascripts/libs/bootstrap.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="boia's博客" type="application/atom+xml">
-  
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  jQuery.noConflict();
+  var rootUrl = "";
+</script>
+<script src="/javascripts/openlayers/OpenLayers.js" type="text/javascript"></script>
+<script src="/javascripts/maps.js" type="text/javascript"></script>
+
   
 
 </head>
@@ -160,7 +170,7 @@
 <p>这里我直接拿<a href="http://www.cnblogs.com/iamzhanglei/archive/2011/10/07/2199306.html">张磊</a>的代码作为测试</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&#123;% LHWmv result,js,html,css presentation 500px %}</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&#123;% jsfiddle LHWmv result,js,html,css presentation 500px %}</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>结果</h3>
@@ -236,6 +246,10 @@
     
 
       <li><a href="/blog/archives">所有文章</a></li>
+      
+      <li class="next"><a class="basic-alignment right" href="/blog/2013/03/04/map-for-octopress/"
+        title="Next Post: map for octopress">map for octopress
+        &raquo;</a></li>
       -
 	</ul>
 
@@ -276,6 +290,10 @@
 <section class="well">
   <ul id="recent_posts" class="nav nav-list">
     <li class="nav-header">最近文章</li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/04/map-for-octopress/">map for octopress</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/03/04/jsfiddle-for-octopress/">在octopress中加入jsfiddle</a>
