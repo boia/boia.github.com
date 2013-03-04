@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-03-04T22:24:04+08:00</updated>
+  <updated>2013-03-04T23:04:40+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -12,6 +12,65 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[octopress侧边栏放上Flickr相片]]></title>
+    <link href="http://boia.github.com/blog/2013/03/04/flickr-sidebar/"/>
+    <updated>2013-03-04T22:35:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/03/04/flickr-sidebar</id>
+    <content type="html"><![CDATA[<p>今天来点生活式的技术，在侧边栏，当然你也可以在页面上放上Flickr相片</p>
+
+<h2>Demo</h2>
+
+<p><a href="http://boia.github.com/blog/archives/">octopress放入<strong>Flickr</strong>相册</a></p>
+
+<!-- more -->
+
+
+<h2>注册Flickr</h2>
+
+<p><a href="http://www.flickr.com/">Flickr</a>来自yahoo，所以注册的是雅虎账号</p>
+
+<h2>下载Flickr-Badge</h2>
+
+<p>Flickr-Badge是一个octopress插件，它托管在github上</p>
+
+<p>输以下命令</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&#123;% git clone https://github.com/chronon/Octopress-Flickr-Badge.git %}</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>文件</h2>
+
+<p> 把<code>flickr.html</code>放到<code>source/_includes/custom/asides/</code>中
+<code>_styles.scss</code>放到 <code>sass/custom</code>中，如果你的<code>_styles.scss</code>以前有过修改，就把里面代码copy出来然后放到以前文件的尾部</p>
+
+<h2>配置</h2>
+
+<p>将<code>custom/asides/flickr.html</code> 放到<code>_config.yml</code>中default_asides的[]中.</p>
+
+<p>在<code>_config.yml</code>的尾部加以下内容</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Flickr Badge
+</span><span class='line'>flickr_user:            # user id (not username)
+</span><span class='line'>flickr_count:           # 照片数量
+</span><span class='line'>flickr_display:         # random or latest(随机或者最新)
+</span><span class='line'>flickr_size:            # t (thumbnail), s (small square), m (medium)
+</span><span class='line'>flickr_source:          # user, user_tag, all, all_tag
+</span><span class='line'>flickr_tag:             # tagname - set if flickr_source is set to user_tag or all_tag</span></code></pre></td></tr></table></div></figure>
+
+
+<p>flickr_user不是用户名，是用户id，你可以从<a href="http://idgettr.com/">idgettr.com</a>获得</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[在octopress中加入jsfiddle]]></title>
@@ -248,7 +307,7 @@ google App就能每天用1G，我就一口气申请了10个App，然后每天无
 </span><span class='line'>LC_ALL=zh_CN.UTF-8</span></code></pre></td></tr></table></div></figure>
 
 
-<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#109;&#97;&#x69;&#x6c;&#x74;&#111;&#58;&#x7a;&#104;&#x65;&#x6e;&#103;&#x77;&#97;&#x6e;&#103;&#x32;&#x33;&#x31;&#52;&#64;&#x71;&#x71;&#x2e;&#99;&#x6f;&#x6d;">&#x7a;&#x68;&#101;&#x6e;&#103;&#119;&#x61;&#110;&#x67;&#50;&#51;&#49;&#52;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
+<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#x6d;&#x61;&#105;&#108;&#x74;&#111;&#x3a;&#x7a;&#x68;&#x65;&#x6e;&#x67;&#119;&#97;&#x6e;&#x67;&#50;&#x33;&#49;&#x34;&#64;&#x71;&#x71;&#46;&#99;&#x6f;&#109;">&#122;&#x68;&#x65;&#110;&#x67;&#119;&#97;&#110;&#x67;&#50;&#51;&#x31;&#x34;&#64;&#113;&#x71;&#x2e;&#99;&#x6f;&#x6d;</a></p>
 
 <p>在次打开cmd，进入到Octopress所在的目录  (cd octopress即可进入)，输入命令</p>
 
