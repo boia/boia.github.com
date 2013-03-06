@@ -45,12 +45,12 @@ titlecase: true       # Converts page and post titles to titlecase
 
 # list each of the sidebar modules you want to include, in the order you want them to appear.
 # To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html'
-default_asides: [asides/recent_posts.html,custom/asides/tag_cloud_3D.html,asides/weibo.html, asides/github.html,]
+default_asides: [custom/asides/flickr.html,asides/recent_posts.html,custom/asides/category_cloud.html,asides/weibo.html, asides/github.html]
 
 # Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
 # and add an array with the asides you want to use.
-blog_index_asides: [custom/asides/tag_cloud.html,asides/recent_posts.html,custom/asides/weibo.html,asides/github.html]
-post_asides: [custom/asides/tag_cloud.html,asides/recent_posts.html,custom/asides/weibo.html,asides/github.html]
+blog_index_asides: [custom/asides/category_cloud.html,asides/recent_posts.html,custom/asides/weibo.html,asides/github.html]
+post_asides: [custom/asides/category_cloud.html,asides/recent_posts.html,custom/asides/weibo.html,asides/github.html]
 # page_asides:
 
 # ----------------------- #
@@ -111,3 +111,10 @@ weibo_pic: true     # Whether you want the pictures in weibo to be shown
 weibo_skin: 10      # Please refer to http://weibo.com/tool/weiboshow
 weibo_share: true   # Whether show the sharing button
 
+# Flickr Badge
+flickr_user: 93830549@N08           # user id (not username)
+flickr_count:  2         # number of photos to show (example: 3)
+flickr_display:  random       # random or latest
+flickr_size:    m        # t (thumbnail), s (small square), m (medium)
+flickr_source:  user        # user, user_tag, all, all_tag
+flickr_tag:             # tagname - set if flickr_source is set to user_tag or all_tag

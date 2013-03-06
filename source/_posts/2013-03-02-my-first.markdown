@@ -1,12 +1,10 @@
 ---
 layout: post
-title: "Octopress剖析<一>"
+title: "Octopress初级安装"
 date: 2013-03-02 12:30
 comments: true
-categories: octopress
+categories: octopress 技术
 ---
-
-#Octopress的安装
 
 用github有一段时间了，也看过[蒋鑫](http://www.worldhello.net/ "Title")老师的**git权威指南**，
 可是总不能很好的理解git版本管理问题，但经过这次一折腾，总归还是懂了些，所以有些东西别只是看，

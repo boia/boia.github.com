@@ -1,0 +1,14 @@
+---
+layout: post
+title: "面试第一站——————联想"
+date: 2013-03-06 10:54
+comments: true
+categories: 面试 生活
+---
+
+昨天下午孤身来到联想面试，觉得最不顺利的事情就是没找到333(外)公交车。先挂个联想公司的招牌
+
+{% img /images/lenovo.png Lenovo Attack! %}
+
+
+{% jsfiddle 7hkyx result,js,html,css default 500px %}
