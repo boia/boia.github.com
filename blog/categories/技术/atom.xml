@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 技术 | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/技术/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-03-04T23:13:44+08:00</updated>
+  <updated>2013-03-06T20:23:23+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -67,6 +67,44 @@ weibo_pic: true     # Whether you want the pictures in weibo to be shown
 weibo_skin: 10      # Please refer to http://weibo.com/tool/weiboshow
 weibo_share: true   # Whether show the sharing button
 </code></p>
+
+<p>
+[Ruby]:			http://www.ruby-lang.org						"Ruby"
+[git]:			http://git-scm.com/								"Git"
+[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
+[Octopress]:	http://octopress.org							"Octopress"
+[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
+[Google]:		http://www.google.com							"Google"
+[Yahoo]:		http://www.yahoo.com							"Yahoo"
+[Twitter]:		http://twitter.com/								"Twitter"
+
+[Firebug]:		http://getfirebug.com/							"Firebug"
+
+[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
+[维基百科]:		http://zh.wikipedia.org							"维基中文"
+
+[煎蛋]:			http://jandan.net								"煎蛋"
+[小众软件]:		http://appinn.com								"小众软件"
+[小众]:			http://appinn.com								"小众软件"
+[新浪微博]:		http://weibo.com								"新浪微博"
+[微博]:			http://weibo.com								"新浪微博"
+[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
+[知乎]:			http://www.zhihu.com							"知乎"
+
+[CSSer]:		http://www.csser.com/							"CSSer"
+
+[Node.JS]:		http://nodejs.org								"Node.JS"
+[NPM]:			http://search.npmjs.org/						"NPM Registry"
+[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
+[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
+[Coffee]:		http://coffeescript.org/						"CoffeeScript"
+[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
+[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
+[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
+
+[GitHub]:		https://github.com								"GitHub"
+
+</p>
 ]]></content>
   </entry>
   
@@ -156,7 +194,7 @@ LANG=zh_CN.UTF-8
 LC_ALL=zh_CN.UTF-8
 </code></p>
 
-<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x7a;&#x68;&#x65;&#110;&#103;&#119;&#x61;&#110;&#103;&#50;&#x33;&#49;&#52;&#x40;&#x71;&#x71;&#46;&#99;&#x6f;&#109;">&#x7a;&#104;&#x65;&#x6e;&#103;&#119;&#x61;&#x6e;&#x67;&#50;&#51;&#49;&#52;&#64;&#113;&#x71;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
+<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#122;&#x68;&#x65;&#x6e;&#x67;&#119;&#97;&#x6e;&#x67;&#x32;&#51;&#x31;&#x34;&#x40;&#113;&#x71;&#46;&#x63;&#x6f;&#x6d;">&#x7a;&#x68;&#x65;&#x6e;&#x67;&#x77;&#x61;&#110;&#103;&#x32;&#x33;&#49;&#x34;&#64;&#113;&#113;&#46;&#99;&#111;&#x6d;</a></p>
 
 <p>在次打开cmd，进入到Octopress所在的目录  (cd octopress即可进入)，输入命令
 <code>
@@ -203,6 +241,44 @@ git push origin source
 </code></p>
 
 <p>终于OK了，今天讲的是安装，以后会有更多惊喜。</p>
+
+<p>
+[Ruby]:			http://www.ruby-lang.org						"Ruby"
+[git]:			http://git-scm.com/								"Git"
+[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
+[Octopress]:	http://octopress.org							"Octopress"
+[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
+[Google]:		http://www.google.com							"Google"
+[Yahoo]:		http://www.yahoo.com							"Yahoo"
+[Twitter]:		http://twitter.com/								"Twitter"
+
+[Firebug]:		http://getfirebug.com/							"Firebug"
+
+[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
+[维基百科]:		http://zh.wikipedia.org							"维基中文"
+
+[煎蛋]:			http://jandan.net								"煎蛋"
+[小众软件]:		http://appinn.com								"小众软件"
+[小众]:			http://appinn.com								"小众软件"
+[新浪微博]:		http://weibo.com								"新浪微博"
+[微博]:			http://weibo.com								"新浪微博"
+[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
+[知乎]:			http://www.zhihu.com							"知乎"
+
+[CSSer]:		http://www.csser.com/							"CSSer"
+
+[Node.JS]:		http://nodejs.org								"Node.JS"
+[NPM]:			http://search.npmjs.org/						"NPM Registry"
+[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
+[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
+[Coffee]:		http://coffeescript.org/						"CoffeeScript"
+[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
+[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
+[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
+
+[GitHub]:		https://github.com								"GitHub"
+
+</p>
 ]]></content>
   </entry>
   

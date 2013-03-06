@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: javascript - boia's博客</title>
+  <title>invalid byte sequence in GBK - boia's博客</title>
   <meta name="author" content="boia">
 
   
-  <meta name="description" content="Category: javascript">
+  <meta name="description" content="遨游在技术的海洋">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://boia.github.comblog/categories/javascript">
+  <link rel="canonical" href="http://boia.github.com/blog/2013/03/06/octopress">
   <link href="/favicon.ico" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -102,49 +102,163 @@
   <div class="container">
     <div class="row-fluid">
       
-<article role="article" class="span9">
+<article class="hentry span9" role="article">
 
   
   <header class="page-header">
-    <h1 class="entry-title">Category: Javascript</h1>
+    
+      <h1 class="entry-title">Invalid Byte Sequence in GBK</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-06T19:31:00+08:00" pubdate data-updated="true">Mar 6<span>th</span>, 2013</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><h2>痛不欲生的windows</h2>
 
-  
-  <h1>2013</h1>
+<p>今天360奇迹般地发挥他的作用，将我jajl-ruby里的一个文件给删了，这尼玛痛苦地搞了一下午啊，还将ruby和devkit都重新安装了一遍，360是白痴，我也变成白痴了？</p>
 
-<article>
-  <div class="well">
+<!-- more -->
 
-<h2><a href="/blog/2013/03/04/jsfiddle-for-octopress/">在octopress中加入jsfiddle</a></h2>
-<time datetime="2013-03-04T14:23:00+08:00" pubdate><span class='month'>Mar</span> <span class='day'>04</span> <span class='year'>2013</span></time>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/javascript/'>javascript</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a></span>
-</footer>
+<h2>invalid byte sequence in GBK</h2>
+
+<p>接着就出现了编码问题，对ruby几乎不懂，看懂代码还是可以的，然后就一个个文件地查，到底哪个文件是转换文件格式编码的，最后锁定到了<code>convertible.rb</code>(还有iconf)</p>
+
+<p>真心还是不懂，也忘了输了什么关键词，就找到<a href="https://github.com/imathis/octopress/issues/232">解决方法</a></p>
+
+<br><br><br>
+
+
+<p><img src="/images/post/1.png" title="imath" ></p>
+
+<br><br><br>
+
+
+<p>只要改成以下代码就可以了，在<code>convertible.rb</code>的28行</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>self.content = File.read(File.join(base, name), :encoding => "utf-8")</span></code></pre></td></tr></table></div></figure>
+
+
 
 </div>
 
-</article>
 
-</div>
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">boia</span></span>
+
+      
+
+
+
+
+
+
+
 
   
+
+
+<time datetime="2013-03-06T19:31:00+08:00" pubdate data-updated="true">Mar 6<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/octopress/'>octopress</a>
+  
+</span>
+
+
+    </p>
+	<p>
+    
+      <div class="sharing">
+  <!--
+  
+  -->
+	<!-- JiaThis Button BEGIN -->
+	
+	<div id="ckepop">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina">新浪微博</a>
+		<a class="jiathis_button_tqq">腾讯微博</a>
+		<a class="jiathis_button_qzone">QQ空间</a>
+		<a class="jiathis_button_renren">人人网</a>
+		<a href="http://www.jiathis.com/share?uid=1661313" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+	</div>
+	<script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1344396774557760" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+    
+	</p>
+	<br><br>
+	<ul class="pager">
+	
+    <li class="previous"><a class="basic-alignment left"
+        href="/blog/2013/03/06/lenovo/" title="Previous Post:
+        面试第一站—————联想(带题目和我做的)">&laquo; 面试第一站—————联想(带题目和我做的)</a></li>
+    
+
+      <li><a href="/blog/archives">所有文章</a></li>
+      -
+	</ul>
+
+    
+	
+	
+	<section id="comment">
+		<br><br><br>
+		<h1 class="title">发表评论</h1>
+	   <!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"boiawang"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+	</section>
+	
+
+  </footer>
 </article>
 
 <aside class="sidebar-nav span3">
   
     <section class="well">
-    <ul id="flickr" class="nav">
-		<li class="nav-header">Flickr</li>
-    </ul>
-	<div class="flickr">
-		<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=2&display=random&size=m&layout=v&source=user&user=93830549@N08"></script>
-	</div>
+  <ul id="category" class="nav">
+    <li class="nav-header">文章分类</li>
+  </ul>
+    <span id="tag-cloud"><a href='/blog/categories/javascript' style='font-size: 112.0%'>javascript(1)</a> <a href='/blog/categories/octopress' style='font-size: 160.0%'>octopress(5)</a> <a href='/blog/categories/技术' style='font-size: 124.0%'>技术(2)</a> <a href='/blog/categories/生活' style='font-size: 124.0%'>生活(2)</a> <a href='/blog/categories/面试' style='font-size: 112.0%'>面试(1)</a> </span>
 </section>
 <section class="well">
   <ul id="recent_posts" class="nav nav-list">
@@ -172,13 +286,21 @@
     
   </ul>
 </section>
+
 <section class="well">
-  <ul id="category" class="nav">
-    <li class="nav-header">文章分类</li>
+  <ul id="weibo" class="nav">
+    <li class="nav-header">新浪微博</li>
   </ul>
-    <span id="tag-cloud"><a href='/blog/categories/javascript' style='font-size: 112.0%'>javascript(1)</a> <a href='/blog/categories/octopress' style='font-size: 160.0%'>octopress(5)</a> <a href='/blog/categories/技术' style='font-size: 124.0%'>技术(2)</a> <a href='/blog/categories/生活' style='font-size: 124.0%'>生活(2)</a> <a href='/blog/categories/面试' style='font-size: 112.0%'>面试(1)</a> </span>
+      <iframe 
+        width="100%" 
+        height="550" 
+        class="share_self" 
+        frameborder="0" 
+        scrolling="no" 
+        src="http://widget.weibo.com/weiboshow/index.php?width=0&height=550&ptype=1&speed=0&skin=&isTitle=0&noborder=1&isWeibo=1&isFans=&uid=2552329061&verifier=80884619">
+      </iframe>
 </section>
-Included file 'asides/weibo.html' not found in _includes directory
+
 <section class="well">
   <ul id="gh_repos" class="nav">
     <li class="nav-header">GitHub Repos</li>
@@ -203,6 +325,8 @@ Included file 'asides/weibo.html' not found in _includes directory
 
   
 </aside>
+
+
 
 
     </div>

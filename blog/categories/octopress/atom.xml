@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-03-04T23:13:44+08:00</updated>
+  <updated>2013-03-06T20:23:23+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -12,6 +12,76 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[invalid byte sequence in GBK]]></title>
+    <link href="http://boia.github.com/blog/2013/03/06/octopress/"/>
+    <updated>2013-03-06T19:31:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/03/06/octopress</id>
+    <content type="html"><![CDATA[<h2>痛不欲生的windows</h2>
+
+<p>今天360奇迹般地发挥他的作用，将我jajl-ruby里的一个文件给删了，这尼玛痛苦地搞了一下午啊，还将ruby和devkit都重新安装了一遍，360是白痴，我也变成白痴了？</p>
+
+<!-- more -->
+
+
+<h2>invalid byte sequence in GBK</h2>
+
+<p>接着就出现了编码问题，对ruby几乎不懂，看懂代码还是可以的，然后就一个个文件地查，到底哪个文件是转换文件格式编码的，最后锁定到了<code>convertible.rb</code>(还有iconf)</p>
+
+<p>真心还是不懂，也忘了输了什么关键词，就找到<a href="https://github.com/imathis/octopress/issues/232">解决方法</a></p>
+
+<br><br><br>
+
+
+<p><img src="/images/post/1.png" title="imath" ></p>
+
+<br><br><br>
+
+
+<p>只要改成以下代码就可以了，在<code>convertible.rb</code>的28行
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>self.content = File.read(File.join(base, name), :encoding => "utf-8")</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>
+[Ruby]:			http://www.ruby-lang.org						"Ruby"
+[git]:			http://git-scm.com/								"Git"
+[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
+[Octopress]:	http://octopress.org							"Octopress"
+[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
+[Google]:		http://www.google.com							"Google"
+[Yahoo]:		http://www.yahoo.com							"Yahoo"
+[Twitter]:		http://twitter.com/								"Twitter"
+
+[Firebug]:		http://getfirebug.com/							"Firebug"
+
+[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
+[维基百科]:		http://zh.wikipedia.org							"维基中文"
+
+[煎蛋]:			http://jandan.net								"煎蛋"
+[小众软件]:		http://appinn.com								"小众软件"
+[小众]:			http://appinn.com								"小众软件"
+[新浪微博]:		http://weibo.com								"新浪微博"
+[微博]:			http://weibo.com								"新浪微博"
+[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
+[知乎]:			http://www.zhihu.com							"知乎"
+
+[CSSer]:		http://www.csser.com/							"CSSer"
+
+[Node.JS]:		http://nodejs.org								"Node.JS"
+[NPM]:			http://search.npmjs.org/						"NPM Registry"
+[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
+[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
+[Coffee]:		http://coffeescript.org/						"CoffeeScript"
+[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
+[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
+[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
+
+[GitHub]:		https://github.com								"GitHub"
+
+</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[octopress侧边栏放上Flickr相片]]></title>
@@ -64,6 +134,44 @@ flickr_tag:             # tagname - set if flickr_source is set to user_tag or a
 ```</p>
 
 <p>flickr_user不是用户名，是用户id，你可以从<a href="http://idgettr.com/">idgettr.com</a>获得</p>
+
+<p>
+[Ruby]:			http://www.ruby-lang.org						"Ruby"
+[git]:			http://git-scm.com/								"Git"
+[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
+[Octopress]:	http://octopress.org							"Octopress"
+[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
+[Google]:		http://www.google.com							"Google"
+[Yahoo]:		http://www.yahoo.com							"Yahoo"
+[Twitter]:		http://twitter.com/								"Twitter"
+
+[Firebug]:		http://getfirebug.com/							"Firebug"
+
+[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
+[维基百科]:		http://zh.wikipedia.org							"维基中文"
+
+[煎蛋]:			http://jandan.net								"煎蛋"
+[小众软件]:		http://appinn.com								"小众软件"
+[小众]:			http://appinn.com								"小众软件"
+[新浪微博]:		http://weibo.com								"新浪微博"
+[微博]:			http://weibo.com								"新浪微博"
+[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
+[知乎]:			http://www.zhihu.com							"知乎"
+
+[CSSer]:		http://www.csser.com/							"CSSer"
+
+[Node.JS]:		http://nodejs.org								"Node.JS"
+[NPM]:			http://search.npmjs.org/						"NPM Registry"
+[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
+[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
+[Coffee]:		http://coffeescript.org/						"CoffeeScript"
+[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
+[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
+[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
+
+[GitHub]:		https://github.com								"GitHub"
+
+</p>
 ]]></content>
   </entry>
   
@@ -119,6 +227,44 @@ flickr_tag:             # tagname - set if flickr_source is set to user_tag or a
 <h2>总结</h2>
 
 <p><strong>jsFiddle</strong>以前在张磊的博客看见的时候挺新颖的，现在在自己的blog里加上这个插件还是分外激动的，以后就不用上面一段代码，下面一个演示那么墨迹了。</p>
+
+<p>
+[Ruby]:			http://www.ruby-lang.org						"Ruby"
+[git]:			http://git-scm.com/								"Git"
+[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
+[Octopress]:	http://octopress.org							"Octopress"
+[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
+[Google]:		http://www.google.com							"Google"
+[Yahoo]:		http://www.yahoo.com							"Yahoo"
+[Twitter]:		http://twitter.com/								"Twitter"
+
+[Firebug]:		http://getfirebug.com/							"Firebug"
+
+[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
+[维基百科]:		http://zh.wikipedia.org							"维基中文"
+
+[煎蛋]:			http://jandan.net								"煎蛋"
+[小众软件]:		http://appinn.com								"小众软件"
+[小众]:			http://appinn.com								"小众软件"
+[新浪微博]:		http://weibo.com								"新浪微博"
+[微博]:			http://weibo.com								"新浪微博"
+[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
+[知乎]:			http://www.zhihu.com							"知乎"
+
+[CSSer]:		http://www.csser.com/							"CSSer"
+
+[Node.JS]:		http://nodejs.org								"Node.JS"
+[NPM]:			http://search.npmjs.org/						"NPM Registry"
+[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
+[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
+[Coffee]:		http://coffeescript.org/						"CoffeeScript"
+[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
+[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
+[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
+
+[GitHub]:		https://github.com								"GitHub"
+
+</p>
 ]]></content>
   </entry>
   
@@ -176,6 +322,44 @@ weibo_pic: true     # Whether you want the pictures in weibo to be shown
 weibo_skin: 10      # Please refer to http://weibo.com/tool/weiboshow
 weibo_share: true   # Whether show the sharing button
 </code></p>
+
+<p>
+[Ruby]:			http://www.ruby-lang.org						"Ruby"
+[git]:			http://git-scm.com/								"Git"
+[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
+[Octopress]:	http://octopress.org							"Octopress"
+[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
+[Google]:		http://www.google.com							"Google"
+[Yahoo]:		http://www.yahoo.com							"Yahoo"
+[Twitter]:		http://twitter.com/								"Twitter"
+
+[Firebug]:		http://getfirebug.com/							"Firebug"
+
+[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
+[维基百科]:		http://zh.wikipedia.org							"维基中文"
+
+[煎蛋]:			http://jandan.net								"煎蛋"
+[小众软件]:		http://appinn.com								"小众软件"
+[小众]:			http://appinn.com								"小众软件"
+[新浪微博]:		http://weibo.com								"新浪微博"
+[微博]:			http://weibo.com								"新浪微博"
+[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
+[知乎]:			http://www.zhihu.com							"知乎"
+
+[CSSer]:		http://www.csser.com/							"CSSer"
+
+[Node.JS]:		http://nodejs.org								"Node.JS"
+[NPM]:			http://search.npmjs.org/						"NPM Registry"
+[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
+[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
+[Coffee]:		http://coffeescript.org/						"CoffeeScript"
+[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
+[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
+[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
+
+[GitHub]:		https://github.com								"GitHub"
+
+</p>
 ]]></content>
   </entry>
   
@@ -265,7 +449,7 @@ LANG=zh_CN.UTF-8
 LC_ALL=zh_CN.UTF-8
 </code></p>
 
-<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#109;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#122;&#104;&#101;&#x6e;&#103;&#x77;&#97;&#110;&#103;&#x32;&#51;&#x31;&#x34;&#64;&#x71;&#x71;&#46;&#x63;&#111;&#109;">&#x7a;&#104;&#101;&#x6e;&#103;&#119;&#97;&#x6e;&#103;&#50;&#51;&#49;&#x34;&#64;&#x71;&#113;&#x2e;&#x63;&#111;&#109;</a></p>
+<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#58;&#x7a;&#104;&#101;&#x6e;&#x67;&#119;&#x61;&#110;&#103;&#50;&#51;&#49;&#x34;&#x40;&#113;&#x71;&#x2e;&#99;&#x6f;&#x6d;">&#122;&#x68;&#101;&#110;&#x67;&#119;&#x61;&#x6e;&#x67;&#50;&#x33;&#x31;&#52;&#x40;&#113;&#113;&#x2e;&#x63;&#111;&#109;</a></p>
 
 <p>在次打开cmd，进入到Octopress所在的目录  (cd octopress即可进入)，输入命令
 <code>
@@ -312,6 +496,44 @@ git push origin source
 </code></p>
 
 <p>终于OK了，今天讲的是安装，以后会有更多惊喜。</p>
+
+<p>
+[Ruby]:			http://www.ruby-lang.org						"Ruby"
+[git]:			http://git-scm.com/								"Git"
+[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
+[Octopress]:	http://octopress.org							"Octopress"
+[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
+[Google]:		http://www.google.com							"Google"
+[Yahoo]:		http://www.yahoo.com							"Yahoo"
+[Twitter]:		http://twitter.com/								"Twitter"
+
+[Firebug]:		http://getfirebug.com/							"Firebug"
+
+[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
+[维基百科]:		http://zh.wikipedia.org							"维基中文"
+
+[煎蛋]:			http://jandan.net								"煎蛋"
+[小众软件]:		http://appinn.com								"小众软件"
+[小众]:			http://appinn.com								"小众软件"
+[新浪微博]:		http://weibo.com								"新浪微博"
+[微博]:			http://weibo.com								"新浪微博"
+[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
+[知乎]:			http://www.zhihu.com							"知乎"
+
+[CSSer]:		http://www.csser.com/							"CSSer"
+
+[Node.JS]:		http://nodejs.org								"Node.JS"
+[NPM]:			http://search.npmjs.org/						"NPM Registry"
+[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
+[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
+[Coffee]:		http://coffeescript.org/						"CoffeeScript"
+[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
+[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
+[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
+
+[GitHub]:		https://github.com								"GitHub"
+
+</p>
 ]]></content>
   </entry>
   
