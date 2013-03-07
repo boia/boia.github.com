@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-03-06T22:35:12+08:00</updated>
+  <updated>2013-03-07T15:51:37+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -12,6 +12,130 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[数独—————无canvas]]></title>
+    <link href="http://boia.github.com/blog/2013/03/07/sudu/"/>
+    <updated>2013-03-07T15:38:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/03/07/sudu</id>
+    <content type="html"><![CDATA[<h2>简介</h2>
+
+<p>闲来无事玩数独，就想到了用javascript来写一个数独游戏，觉得用DOM写比canvas要简单的多，只是对DOM的API特别熟悉，不过API并不是太多，看了一下就开始写了，在设计和美工方面并没有用太多时间，所以美工也很糙，主要suduku的算法确实卡了好长一段时间，不过也写出了平庸的算法，没辙啊，对算法不感冒是很悲哀的，一直没明白，为什么选关以后数据就会变乱了。</p>
+
+<!-- more -->
+
+
+<p><img src="/images/post/sudu.png" title="sudu" ></p>
+
+<br><br><br>
+
+
+
+
+<br>
+
+
+<p><a href="/game/sudu/sudu.html">开始游戏</a></p>
+
+<p>
+[Ruby]:			http://www.ruby-lang.org						"Ruby"
+[git]:			http://git-scm.com/								"Git"
+[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
+[Octopress]:	http://octopress.org							"Octopress"
+[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
+[Google]:		http://www.google.com							"Google"
+[Yahoo]:		http://www.yahoo.com							"Yahoo"
+[Twitter]:		http://twitter.com/								"Twitter"
+
+[Firebug]:		http://getfirebug.com/							"Firebug"
+
+[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
+[维基百科]:		http://zh.wikipedia.org							"维基中文"
+
+[煎蛋]:			http://jandan.net								"煎蛋"
+[小众软件]:		http://appinn.com								"小众软件"
+[小众]:			http://appinn.com								"小众软件"
+[新浪微博]:		http://weibo.com								"新浪微博"
+[微博]:			http://weibo.com								"新浪微博"
+[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
+[知乎]:			http://www.zhihu.com							"知乎"
+
+[CSSer]:		http://www.csser.com/							"CSSer"
+
+[Node.JS]:		http://nodejs.org								"Node.JS"
+[NPM]:			http://search.npmjs.org/						"NPM Registry"
+[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
+[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
+[Coffee]:		http://coffeescript.org/						"CoffeeScript"
+[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
+[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
+[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
+
+[GitHub]:		https://github.com								"GitHub"
+
+</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[蘑菇和小熊的游戏]]></title>
+    <link href="http://boia.github.com/blog/2013/03/07/mushroom_bear/"/>
+    <updated>2013-03-07T14:56:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/03/07/mushroom_bear</id>
+    <content type="html"><![CDATA[<p>把一个游戏移植过来，游戏是从一个<a href="http://jacebook.co.uk/blog/2010/09/11/html5-writing-a-game/">老外</a>那里看见的，他写了关于这个游戏的教程,我发现他的代码并不是特别好，也比较地乱，然后我就想着自己做一个，素材就直接从他那里盗过来了，终归我对设计并不是特别感兴趣,还有很多bug需要修改，不要吐槽。</p>
+
+<!-- more -->
+
+
+<br><br><br>
+
+
+<p><img src="/images/post/mush_bear.png" title="mushroom_bear" ></p>
+
+<br>
+
+
+<p><a href="/game/mush-bear/game.html">开始游戏</a></p>
+
+<p>
+[Ruby]:			http://www.ruby-lang.org						"Ruby"
+[git]:			http://git-scm.com/								"Git"
+[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
+[Octopress]:	http://octopress.org							"Octopress"
+[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
+[Google]:		http://www.google.com							"Google"
+[Yahoo]:		http://www.yahoo.com							"Yahoo"
+[Twitter]:		http://twitter.com/								"Twitter"
+
+[Firebug]:		http://getfirebug.com/							"Firebug"
+
+[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
+[维基百科]:		http://zh.wikipedia.org							"维基中文"
+
+[煎蛋]:			http://jandan.net								"煎蛋"
+[小众软件]:		http://appinn.com								"小众软件"
+[小众]:			http://appinn.com								"小众软件"
+[新浪微博]:		http://weibo.com								"新浪微博"
+[微博]:			http://weibo.com								"新浪微博"
+[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
+[知乎]:			http://www.zhihu.com							"知乎"
+
+[CSSer]:		http://www.csser.com/							"CSSer"
+
+[Node.JS]:		http://nodejs.org								"Node.JS"
+[NPM]:			http://search.npmjs.org/						"NPM Registry"
+[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
+[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
+[Coffee]:		http://coffeescript.org/						"CoffeeScript"
+[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
+[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
+[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
+
+[GitHub]:		https://github.com								"GitHub"
+
+</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[在octopress中加入jsfiddle]]></title>

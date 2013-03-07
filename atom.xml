@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-03-06T22:35:12+08:00</updated>
+  <updated>2013-03-07T15:51:37+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -12,6 +12,54 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[数独—————无canvas]]></title>
+    <link href="http://boia.github.com/blog/2013/03/07/sudu/"/>
+    <updated>2013-03-07T15:38:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/03/07/sudu</id>
+    <content type="html"><![CDATA[<h2>简介</h2>
+
+<p>闲来无事玩数独，就想到了用javascript来写一个数独游戏，觉得用DOM写比canvas要简单的多，只是对DOM的API特别熟悉，不过API并不是太多，看了一下就开始写了，在设计和美工方面并没有用太多时间，所以美工也很糙，主要suduku的算法确实卡了好长一段时间，不过也写出了平庸的算法，没辙啊，对算法不感冒是很悲哀的，一直没明白，为什么选关以后数据就会变乱了。</p>
+
+<!-- more -->
+
+
+<p><img src="http://boia.github.com/images/post/sudu.png" title="sudu" ></p>
+
+<br><br><br>
+
+
+
+
+<br>
+
+
+<p><a href="http://boia.github.com/game/sudu/sudu.html">开始游戏</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[蘑菇和小熊的游戏]]></title>
+    <link href="http://boia.github.com/blog/2013/03/07/mushroom_bear/"/>
+    <updated>2013-03-07T14:56:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/03/07/mushroom_bear</id>
+    <content type="html"><![CDATA[<p>把一个游戏移植过来，游戏是从一个<a href="http://jacebook.co.uk/blog/2010/09/11/html5-writing-a-game/">老外</a>那里看见的，他写了关于这个游戏的教程,我发现他的代码并不是特别好，也比较地乱，然后我就想着自己做一个，素材就直接从他那里盗过来了，终归我对设计并不是特别感兴趣,还有很多bug需要修改，不要吐槽。</p>
+
+<!-- more -->
+
+
+<br><br><br>
+
+
+<p><img src="http://boia.github.com/images/post/mush_bear.png" title="mushroom_bear" ></p>
+
+<br>
+
+
+<p><a href="http://boia.github.com/game/mush-bear/game.html">开始游戏</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[invalid byte sequence in GBK]]></title>
@@ -391,7 +439,7 @@ google App就能每天用1G，我就一口气申请了10个App，然后每天无
 </span><span class='line'>LC_ALL=zh_CN.UTF-8</span></code></pre></td></tr></table></div></figure>
 
 
-<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#109;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#x7a;&#x68;&#101;&#110;&#x67;&#x77;&#x61;&#110;&#x67;&#50;&#x33;&#x31;&#52;&#x40;&#113;&#x71;&#x2e;&#x63;&#111;&#x6d;">&#x7a;&#x68;&#x65;&#110;&#103;&#x77;&#97;&#110;&#103;&#x32;&#x33;&#49;&#x34;&#64;&#x71;&#x71;&#46;&#99;&#x6f;&#109;</a></p>
+<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#x7a;&#104;&#101;&#110;&#x67;&#x77;&#x61;&#x6e;&#103;&#50;&#51;&#x31;&#x34;&#64;&#113;&#x71;&#x2e;&#99;&#111;&#109;">&#x7a;&#x68;&#x65;&#110;&#x67;&#119;&#97;&#x6e;&#103;&#x32;&#51;&#x31;&#x34;&#x40;&#113;&#x71;&#x2e;&#99;&#111;&#109;</a></p>
 
 <p>在次打开cmd，进入到Octopress所在的目录  (cd octopress即可进入)，输入命令</p>
 
