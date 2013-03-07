@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 游戏 | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/游戏/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-03-07T15:51:37+08:00</updated>
+  <updated>2013-03-07T15:54:21+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[数独—————无canvas]]></title>
+    <title type="html"><![CDATA[数独(无canvas)]]></title>
     <link href="http://boia.github.com/blog/2013/03/07/sudu/"/>
     <updated>2013-03-07T15:38:00+08:00</updated>
     <id>http://boia.github.com/blog/2013/03/07/sudu</id>
@@ -25,12 +25,12 @@
 <!-- more -->
 
 
-<p><img src="/images/post/sudu.png" title="sudu" ></p>
+
 
 <br><br><br>
 
 
-
+<p><img src="/images/post/sudu.png" title="sudu" ></p>
 
 <br>
 
