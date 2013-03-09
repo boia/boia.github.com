@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 物联网 | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/物联网/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-03-08T23:47:25+08:00</updated>
+  <updated>2013-03-09T16:20:08+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -22,18 +22,20 @@
 
 <p>Arduino Mega2560买来也将近一个多月了，一直放着没用，昨天想着试试Ethernet Shield，将Arduino作为一个服务器，在浏览器上可以控制Arduino，本来想着也不是太难，但自己真正搞起来了就不是那么一回事了。</p>
 
+<br>
+
+
+<p><img class="left" src="/images/post/ethernet.jpg" width="250" height="250" title="Arduino Ethernet" alt="Arduino Ethernet"></p>
+
 <!-- more -->
+
+
+<br>
 
 
 <h3>搭建局域网</h3>
 
 <p>先不连到网络，来搭建一个局域网，将本机和Arduino用网线连起来(用路由器的自动获取IP应该更简单一点)，</p>
-
-<br><br>
-
-
-<p><img class="left" src="/images/post/ethernet.jpg" width="250" height="250" title="Arduino Ethernet" alt="Arduino Ethernet">
-可以看到Ethernet Shield刚好可以嵌入到Arduino控制板上</p>
 
 <h3>下载程序配置</h3>
 

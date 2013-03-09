@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-03-08T23:47:25+08:00</updated>
+  <updated>2013-03-09T16:20:08+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -22,18 +22,20 @@
 
 <p>Arduino Mega2560买来也将近一个多月了，一直放着没用，昨天想着试试Ethernet Shield，将Arduino作为一个服务器，在浏览器上可以控制Arduino，本来想着也不是太难，但自己真正搞起来了就不是那么一回事了。</p>
 
+<br>
+
+
+<p><img class="left" src="http://boia.github.com/images/post/ethernet.jpg" width="250" height="250" title="Arduino Ethernet" alt="Arduino Ethernet"></p>
+
 <!-- more -->
+
+
+<br>
 
 
 <h3>搭建局域网</h3>
 
 <p>先不连到网络，来搭建一个局域网，将本机和Arduino用网线连起来(用路由器的自动获取IP应该更简单一点)，</p>
-
-<br><br>
-
-
-<p><img class="left" src="http://boia.github.com/images/post/ethernet.jpg" width="250" height="250" title="Arduino Ethernet" alt="Arduino Ethernet">
-可以看到Ethernet Shield刚好可以嵌入到Arduino控制板上</p>
 
 <h3>下载程序配置</h3>
 
@@ -776,7 +778,7 @@ google App就能每天用1G，我就一口气申请了10个App，然后每天无
 </span><span class='line'>LC_ALL=zh_CN.UTF-8</span></code></pre></td></tr></table></div></figure>
 
 
-<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#122;&#104;&#x65;&#110;&#103;&#x77;&#97;&#110;&#103;&#50;&#x33;&#49;&#52;&#x40;&#x71;&#113;&#x2e;&#99;&#111;&#x6d;">&#x7a;&#x68;&#x65;&#110;&#x67;&#119;&#97;&#x6e;&#x67;&#50;&#51;&#x31;&#x34;&#64;&#113;&#113;&#46;&#x63;&#x6f;&#109;</a></p>
+<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#58;&#x7a;&#x68;&#x65;&#110;&#x67;&#119;&#x61;&#110;&#x67;&#x32;&#51;&#x31;&#52;&#x40;&#113;&#x71;&#x2e;&#x63;&#111;&#x6d;">&#x7a;&#104;&#101;&#x6e;&#103;&#x77;&#97;&#110;&#x67;&#x32;&#51;&#x31;&#52;&#x40;&#x71;&#113;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
 
 <p>在次打开cmd，进入到Octopress所在的目录  (cd octopress即可进入)，输入命令</p>
 
