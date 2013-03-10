@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-03-09T16:31:08+08:00</updated>
+  <updated>2013-03-10T21:16:50+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -25,7 +25,7 @@
 <br>
 
 
-<p><img class="left" src="http://boia.github.com/images/post/ethernet.jpg" title="Arduino Yeelink" alt="Arduino Yeelink"></p>
+<p><img src="http://boia.github.com/images/post/ethernet.jpg" title="Arduino Yeelink" ></p>
 
 <!-- more -->
 
@@ -347,8 +347,6 @@
 
 
 <p><img class="left" src="http://boia.github.com/images/post/arduino3.png" title="Arduino Yeelink" alt="Arduino Yeelink"></p>
-
-<p> Included file &#8216;link&#8217; not found in _includes directory</p>
 ]]></content>
   </entry>
   
@@ -778,7 +776,7 @@ google App就能每天用1G，我就一口气申请了10个App，然后每天无
 </span><span class='line'>LC_ALL=zh_CN.UTF-8</span></code></pre></td></tr></table></div></figure>
 
 
-<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#122;&#104;&#101;&#x6e;&#x67;&#119;&#97;&#x6e;&#103;&#x32;&#51;&#x31;&#x34;&#64;&#113;&#113;&#46;&#x63;&#x6f;&#109;">&#122;&#104;&#101;&#x6e;&#103;&#x77;&#x61;&#110;&#x67;&#50;&#x33;&#49;&#x34;&#64;&#x71;&#x71;&#46;&#x63;&#x6f;&#x6d;</a></p>
+<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#x7a;&#104;&#x65;&#110;&#103;&#119;&#97;&#110;&#x67;&#50;&#x33;&#x31;&#x34;&#64;&#113;&#113;&#46;&#x63;&#111;&#x6d;">&#x7a;&#104;&#x65;&#110;&#103;&#119;&#x61;&#x6e;&#x67;&#50;&#51;&#x31;&#x34;&#64;&#113;&#113;&#x2e;&#99;&#x6f;&#109;</a></p>
 
 <p>在次打开cmd，进入到Octopress所在的目录  (cd octopress即可进入)，输入命令</p>
 
