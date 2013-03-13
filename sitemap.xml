@@ -2,51 +2,55 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://boia.github.com/blog/2013/03/02/my-first/</loc>
-        <lastmod>2013-03-06T22:35:02+08:00</lastmod>
+        <lastmod>2013-03-13T04:08:14+08:00</lastmod>
     </url>
     <url>
         <loc>http://boia.github.com/blog/2013/03/04/octopresss-weibo/</loc>
-        <lastmod>2013-03-06T22:35:02+08:00</lastmod>
+        <lastmod>2013-03-13T04:08:14+08:00</lastmod>
     </url>
     <url>
         <loc>http://boia.github.com/blog/2013/03/04/jsfiddle-for-octopress/</loc>
-        <lastmod>2013-03-06T22:35:02+08:00</lastmod>
+        <lastmod>2013-03-13T04:08:14+08:00</lastmod>
     </url>
     <url>
         <loc>http://boia.github.com/blog/2013/03/04/flickr-sidebar/</loc>
-        <lastmod>2013-03-06T22:35:02+08:00</lastmod>
+        <lastmod>2013-03-13T04:08:14+08:00</lastmod>
     </url>
     <url>
         <loc>http://boia.github.com/blog/2013/03/06/lenovo/</loc>
-        <lastmod>2013-03-06T22:35:02+08:00</lastmod>
+        <lastmod>2013-03-13T04:08:14+08:00</lastmod>
     </url>
     <url>
         <loc>http://boia.github.com/blog/2013/03/06/octopress/</loc>
-        <lastmod>2013-03-06T22:35:02+08:00</lastmod>
+        <lastmod>2013-03-13T04:08:14+08:00</lastmod>
     </url>
     <url>
         <loc>http://boia.github.com/blog/2013/03/07/mushroom_bear/</loc>
-        <lastmod>2013-03-07T15:50:55+08:00</lastmod>
+        <lastmod>2013-03-13T04:08:14+08:00</lastmod>
     </url>
     <url>
         <loc>http://boia.github.com/blog/2013/03/07/sudu/</loc>
-        <lastmod>2013-03-07T15:54:13+08:00</lastmod>
+        <lastmod>2013-03-13T04:08:14+08:00</lastmod>
     </url>
     <url>
         <loc>http://boia.github.com/blog/2013/03/08/arduino-yeelink/</loc>
-        <lastmod>2013-03-12T10:20:18+08:00</lastmod>
+        <lastmod>2013-03-13T04:08:14+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://boia.github.com/404.html</loc>
+        <lastmod>2013-03-13T19:10:27+08:00</lastmod>
     </url>
     <url>
         <loc>http://boia.github.com/blog/archives/</loc>
-        <lastmod>2013-03-12T10:20:18+08:00</lastmod>
+        <lastmod>2013-03-13T19:44:05+08:00</lastmod>
     </url>
     <url>
         <loc>http://boia.github.com/blog/categories/</loc>
-        <lastmod>2013-03-12T10:20:18+08:00</lastmod>
+        <lastmod>2013-03-13T20:06:26+08:00</lastmod>
     </url>
     <url>
         <loc>http://boia.github.com/game/</loc>
-        <lastmod>2013-03-07T15:36:48+08:00</lastmod>
+        <lastmod>2013-03-13T04:08:14+08:00</lastmod>
     </url>
     <url>
         <loc>http://boia.github.com/game/mush-bear/</loc>
@@ -54,10 +58,6 @@
     </url>
     <url>
         <loc>http://boia.github.com/</loc>
-        <lastmod>2013-03-12T10:20:18+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://boia.github.com/robots.txt</loc>
-        <lastmod>2013-03-02T11:58:02+08:00</lastmod>
+        <lastmod>2013-03-13T20:21:52+08:00</lastmod>
     </url>
 </urlset>
