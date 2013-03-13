@@ -1,0 +1,22 @@
+---
+layout: post
+title: "数独(无canvas)"
+date: 2013-03-07 15:38
+comments: true
+categories: javascript 游戏
+---
+
+## 简介
+
+闲来无事玩数独，就想到了用javascript来写一个数独游戏，觉得用DOM写比canvas要简单的多，只是对DOM的API特别熟悉，不过API并不是太多，看了一下就开始写了，在设计和美工方面并没有用太多时间，所以美工也很糙，主要suduku的算法确实卡了好长一段时间，不过也写出了平庸的算法，没辙啊，对算法不感冒是很悲哀的，一直没明白，为什么选关以后数据就会变乱了。
+
+<!-- more -->
+
+<br><br><br>
+{% img /images/post/sudu.png sudu %}
+
+<br>
+[开始游戏]({{ root_url }}/game/sudu/sudu.html)
+
+{% include links %}
+

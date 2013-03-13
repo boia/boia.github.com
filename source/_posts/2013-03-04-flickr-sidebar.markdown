@@ -54,3 +54,5 @@ flickr_tag:             # tagname - set if flickr_source is set to user_tag or a
 ```
 
 flickr_user不是用户名，是用户id，你可以从[idgettr.com](http://idgettr.com/)获得
+
+{% include links %}

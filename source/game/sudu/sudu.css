@@ -1,0 +1,82 @@
+		div{
+			font-family:georgia,verdana,helvetica,sans-serif,arial;
+		}
+		span{
+			color:red;
+		}
+		.framework{
+			margin:20px auto;
+			width:880px;
+			height:600px;
+			border:1px solid #d1d1d1;
+			box-shadow:3px 3px 5px rgba(0,0,0,.2);
+			font-size:30px;
+			font-weight:bold;
+			text-shadow:3px 3px 3px rgba(0,0,0,0.3);
+		}
+		div p{
+			margin-left:200px;
+		}
+		div#gameBody{		
+			margin:100px auto;
+			margin-left:10px;
+			width:450px;
+			height:450px;
+		}
+		.big1{
+			margin:2px;
+			z-index:0;
+			width:43px;
+			height:43px;
+			background:#cccccc;
+			border-radius:5px;
+			font-size:30px;
+			line-height:50px;
+			float:left;
+			font-weight:bold;
+			text-align:center;
+		}
+		.big2{
+			z-index:1;
+			position:absolute;
+			border:1px solid #cccccc;
+			width:115px;
+			height:115px;
+			background:white;
+			border-radius:7px;	
+		}
+		.small{
+			float:left;
+			border:1px solid #cccccc;
+			margin:3px;
+			width:30px;
+			height:30px;
+			background:white;
+			border-radius:3px;	
+			font-size:20px;
+			font-weight:bold;
+			text-align:center;
+			line-height:30px;
+		}
+		form{
+			position:absolute;
+			left:680px;
+			top:200px;
+		}
+		input{
+			margin:10px;
+		}
+		input[type="button"]{
+			width:120px;
+			height:40px;
+			font-size:20px;
+		}
+		footer{
+			margin:0;
+			padding:0;
+			position:absolute;
+			top:610px;
+			color:red;
+			font-size:25px;
+			text-shadow:3px 3px 3px rgba(0,0,0,0.3);
+		}

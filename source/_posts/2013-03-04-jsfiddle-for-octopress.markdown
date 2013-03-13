@@ -54,7 +54,4 @@ categories: octopress javascript
 
 **jsFiddle**以前在张磊的博客看见的时候挺新颖的，现在在自己的blog里加上这个插件还是分外激动的，以后就不用上面一段代码，下面一个演示那么墨迹了。
 
-[jsFiddle]: http://jsfiddle.net
-[Octopress]: http://octopress.org
-[fiddle]: http://jsfiddle.net
-[GitHub]: http://github.com
+{% include links %}

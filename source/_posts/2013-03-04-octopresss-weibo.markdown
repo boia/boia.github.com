@@ -51,3 +51,4 @@ weibo_skin: 10      # Please refer to http://weibo.com/tool/weiboshow
 weibo_share: true   # Whether show the sharing button
 ```
 
+{% include links %}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8">
+	<link rel="stylesheet" type="text/css" href="sudu.css" />
+
+</head>
+<body>
+	<div class="framework">
+		<p>请使用Chrom或者ff,<span>IE的答案检查没用</span></p>
+		<div id="gameBody"></div>
+		<form name="form">
+			<input type="radio" name="select" value="0.8" checked />小学
+			<input type="radio" name="select" value="0.6" />初中
+			<input type="radio" name="select" value="0.4" />高中
+			<input type="radio" name="select" value="0.2" />大学<br>
+			<input type="button" id="start" value="开始新游戏">
+			<input type="button" id="end" value="显示答案"><br>
+			<input type="button" id="check" value="是否正确">
+		</form>
+		<footer>
+			这里有个Bug，点击开始新游戏，算法就不对，没找出哪里的问题
+		</footer>
+	</div>
+
+	<script type="text/javascript" src="rule.js"></script>
+	<script type="text/javascript" src="square.js"></script>
+	<script type="text/javascript" src="display.js"></script>
+	
+	<script type="text/javascript">
+		var selects = document.getElementsByName("select");
+		var start = document.getElementById("start");
+		var end   = document.getElementById("end");
+		var check = document.getElementById("check");
+
+		var isChecked,level;
+		
+		if(level === undefined) level = 0.8;
+		
+		
+		addEvent(check,"click",checkResult);
+		addEvent(start,"click",function(){
+									changeAllNumber(level);
+							   });
+		addEvent(end,"click",displayResult);
+		for(var i=0;i<4;i++){
+			addEvent(selects[i],"click",function(){
+											isChecked = this;
+											level = parseFloat(isChecked.value);
+										});
+		}
+		
+		createFull(level);
+	</script>
+</body>
+</html>

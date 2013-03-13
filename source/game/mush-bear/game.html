@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<meta charset=utf-8>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			/*canvas{
+				margin-left:500px;
+				margin-top:100px;
+			}*/
+			img#start{
+				position: absolute;
+				z-index:1;
+				left:600px;
+				top: 240px;
+			}
+			img#start:hover{
+				cursor:pointer;
+				width:125px;
+				height:50px;
+			}
+		</style>
+		
+		<script src="script/jquery-1.7.1.min.js"></script>
+		
+		<script src="script/stage.js"></script>
+		<script src="script/text.js"></script>
+		<script src="script/forest.js"></script>	
+		<script src="script/mushroom.js"></script>
+		<script src="script/bear.js"></script>
+		<script src="script/prize.js"></script>		
+		<script src="script/lives.js"></script>
+		<script src="script/score.js"></script>
+		<script src="script/animation.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				var animation = new boia.Animation();
+				$("#start").click(function(){
+					$(this).hide();
+
+					animation.stopSign = setInterval(function(){
+									animation.interval();
+								},10);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<canvas id="mycanvas" width=1260 height=680></canvas>
+		<img src="images/start.png" id="start" width=100px height=40px/>
+	</body>
+
+</html>
