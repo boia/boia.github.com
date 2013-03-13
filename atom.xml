@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-03-13T20:51:49+08:00</updated>
+  <updated>2013-03-13T22:35:43+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -12,6 +12,42 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[一代宗师吐槽否]]></title>
+    <link href="http://boia.github.com/blog/2013/03/13/yidaizongshi/"/>
+    <updated>2013-03-13T22:05:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/03/13/yidaizongshi</id>
+    <content type="html"><![CDATA[<p><img src="http://boia.github.com/images/post/yidaizongshi.png" title="一代宗师" ></p>
+
+<!-- more -->
+
+
+<p>今天花了俩小时看了<a href="http://baike.baidu.com/view/675320.htm">一代宗师</a>，本来去年1月份对一代宗师抱着极大的乐趣，群星聚首加上<strong>王家卫</strong>，这本是一部好片，况且顶着<strong>八年筹备，三年拍摄</strong>的帽子，期待本是应该。</p>
+
+<p>吐槽只为个人意见</p>
+
+<h2>人生如戏 落子无悔</h2>
+
+<p>第一败笔叶问的妻子用的是韩国人，第一眼没有认出来，这应该是那个步步高广告那姐们儿吧？韩国妞儿也会拍电影？</p>
+
+<h2>每次的相聚 都是久后重逢</h2>
+
+<p>宫二这名儿是不是太**啥了</p>
+
+<h2>人活在世上 有的活成了面子 有的活成了里子</h2>
+
+<p>赵本山和小沈阳这两说相声的，哦，说小品的来凑什么热闹</p>
+
+<h2>功夫 两个字 一横一竖</h2>
+
+<p>这句话很经典，没有吐槽，人生亦如此。可是对打戏会不会太多了？</p>
+
+<h2>综述</h2>
+
+<p>没有吐槽，没有吐槽，对中国电影只能用<strong>一言难尽</strong>来形容有木有。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Arduino链接yeelink实现物联网]]></title>
@@ -776,7 +812,7 @@ google App就能每天用1G，我就一口气申请了10个App，然后每天无
 </span><span class='line'>LC_ALL=zh_CN.UTF-8</span></code></pre></td></tr></table></div></figure>
 
 
-<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x7a;&#104;&#x65;&#110;&#x67;&#x77;&#x61;&#x6e;&#103;&#x32;&#x33;&#x31;&#52;&#x40;&#x71;&#113;&#46;&#99;&#x6f;&#109;">&#x7a;&#x68;&#101;&#x6e;&#103;&#x77;&#97;&#x6e;&#103;&#50;&#x33;&#49;&#52;&#x40;&#113;&#x71;&#46;&#x63;&#111;&#109;</a></p>
+<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#x6f;&#58;&#x7a;&#x68;&#101;&#110;&#x67;&#x77;&#x61;&#110;&#103;&#x32;&#51;&#x31;&#x34;&#64;&#113;&#x71;&#46;&#99;&#x6f;&#109;">&#x7a;&#104;&#101;&#110;&#103;&#x77;&#97;&#110;&#103;&#50;&#x33;&#x31;&#52;&#x40;&#x71;&#113;&#46;&#x63;&#x6f;&#x6d;</a></p>
 
 <p>在次打开cmd，进入到Octopress所在的目录  (cd octopress即可进入)，输入命令</p>
 
