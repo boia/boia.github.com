@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 工作 | boia's博客]]></title>
+  <link href="http://boia.github.com/blog/categories/工作/atom.xml" rel="self"/>
+  <link href="http://boia.github.com/"/>
+  <updated>2013-03-16T11:11:40+08:00</updated>
+  <id>http://boia.github.com/</id>
+  <author>
+    <name><![CDATA[boia]]></name>
+    <email><![CDATA[zhengwang2314@qq.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[纪念下新车]]></title>
+    <link href="http://boia.github.com/blog/2013/03/16/new-bike/"/>
+    <updated>2013-03-16T11:06:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/03/16/new-bike</id>
+    <content type="html"><![CDATA[<h2>人生的第一次工作</h2>
+
+<p>不管怎么样，人生的第一次工作还是值得期待的，新的学习开始了！！！</p>
+
+<!-- more -->
+
+
+<h2>有图有真相</h2>
+
+<p><img src="/images/post/che.png" title="新车" ></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-03-13T22:40:48+08:00</updated>
+  <updated>2013-03-16T11:11:40+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[纪念下新车]]></title>
+    <link href="http://boia.github.com/blog/2013/03/16/new-bike/"/>
+    <updated>2013-03-16T11:06:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/03/16/new-bike</id>
+    <content type="html"><![CDATA[<h2>人生的第一次工作</h2>
+
+<p>不管怎么样，人生的第一次工作还是值得期待的，新的学习开始了！！！</p>
+
+<!-- more -->
+
+
+<h2>有图有真相</h2>
+
+<p><img src="http://boia.github.com/images/post/che.png" title="新车" ></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[一代宗师吐槽否]]></title>
@@ -814,7 +832,7 @@ google App就能每天用1G，我就一口气申请了10个App，然后每天无
 </span><span class='line'>LC_ALL=zh_CN.UTF-8</span></code></pre></td></tr></table></div></figure>
 
 
-<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#122;&#x68;&#x65;&#x6e;&#103;&#119;&#97;&#x6e;&#x67;&#50;&#51;&#x31;&#52;&#64;&#x71;&#113;&#x2e;&#x63;&#111;&#x6d;">&#122;&#104;&#101;&#x6e;&#103;&#119;&#x61;&#110;&#103;&#50;&#x33;&#49;&#52;&#x40;&#113;&#113;&#46;&#99;&#x6f;&#x6d;</a></p>
+<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#122;&#x68;&#101;&#110;&#103;&#x77;&#97;&#x6e;&#103;&#x32;&#x33;&#x31;&#x34;&#64;&#x71;&#113;&#46;&#99;&#111;&#x6d;">&#122;&#x68;&#x65;&#110;&#x67;&#x77;&#x61;&#110;&#x67;&#x32;&#51;&#x31;&#x34;&#x40;&#x71;&#x71;&#x2e;&#99;&#x6f;&#x6d;</a></p>
 
 <p>在次打开cmd，进入到Octopress所在的目录  (cd octopress即可进入)，输入命令</p>
 
