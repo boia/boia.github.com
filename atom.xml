@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-03-16T11:11:40+08:00</updated>
+  <updated>2013-03-16T16:04:59+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[开始html5]]></title>
+    <link href="http://boia.github.com/blog/2013/03/16/begin-html5/"/>
+    <updated>2013-03-16T11:44:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/03/16/begin-html5</id>
+    <content type="html"><![CDATA[<h2>简介</h2>
+
+<p>作为一个自动化学院(传言专业被并到了计算机专业)的学生，对开发语言(面向对象)几乎没有接触过，C也是朦朦胧胧凭着最后两夜地奋斗通过了考试，可能天赋在此，考的还可以。大二搞起单片机，那时候还是用51，不知怎地就爱上了程序，不过至今还坚持着<strong>硬件和软件是一家</strong>的真理。</p>
+
+<!-- more -->
+
+
+<h2>编程</h2>
+
+<p>一年前，偶然的机会让我知道了<a href="http://weibo.com/xiuyetang/">秀野堂</a>堂主，当时他的个人网站还是用纯HTML5写的，现在可能没有时间管理了。下载了他的6个视频，当时对web几乎不懂，就开始看起了他的教程视频，然后花了将近一周的时间写了一个纯静态的网站，而且只是<strong>html5</strong>，连常人熟知的div都没有(造成了现在搞个应用也不用div)，写出来以后还洋洋得意了好几天，现在觉得当时就是一纯2b，没见过世面的村儿。不知天高地厚地在3v.com申请了免费空间就上传了，ftp用起来还是蛮熟练的。css、js还得边看着手册边查用法的时候，就去下载了<strong>php_manual_zh.chm</strong>，或许真是脑子开窍，也可能是曾苦逼熬夜一个月细读C++手册感动了上天，将我的IQ提高了不少等等各种不为人知的缘由，学起新语言来轻轻松松，class、extend、implement、interface&#8230;这些我未曾碰过的关键词至今都刻在我脑子里。所以明白了一个道理:<strong>领悟编程，只是在等一个时机</strong>。</p>
+
+<h2>论道HTML5</h2>
+
+<p><a href="http://weibo.com/xiuyetang/">秀野堂</a>在一年前说要闭关做个关于webgl的游戏，然后就消失了，在这里我必须要感谢秀野堂，是他确定了我未来至少5年的方向，然而对于他出的书，在很早前我就在豆瓣中加入了想读的行列，一直没买(觉得不值&#8230;)，两天前拿到这本书，到今天也就看了一章，最近一直在搞脑电波(失败中&#8230;)。</p>
+
+<p><img src="http://boia.github.com/images/post/lundaohtml5.png" title="论道HTML5" ></p>
+
+<h2>总结</h2>
+
+<p>坚持地搞下去&#8230;</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[纪念下新车]]></title>
@@ -832,7 +860,7 @@ google App就能每天用1G，我就一口气申请了10个App，然后每天无
 </span><span class='line'>LC_ALL=zh_CN.UTF-8</span></code></pre></td></tr></table></div></figure>
 
 
-<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#122;&#x68;&#101;&#110;&#103;&#x77;&#97;&#x6e;&#103;&#x32;&#x33;&#x31;&#x34;&#64;&#x71;&#113;&#46;&#99;&#111;&#x6d;">&#122;&#x68;&#x65;&#110;&#x67;&#x77;&#x61;&#110;&#x67;&#x32;&#51;&#x31;&#x34;&#x40;&#x71;&#x71;&#x2e;&#99;&#x6f;&#x6d;</a></p>
+<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#109;&#97;&#105;&#x6c;&#x74;&#111;&#x3a;&#x7a;&#104;&#101;&#x6e;&#x67;&#x77;&#x61;&#110;&#x67;&#x32;&#x33;&#x31;&#x34;&#x40;&#113;&#113;&#46;&#x63;&#111;&#109;">&#x7a;&#104;&#x65;&#x6e;&#103;&#x77;&#97;&#110;&#x67;&#50;&#51;&#49;&#52;&#x40;&#113;&#x71;&#x2e;&#x63;&#111;&#109;</a></p>
 
 <p>在次打开cmd，进入到Octopress所在的目录  (cd octopress即可进入)，输入命令</p>
 
