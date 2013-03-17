@@ -4,7 +4,7 @@
   <title><![CDATA[Category: html5 | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/html5/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-03-16T16:07:15+08:00</updated>
+  <updated>2013-03-17T21:49:29+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[html5模拟数码管实验]]></title>
+    <link href="http://boia.github.com/blog/2013/03/17/num-light/"/>
+    <updated>2013-03-17T21:36:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/03/17/num-light</id>
+    <content type="html"><![CDATA[<h2>前言</h2>
+
+<p>最近在做物联网的东西，也好久没碰电子了，看到显示器，就想用<strong>HTML5</strong>模拟一个数码管玩玩，这个程序在前段时间已经完成了，今天本想着改进一下，不知道是不是因为实习前的"大姨爸"来了，特别的无力。</p>
+
+<!-- more -->
+
+
+<br><br>
+
+
+<h2>瞻仰代码</h2>
+
+<p>代码本不难，估计是隔了一段时间了，今天来看已经有点困难，如果要解释的话就更加地为难了。没有动画效果，没有复杂代码，只是在4*7的格子上画圆凑成一个数字，将每个数字的坐标存在数组里，然后用forEach(函数编程真妙...)将每个坐标都取出来画圆。</p>
+
+<br><br>
+
+
+<h2>看看jsFiddle</h2>
+
+<p><iframe style="width: 100%; height: 400px" src="http://jsfiddle.net/59mNq/embedded/result,js,html,css/presentation/"></iframe></p>
+
+<br><br>
+
+
+<h2>最近浅淡</h2>
+
+<p>毕设先要放一段时间了，专心实习，脑电波继续无力着...</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[开始html5]]></title>
