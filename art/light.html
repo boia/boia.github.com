@@ -1,0 +1,74 @@
+<html>
+<meta charset="utf-8">
+<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	#dark{
+		width: 100%;
+		height: 100%;
+		background-color: rgb(0,0,0);
+		/*background: radial-gradient(circle,#f00,#ff0,#080);*/
+		padding-top: 200px;
+	}
+	#light{
+		display: block;
+		width: 15px;
+		height: 20px;
+		background: url(images/light.png) 0 0 no-repeat;
+		cursor: pointer;
+		margin: 0 auto;
+	}
+</style>
+
+<div id="dark">
+	<span id="light"></span>
+</div>
+
+<script>
+	window.onload = function(){
+		var $ = function(id){
+			return document.getElementById(id);
+		};
+
+		var light = $("light");
+		var dark = $("dark");
+		var isDark = false;
+
+		var centerX = 0;
+		var centerY = 0;
+		var isMove = 0;
+
+		light.onclick = function(){
+			if(isDark){
+				light.style.backgroundPosition = "0 0";
+				dark.style.backgroundColor = "rgba(0,0,0,1)";
+				isDark = false;
+			}
+			else{
+				light.style.backgroundPosition = "0 -50";
+				dark.style.backgroundColor = "rgba(0,0,0,0.5)";				
+				isDark = true;
+			}
+			
+		};
+
+		dark.onmousemove = function(e){
+			//background: radial-gradient(circle,#f00,#ff0,#080);
+				var x = e.clientX;
+				var y = e.clientY;
+			if(isDark){
+				/*dark.style.background = "-webkit-gradient(radial,"+x+" "+y+", 15,"+x+" "+y+", 40, from(#00c9ff), to(rgba(0,201,255,0)), color-stop(80%, #00b5e2))";*/
+				dark.style.background = "rgb(0,0,0) -webkit-gradient(radial,"+x+" "+y+", 50,"+x+" "+y+",80, from(rgba(255,255,255,1)), to(rgba(255,255,255,0.7)), color-stop(100%, rgba(255,255,255,0.4)))";
+
+				/*dark.style.background = "rgb(0,0,0) -webkit-gradient(radial,center center, 30,"+x+" "+y+",80, from(rgba(0,0,0,1)), to(rgba(255,255,255,0.6)), color-stop(100%, rgba(255,255,255,0.9)))";*/
+			}
+			else{
+				dark.style.background = "rgba(0,0,0,1)";
+				//clearInterval(isMove);
+			}			
+		}
+	}
+</script>
+</html>
