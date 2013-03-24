@@ -4,7 +4,7 @@
   <title><![CDATA[Category: css3 | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/css3/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-03-24T19:58:10+08:00</updated>
+  <updated>2013-03-24T20:02:29+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[纪念地球节电一小时]]></title>
-    <link href="http://boia.github.com/blog/2013/03/24/xiaoneidengguang/"/>
+    <link href="http://boia.github.com/blog/2013/03/24/ditiejiedian/"/>
     <updated>2013-03-24T16:18:00+08:00</updated>
-    <id>http://boia.github.com/blog/2013/03/24/xiaoneidengguang</id>
+    <id>http://boia.github.com/blog/2013/03/24/ditiejiedian</id>
     <content type="html"><![CDATA[<h2>2013-3-23 节电</h2>
 
 <p>世界自然基金会在2007年向全球发出的一项倡议：就是在每年三月的最后一个星期六20：30~21：30期间熄灯1小时，为了纪念这个活动，我用CSS3+JS代码模拟了一个节电活动，如果你是IE(或者国内山寨浏览器)的忠实用户，请绕道吧。</p>
@@ -85,9 +85,12 @@
 <br><br>
 
 
-<p>感觉移动鼠标的时候，明显有些卡，将背景色处理放在setInterval中处理，效果也一样，应该是gradient函数中的终始坐标都用变量，而且是个时刻在改变的变量，那么就出现了卡的现象。动画帧频我觉得还是canvas处理比较好玩，对于gradient()这个函数，我也是今天第一次用，如果有什么不懂，可以去看下CSS手册。对于效果，程序主要处理div里的background，给Object.style.background赋值就可以，移动鼠标，灯的中心就跟着鼠标跑了。
-我还写了一个手电筒效果，这个效果明显流畅很多，因为起始的坐标用了一个定值，鼠标带动手电筒照亮黑暗的地方。对CSS3我不是很熟，但确实很厉害。
-最近准备写个关于canvas的教程(是根据ActionScript来写的)。
+<p>感觉移动鼠标的时候，明显有些卡，将背景色处理放在setInterval中处理，效果也一样，应该是gradient函数中的终始坐标都用变量，而且是个时刻在改变的变量，那么就出现了卡的现象。动画帧频我觉得还是canvas处理比较好玩，对于gradient()这个函数，我也是今天第一次用，如果有什么不懂，可以去看下CSS手册。对于效果，程序主要围绕着给Object.style.background赋值来实现特效。</p>
+
+<p>我还写了一个手电筒效果，这个效果明显流畅很多，因为起始的坐标用了一个定值，鼠标带动手电
+筒照亮黑暗的地方。对CSS3我不是很熟，但确实很厉害。</p>
+
+<p>最近准备写个关于canvas的教程(是根据ActionScript来写的)。
 
 [Ruby]:			http://www.ruby-lang.org						"Ruby"
 [git]:			http://git-scm.com/								"Git"

@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-03-24T19:58:10+08:00</updated>
+  <updated>2013-03-24T20:02:29+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[纪念地球节电一小时]]></title>
-    <link href="http://boia.github.com/blog/2013/03/24/xiaoneidengguang/"/>
+    <link href="http://boia.github.com/blog/2013/03/24/ditiejiedian/"/>
     <updated>2013-03-24T16:18:00+08:00</updated>
-    <id>http://boia.github.com/blog/2013/03/24/xiaoneidengguang</id>
+    <id>http://boia.github.com/blog/2013/03/24/ditiejiedian</id>
     <content type="html"><![CDATA[<h2>2013-3-23 节电</h2>
 
 <p>世界自然基金会在2007年向全球发出的一项倡议：就是在每年三月的最后一个星期六20：30~21：30期间熄灯1小时，为了纪念这个活动，我用CSS3+JS代码模拟了一个节电活动，如果你是IE(或者国内山寨浏览器)的忠实用户，请绕道吧。</p>
@@ -123,9 +123,12 @@
 <br><br>
 
 
-<p>感觉移动鼠标的时候，明显有些卡，将背景色处理放在setInterval中处理，效果也一样，应该是gradient函数中的终始坐标都用变量，而且是个时刻在改变的变量，那么就出现了卡的现象。动画帧频我觉得还是canvas处理比较好玩，对于gradient()这个函数，我也是今天第一次用，如果有什么不懂，可以去看下CSS手册。对于效果，程序主要处理div里的background，给Object.style.background赋值就可以，移动鼠标，灯的中心就跟着鼠标跑了。
-我还写了一个手电筒效果，这个效果明显流畅很多，因为起始的坐标用了一个定值，鼠标带动手电筒照亮黑暗的地方。对CSS3我不是很熟，但确实很厉害。
-最近准备写个关于canvas的教程(是根据ActionScript来写的)。</p>
+<p>感觉移动鼠标的时候，明显有些卡，将背景色处理放在setInterval中处理，效果也一样，应该是gradient函数中的终始坐标都用变量，而且是个时刻在改变的变量，那么就出现了卡的现象。动画帧频我觉得还是canvas处理比较好玩，对于gradient()这个函数，我也是今天第一次用，如果有什么不懂，可以去看下CSS手册。对于效果，程序主要围绕着给Object.style.background赋值来实现特效。</p>
+
+<p>我还写了一个手电筒效果，这个效果明显流畅很多，因为起始的坐标用了一个定值，鼠标带动手电
+筒照亮黑暗的地方。对CSS3我不是很熟，但确实很厉害。</p>
+
+<p>最近准备写个关于canvas的教程(是根据ActionScript来写的)。</p>
 ]]></content>
   </entry>
   
@@ -1022,7 +1025,7 @@ google App就能每天用1G，我就一口气申请了10个App，然后每天无
 </span><span class='line'>LC_ALL=zh_CN.UTF-8</span></code></pre></td></tr></table></div></figure>
 
 
-<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#109;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#122;&#x68;&#x65;&#110;&#103;&#119;&#x61;&#x6e;&#x67;&#50;&#51;&#x31;&#x34;&#64;&#113;&#x71;&#46;&#x63;&#111;&#x6d;">&#x7a;&#104;&#101;&#110;&#x67;&#x77;&#97;&#x6e;&#x67;&#x32;&#x33;&#x31;&#52;&#64;&#x71;&#x71;&#x2e;&#99;&#111;&#109;</a></p>
+<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#122;&#x68;&#x65;&#x6e;&#103;&#119;&#97;&#x6e;&#x67;&#x32;&#51;&#x31;&#52;&#64;&#x71;&#113;&#46;&#99;&#x6f;&#x6d;">&#x7a;&#x68;&#101;&#110;&#103;&#x77;&#97;&#110;&#103;&#50;&#x33;&#x31;&#x34;&#64;&#113;&#113;&#46;&#99;&#111;&#x6d;</a></p>
 
 <p>在次打开cmd，进入到Octopress所在的目录  (cd octopress即可进入)，输入命令</p>
 
