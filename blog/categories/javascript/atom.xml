@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-03-24T19:40:08+08:00</updated>
+  <updated>2013-03-24T19:58:10+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -27,7 +27,68 @@
 
 <p><a href="/art/light.html">预览效果</a></p>
 
-<p>
+<br><br>
+
+
+<h2>代码解析</h2>
+
+<br><br>
+
+
+<p>```javascript</p>
+
+<pre><code>window.onload = function(){
+    var $ = function(id){
+        return document.getElementById(id);
+    };
+
+    var light = $("light");
+    var dark = $("dark");
+    var isDark = false;
+
+    //var centerX = 0;
+    //var centerY = 0;
+    //var isMove = 0;
+
+    light.onclick = function(){
+        if(isDark){
+            light.style.backgroundPosition = "0 0";
+            dark.style.backgroundColor = "rgba(0,0,0,1)";
+            isDark = false;
+        }
+        else{
+            light.style.backgroundPosition = "0 -50";
+            dark.style.backgroundColor = "rgba(0,0,0,0.5)";             
+            isDark = true;
+        }
+
+    };
+
+    dark.onmousemove = function(e){
+            var x = e.clientX;
+            var y = e.clientY;
+        if(isDark){
+            dark.style.background = "rgb(0,0,0) -webkit-gradient(radial,"+x+" "+y+", 50,"+x+" "+y+",80, from(rgba(255,255,255,1)), to(rgba(255,255,255,0.7)), color-stop(100%, rgba(255,255,255,0.4)))";
+
+            //手电筒效果
+            /*dark.style.background = "rgb(0,0,0) -webkit-gradient(radial,center center, 30,"+x+" "+y+",80, from(rgba(0,0,0,1)), to(rgba(255,255,255,0.6)), color-stop(100%, rgba(255,255,255,0.9)))";*/
+        }
+        else{
+            dark.style.background = "rgba(0,0,0,1)";
+        }           
+    }
+}
+</code></pre>
+
+<p>```</p>
+
+<br><br>
+
+
+<p>感觉移动鼠标的时候，明显有些卡，将背景色处理放在setInterval中处理，效果也一样，应该是gradient函数中的终始坐标都用变量，而且是个时刻在改变的变量，那么就出现了卡的现象。动画帧频我觉得还是canvas处理比较好玩，对于gradient()这个函数，我也是今天第一次用，如果有什么不懂，可以去看下CSS手册。对于效果，程序主要处理div里的background，给Object.style.background赋值就可以，移动鼠标，灯的中心就跟着鼠标跑了。
+我还写了一个手电筒效果，这个效果明显流畅很多，因为起始的坐标用了一个定值，鼠标带动手电筒照亮黑暗的地方。对CSS3我不是很熟，但确实很厉害。
+最近准备写个关于canvas的教程(是根据ActionScript来写的)。
+
 [Ruby]:			http://www.ruby-lang.org						"Ruby"
 [git]:			http://git-scm.com/								"Git"
 [Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
