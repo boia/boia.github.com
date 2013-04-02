@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-03-28T14:13:06+08:00</updated>
+  <updated>2013-04-02T23:37:18+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -14,11 +14,46 @@
 
   
   <entry>
-    <title type="html"><![CDATA[flot-course1]]></title>
+    <title type="html"><![CDATA[WARN Could not determine content-length of response body.Set content-length of the response or set Response#chunked = true]]></title>
+    <link href="http://boia.github.com/blog/2013/03/28/set-response/"/>
+    <updated>2013-03-28T16:55:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/03/28/set-response</id>
+    <content type="html"><![CDATA[<h2>rake preview</h2>
+
+<p>今天rake preview的时候出现了一个警告，应该是我用iframe的时候去获得其他源的时候出现的问题，因为对ruby很浅的了解，所以只能发挥我seo的本领，最终还是解决了。</p>
+
+<!-- more -->
+
+
+<br><br>
+
+
+<p>错误是这样的,如下图所示</p>
+
+<p><img src="http://boia.github.com/images/post/response.png" title="set response" ><br></p>
+
+<p>杜绝一切警告和错误是一个良好coder的优秀品质，因为coder固有的强迫症，有一个警告都是不允许的事情，改之义不容缓。<br></p>
+
+<p>找到<code>F:software\Ruby193\lib\ruby\1.9.1\webrick\httpresponse.rb</code>,你别跟我说你找不到路径&#8230;<br><br></p>
+
+<p>在205行，你能看到<code>if chunked? || @header['content-length']</code><br><br></p>
+
+<p>只要改成<code>if chunked? || @header['content-length'] || @status == 304 || @status == 204</code>  就行了，不要问我为什么？我真的不懂。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[jquery-flot教程]]></title>
     <link href="http://boia.github.com/blog/2013/03/28/flot-course1/"/>
     <updated>2013-03-28T13:39:00+08:00</updated>
     <id>http://boia.github.com/blog/2013/03/28/flot-course1</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<!-- more -->
+
+
+<p><link href="http://boia.github.com/stylesheets/custom.css" media="screen,projection" rel="stylesheet" type="text/css"></p>
+
+<iframe class="articlebox" width="600" height="400" src="http://boia.github.com/course/jQuery/flot/examples/index.html" sandbox></iframe>
+
 ]]></content>
   </entry>
   
@@ -1034,7 +1069,7 @@ google App就能每天用1G，我就一口气申请了10个App，然后每天无
 </span><span class='line'>LC_ALL=zh_CN.UTF-8</span></code></pre></td></tr></table></div></figure>
 
 
-<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#x7a;&#104;&#101;&#x6e;&#103;&#x77;&#97;&#110;&#103;&#50;&#x33;&#x31;&#52;&#x40;&#x71;&#113;&#46;&#x63;&#x6f;&#109;">&#122;&#104;&#x65;&#x6e;&#x67;&#119;&#97;&#x6e;&#103;&#x32;&#51;&#x31;&#52;&#64;&#x71;&#x71;&#46;&#99;&#x6f;&#x6d;</a></p>
+<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#122;&#x68;&#101;&#x6e;&#x67;&#119;&#97;&#110;&#103;&#50;&#51;&#49;&#x34;&#64;&#113;&#113;&#46;&#x63;&#111;&#109;">&#x7a;&#x68;&#x65;&#110;&#103;&#119;&#x61;&#x6e;&#103;&#50;&#x33;&#49;&#52;&#x40;&#x71;&#113;&#46;&#99;&#x6f;&#x6d;</a></p>
 
 <p>在次打开cmd，进入到Octopress所在的目录  (cd octopress即可进入)，输入命令</p>
 

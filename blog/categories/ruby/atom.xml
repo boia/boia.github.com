@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ruby | boia's博客]]></title>
+  <link href="http://boia.github.com/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://boia.github.com/"/>
+  <updated>2013-04-02T23:37:18+08:00</updated>
+  <id>http://boia.github.com/</id>
+  <author>
+    <name><![CDATA[boia]]></name>
+    <email><![CDATA[zhengwang2314@qq.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[WARN Could not determine content-length of response body.Set content-length of the response or set Response#chunked = true]]></title>
+    <link href="http://boia.github.com/blog/2013/03/28/set-response/"/>
+    <updated>2013-03-28T16:55:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/03/28/set-response</id>
+    <content type="html"><![CDATA[<h2>rake preview</h2>
+
+<p>今天rake preview的时候出现了一个警告，应该是我用iframe的时候去获得其他源的时候出现的问题，因为对ruby很浅的了解，所以只能发挥我seo的本领，最终还是解决了。</p>
+
+<!-- more -->
+
+
+<br><br>
+
+
+<p>错误是这样的,如下图所示</p>
+
+<p><img src="/images/post/response.png" title="set response" ><br></p>
+
+<p>杜绝一切警告和错误是一个良好coder的优秀品质，因为coder固有的强迫症，有一个警告都是不允许的事情，改之义不容缓。<br></p>
+
+<p>找到<code>F:software\Ruby193\lib\ruby\1.9.1\webrick\httpresponse.rb</code>,你别跟我说你找不到路径...<br><br></p>
+
+<p>在205行，你能看到<code>if chunked? || @header['content-length']</code><br><br></p>
+
+<p>只要改成<code>if chunked? || @header['content-length'] || @status == 304 || @status == 204</code>  就行了，不要问我为什么？我真的不懂。</p>
+]]></content>
+  </entry>
+  
+</feed>

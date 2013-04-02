@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-03-28T14:13:06+08:00</updated>
+  <updated>2013-04-02T23:37:18+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[WARN Could not determine content-length of response body.Set content-length of the response or set Response#chunked = true]]></title>
+    <link href="http://boia.github.com/blog/2013/03/28/set-response/"/>
+    <updated>2013-03-28T16:55:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/03/28/set-response</id>
+    <content type="html"><![CDATA[<h2>rake preview</h2>
+
+<p>今天rake preview的时候出现了一个警告，应该是我用iframe的时候去获得其他源的时候出现的问题，因为对ruby很浅的了解，所以只能发挥我seo的本领，最终还是解决了。</p>
+
+<!-- more -->
+
+
+<br><br>
+
+
+<p>错误是这样的,如下图所示</p>
+
+<p><img src="/images/post/response.png" title="set response" ><br></p>
+
+<p>杜绝一切警告和错误是一个良好coder的优秀品质，因为coder固有的强迫症，有一个警告都是不允许的事情，改之义不容缓。<br></p>
+
+<p>找到<code>F:software\Ruby193\lib\ruby\1.9.1\webrick\httpresponse.rb</code>,你别跟我说你找不到路径...<br><br></p>
+
+<p>在205行，你能看到<code>if chunked? || @header['content-length']</code><br><br></p>
+
+<p>只要改成<code>if chunked? || @header['content-length'] || @status == 304 || @status == 204</code>  就行了，不要问我为什么？我真的不懂。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[invalid byte sequence in GBK]]></title>
@@ -322,180 +351,6 @@ weibo_pic: true     # Whether you want the pictures in weibo to be shown
 weibo_skin: 10      # Please refer to http://weibo.com/tool/weiboshow
 weibo_share: true   # Whether show the sharing button
 </code></p>
-
-<p>
-[Ruby]:			http://www.ruby-lang.org						"Ruby"
-[git]:			http://git-scm.com/								"Git"
-[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
-[Octopress]:	http://octopress.org							"Octopress"
-[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
-[Google]:		http://www.google.com							"Google"
-[Yahoo]:		http://www.yahoo.com							"Yahoo"
-[Twitter]:		http://twitter.com/								"Twitter"
-
-[Firebug]:		http://getfirebug.com/							"Firebug"
-
-[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
-[维基百科]:		http://zh.wikipedia.org							"维基中文"
-
-[煎蛋]:			http://jandan.net								"煎蛋"
-[小众软件]:		http://appinn.com								"小众软件"
-[小众]:			http://appinn.com								"小众软件"
-[新浪微博]:		http://weibo.com								"新浪微博"
-[微博]:			http://weibo.com								"新浪微博"
-[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
-[知乎]:			http://www.zhihu.com							"知乎"
-
-[CSSer]:		http://www.csser.com/							"CSSer"
-
-[Node.JS]:		http://nodejs.org								"Node.JS"
-[NPM]:			http://search.npmjs.org/						"NPM Registry"
-[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
-[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
-[Coffee]:		http://coffeescript.org/						"CoffeeScript"
-[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
-[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
-[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
-
-[GitHub]:		https://github.com								"GitHub"
-
-</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Octopress初级安装]]></title>
-    <link href="http://boia.github.com/blog/2013/03/02/my-first/"/>
-    <updated>2013-03-02T12:30:00+08:00</updated>
-    <id>http://boia.github.com/blog/2013/03/02/my-first</id>
-    <content type="html"><![CDATA[<p>用github有一段时间了，也看过<a href="http://www.worldhello.net/" title="Title">蒋鑫</a>老师的<strong>git权威指南</strong>，
-可是总不能很好的理解git版本管理问题，但经过这次一折腾，总归还是懂了些，所以有些东西别只是看，
-也要踏踏实实地去做一遍，这样才能更好的去理解。</p>
-
-<p>今天我们学习Octopress的安装，在windows下运行Octopress博客并发布到Github Pages上。</p>
-
-<!-- more -->
-
-
-<h2>①安装Git</h2>
-
-<p><a href="https://code.google.com/p/msysgit/downloads/list?q=full+installer+official+git" title="title">msysgit</a>
-是一git在windows下的管理软件，这里要注意的一点是有一个<strong>SSH Keys</strong>的问题，你必须生成密钥然后
-放在<strong><a href="http://github.com" title="Title">git</a></strong>网站对应的地方，否则push的话会出现error</p>
-
-<h2>②安装Ruby</h2>
-
-<p>因为Octopress是用ruby写的，所以安装ruby也是必须的，最新的Octopress指定的Ruby版本好像是1.9.3，
-所以我也推荐大家下<strong><a href="http://rubyinstaller.org/" title="Title">ruby1.9.3</a></strong>，在windows的安装就不用我教大家了
-安装好以后，在cmd中敲击以下代码
-<code>
-ruby --version
-</code>
-如果出现版本号的话说明你安装正确了</p>
-
-<h2>③安装Devkit</h2>
-
-<p>接着安装Devkit，我下的是4.5.2版本，<a href="https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe" title="Title">DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe</a>
-下载到E:盘，在win的cmd窗口进入到e，然后敲击下面的命令:</p>
-
-<p><code>
-cd E:DevKit
-ruby dk.rb init
-ruby dk.rb install
-</code></p>
-
-<h2>④安装python</h2>
-
-<p>安装Python是为了博客代码加亮，在windows下最好下载<strong><a href="http://www.activestate.com/activepython/downloads" title="Title">python2.7</a>，</strong>
-别下载Python3，继续在cmd中执行下面命令:
-<code>
-easy_install pygments
-</code></p>
-
-<h2>⑤下载Octopress</h2>
-
-<p>以前玩rails的时候，用gem install rails总是出现错误，然后就谷歌、百度轮番找，发现原来是网站被河蟹了，
-马上就翻墙了，自由门是最常用的，最近谷歌出了个好玩意儿，goagent(不过这东西下载前还得翻墙)，只要有一个
-google App就能每天用1G，我就一口气申请了10个App，然后每天无止境的翻墙了，而且至今没出现不稳定或者崩溃的问题。
-这里就不写goagent的教程了，大家可以百度一下，步骤还是很简单的。</p>
-
-<p>为什么这里要说vpn呢？其实是因为要安装bundler(是一个ruby的包)，所以应该需要翻墙吧。</p>
-
-<p>首先下载Octopress源码，打开cmd &lt;&lt;E回车，选择了E盘以后，输入命令:
-<code>
-git clone git://github.com/imathis/octopress.git  octopress
-</code></p>
-
-<p>如果你ssh keys没设置对的话，估计这里也成功不了</p>
-
-<p>接着安装Octopress的依赖项，还是在cmd中敲命令</p>
-
-<p><code>
-cd octopress
-gem install bundler
-bundle install
-</code></p>
-
-<h2>⑥创建版本库</h2>
-
-<p>登录到<a href="https://github.com/" title="Title">Github</a>，点击Create A Repository，这时候需要输入版本名，
-非常非常重要的一点版本名的格式<strong>username.github.com</strong>，你自己username不用我教吧？</p>
-
-<h2>⑦将Octopress发布到Github</h2>
-
-<p>说发布之前，咱们还要对windows环境变量配置一下为了支持中文编码
-<code>
-LANG=zh_CN.UTF-8
-LC_ALL=zh_CN.UTF-8
-</code></p>
-
-<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#x6d;&#97;&#x69;&#108;&#116;&#111;&#58;&#122;&#x68;&#x65;&#x6e;&#103;&#119;&#x61;&#x6e;&#103;&#50;&#51;&#49;&#52;&#x40;&#x71;&#x71;&#x2e;&#99;&#x6f;&#109;">&#x7a;&#x68;&#101;&#x6e;&#103;&#119;&#x61;&#x6e;&#x67;&#50;&#x33;&#x31;&#x34;&#64;&#x71;&#113;&#x2e;&#99;&#111;&#x6d;</a></p>
-
-<p>在次打开cmd，进入到Octopress所在的目录  (cd octopress即可进入)，输入命令
-<code>
-rake setup_github_pages
-</code></p>
-
-<p>按提示输入刚才新建的Repo地址，类似： git@github.com:username/username.github.com 或
-git@github.com:username/username.github.com.git。</p>
-
-<p>完成以后输入命令</p>
-
-<p><code>
-rake install
-rake generate
-rake preview
-</code></p>
-
-<p>对了，这里还有一个可能会遇到的错误，错误提示是关于rake版本，然后说use bundle exex可能可以解决，
-那么你只要在输rake前加上bundle exec就好了</p>
-
-<p>其中rake install是安装Octopress默认主题的，
-rake gnerate是生成静态页面的，这两个命令是必须运行的，
-而rake preview则是用来本地浏览的（运行时看屏幕上提示，按Ctrl+C并输入Y来终止批处理操作），
-运行后打开浏览器，输入 http://localhost:4000/ 就可以看到如下的界面了，
-不想预览的话也可以不运行，直接进入下一步。</p>
-
-<h2>⑧将博客发布到Github</h2>
-
-<p>cmd输入下面命令
-<code>
-rake deploy  
-</code></p>
-
-<p>这样，生成的内容将会自动发布到master分支，并且可以使用 http://username.github.com 访问内容。</p>
-
-<h2>⑨将源文件发布到source分支下</h2>
-
-<p>可以说你的工作已经全部最好了，可你想万一其他配置文件丢失了怎么办？这时候你就要将源文件放到git中</p>
-
-<p><code>
-git add .
-git commit -m "1st"
-git push origin source
-</code></p>
-
-<p>终于OK了，今天讲的是安装，以后会有更多惊喜。</p>
 
 <p>
 [Ruby]:			http://www.ruby-lang.org						"Ruby"

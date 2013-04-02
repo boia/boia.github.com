@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: jQuery | boia's博客]]></title>
+  <link href="http://boia.github.com/blog/categories/jquery/atom.xml" rel="self"/>
+  <link href="http://boia.github.com/"/>
+  <updated>2013-04-02T23:37:18+08:00</updated>
+  <id>http://boia.github.com/</id>
+  <author>
+    <name><![CDATA[boia]]></name>
+    <email><![CDATA[zhengwang2314@qq.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[jquery-flot教程]]></title>
+    <link href="http://boia.github.com/blog/2013/03/28/flot-course1/"/>
+    <updated>2013-03-28T13:39:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/03/28/flot-course1</id>
+    <content type="html"><![CDATA[<!-- more -->
+
+
+<p><link href="/stylesheets/custom.css" media="screen,projection" rel="stylesheet" type="text/css"></p>
+
+<iframe class="articlebox" width="600" height="400" src="/course/jQuery/flot/examples/index.html" sandbox></iframe>
+
+]]></content>
+  </entry>
+  
+</feed>
