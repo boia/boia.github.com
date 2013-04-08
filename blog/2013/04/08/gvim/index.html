@@ -1,0 +1,39 @@
+<hr />
+
+<p>layout: post
+title: &#8220;gvim中文乱码的解决方法以及一些简单配置&#8221;
+date: 2013-04-08 17:11
+comments: true
+categories: gvim  IDE</p>
+
+<hr />
+
+<h2>初试Vim</h2>
+
+<p>因为笔记本没有按ubuntu，所以在windows系统中只好按gvim，我的版本是<a href="" title="http://119.147.99.43/gdown_group133/M00/0B/06/d5NjK05l5fIAAAAAAJEId3VUWeE9186457/gvim73_46.rar?k=tk1dDKwISpJv7ImuVmeyoA&amp;t=1365409424&amp;u=3683547893-75501363-eielyukb&amp;s=307200&amp;file=gvim73_46.rar">gvim7.346</a>，如果你也碰到了中文编码问题的话，可以按我说的去解决。</p>
+
+<!-- more -->
+
+
+<br><br>
+
+
+<h2>打开_vimrc</h2>
+
+<p>打开<code>_vimrc</code>这个文件，这个文件在你安装gvim的根目录可以找到，然后用编译器打开，最好别用记事本。</p>
+
+<h2>添加配置</h2>
+
+<p>set encoding=utf-8
+set fileencodings=utf-8,gbk,gb18030,gk2312
+&#8220;解决菜单乱码
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+&#8220;解决consle输出乱码
+language messages zh_CN.utf-8
+“打开语法高亮
+syntax on
+“gvim 配色方案
+colorscheme torte</p>
+
+<p>OK，做得好！！！</p>
