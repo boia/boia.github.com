@@ -127,7 +127,58 @@
   </header>
 
 
-<div class="entry-content">
+<div class="entry-content"><p>因为需要测试ajax的跨域操作，所以在本地搭建一个虚拟服务器，也碰到一些问题，不过最终还是解决了，如果你也想搭建虚拟服务器，可以按以下步骤进行操作。</p>
+
+<!-- more -->
+
+
+<br><br>
+
+
+<h2>httpd-vhosts.conf</h2>
+
+<p>找到<code>httpd-vhosts.conf</code>，我的文件在<code>F:\Software\wamp\bin\apache\apache2.2.22\conf\extra</code>下，作为一个coder分工总是令人蛋疼地明确，理所当然，你也可以直接在<code>httpd.conf</code>中设置，不过我建议你不要这么做。</p>
+
+<p>将里面的内容用&#8221;#&#8221;全部注释掉，然后加入以下内容</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;VirtualHost 127.0.0.2:8080&gt;
+</span><span class='line'>    DocumentRoot F:/Software/wamp/virtual
+</span><span class='line'>   ServerName virtual
+</span><span class='line'>
+</span><span class='line'> DirectoryIndex index.html
+</span><span class='line'>&lt;Directory "F:/Software/wamp/virtual"&gt;
+</span><span class='line'>    Options Indexes FollowSymLinks
+</span><span class='line'>    AllowOverride None
+</span><span class='line'>    Order allow,deny
+</span><span class='line'>    Allow from all
+</span><span class='line'>&lt;/Directory&gt;
+</span><span class='line'>&lt;/VirtualHost&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>因为这里端口我用了8080，如果你是80的话，你就要写成127.0.0.2:80，DocumentRoot是你虚拟主机的根目录，这里我就不多说了。</p>
+
+<h2>httpd-conf</h2>
+
+<p>我一开始以为只要在<code>httpd-vhosts.conf</code>改了就可以了，没想到主配置文件没有包含，找到<code>Include conf/extra/httpd-vhosts.conf</code>，将前面的&#8221;#&#8221;去掉。</p>
+
+<br><br>
+
+
+<h2>hosts</h2>
+
+<p>最后一步了，如果你玩过代理翻墙，那么你就可能会知道(不排除你用自由门)需要在hosts文件中修改IP指向那个你需要翻墙的网址，这里咱们就要设置一下将IP指向咱们的虚拟目录。</p>
 </div>
 
 </div>
@@ -153,6 +204,12 @@
 
 <time datetime="2013-04-09T10:59:00+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2013</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/apache/'>apache</a>
+  
+</span>
 
 
     </p>
@@ -242,7 +299,7 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
     <section class="well" style="padding: 8px 0;">
 
 	<h3 class="nav-header">文章分类</h3>
-    <ul class="nav nav-list"><li><a href='/blog/categories/arduino'>Arduino (1)</a></li><li><a href='/blog/categories/css3'>css3 (1)</a></li><li><a href='/blog/categories/gvim'>gvim (1)</a></li><li><a href='/blog/categories/html5'>html5 (3)</a></li><li><a href='/blog/categories/ide'>IDE (1)</a></li><li><a href='/blog/categories/javascript'>javascript (5)</a></li><li><a href='/blog/categories/jquery'>jQuery (1)</a></li><li><a href='/blog/categories/lab'>lab (1)</a></li><li><a href='/blog/categories/octopress'>octopress (6)</a></li><li><a href='/blog/categories/ruby'>ruby (1)</a></li><li><a href='/blog/categories/工作'>工作 (1)</a></li><li><a href='/blog/categories/技术'>技术 (2)</a></li><li><a href='/blog/categories/游戏'>游戏 (2)</a></li><li><a href='/blog/categories/物联网'>物联网 (1)</a></li><li><a href='/blog/categories/生活'>生活 (3)</a></li><li><a href='/blog/categories/电影'>电影 (1)</a></li><li><a href='/blog/categories/面试'>面试 (1)</a></li></ul>
+    <ul class="nav nav-list"><li><a href='/blog/categories/apache'>apache (1)</a></li><li><a href='/blog/categories/arduino'>Arduino (1)</a></li><li><a href='/blog/categories/css3'>css3 (1)</a></li><li><a href='/blog/categories/gvim'>gvim (1)</a></li><li><a href='/blog/categories/html5'>html5 (3)</a></li><li><a href='/blog/categories/ide'>IDE (1)</a></li><li><a href='/blog/categories/javascript'>javascript (5)</a></li><li><a href='/blog/categories/jquery'>jQuery (1)</a></li><li><a href='/blog/categories/lab'>lab (1)</a></li><li><a href='/blog/categories/octopress'>octopress (6)</a></li><li><a href='/blog/categories/ruby'>ruby (1)</a></li><li><a href='/blog/categories/工作'>工作 (1)</a></li><li><a href='/blog/categories/技术'>技术 (2)</a></li><li><a href='/blog/categories/游戏'>游戏 (2)</a></li><li><a href='/blog/categories/物联网'>物联网 (1)</a></li><li><a href='/blog/categories/生活'>生活 (3)</a></li><li><a href='/blog/categories/电影'>电影 (1)</a></li><li><a href='/blog/categories/面试'>面试 (1)</a></li></ul>
 </section>
 <section class="well" style="padding: 8px 0;">
 	<h3 class="nav-header">最近文章</h3>
