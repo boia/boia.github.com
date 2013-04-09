@@ -4,7 +4,7 @@
   <title><![CDATA[Category: gvim | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/gvim/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-04-09T11:03:55+08:00</updated>
+  <updated>2013-04-09T11:05:59+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -31,6 +31,9 @@
 <h2>打开_vimrc</h2>
 
 <p>打开<code>_vimrc</code>这个文件，这个文件在你安装gvim的根目录可以找到，然后用编译器打开，最好别用记事本。</p>
+
+<br><br>
+
 
 <h2>添加配置</h2>
 
