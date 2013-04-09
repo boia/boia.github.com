@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-04-08T17:20:28+08:00</updated>
+  <updated>2013-04-09T11:03:55+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -14,21 +14,20 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Gvim]]></title>
+    <title type="html"><![CDATA[virtual]]></title>
+    <link href="http://boia.github.com/blog/2013/04/09/virtual/"/>
+    <updated>2013-04-09T10:59:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/04/09/virtual</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[gvim中文乱码的解决方法以及一些简单配置]]></title>
     <link href="http://boia.github.com/blog/2013/04/08/gvim/"/>
-    <updated>2013-04-08T00:00:00+08:00</updated>
+    <updated>2013-04-08T17:11:00+08:00</updated>
     <id>http://boia.github.com/blog/2013/04/08/gvim</id>
-    <content type="html"><![CDATA[<hr />
-
-<p>layout: post
-title: &#8220;gvim中文乱码的解决方法以及一些简单配置&#8221;
-date: 2013-04-08 17:11
-comments: true
-categories: gvim  IDE</p>
-
-<hr />
-
-<h2>初试Vim</h2>
+    <content type="html"><![CDATA[<h2>初试Vim</h2>
 
 <p>因为笔记本没有按ubuntu，所以在windows系统中只好按gvim，我的版本是<a href="" title="http://119.147.99.43/gdown_group133/M00/0B/06/d5NjK05l5fIAAAAAAJEId3VUWeE9186457/gvim73_46.rar?k=tk1dDKwISpJv7ImuVmeyoA&amp;t=1365409424&amp;u=3683547893-75501363-eielyukb&amp;s=307200&amp;file=gvim73_46.rar">gvim7.346</a>，如果你也碰到了中文编码问题的话，可以按我说的去解决。</p>
 
@@ -1116,7 +1115,7 @@ google App就能每天用1G，我就一口气申请了10个App，然后每天无
 </span><span class='line'>LC_ALL=zh_CN.UTF-8</span></code></pre></td></tr></table></div></figure>
 
 
-<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#109;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#122;&#104;&#x65;&#x6e;&#103;&#119;&#x61;&#x6e;&#103;&#x32;&#x33;&#x31;&#x34;&#x40;&#x71;&#113;&#x2e;&#99;&#x6f;&#x6d;">&#x7a;&#104;&#101;&#110;&#x67;&#x77;&#97;&#110;&#103;&#50;&#x33;&#x31;&#52;&#x40;&#x71;&#x71;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
+<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#109;&#97;&#105;&#x6c;&#116;&#111;&#x3a;&#122;&#104;&#101;&#110;&#103;&#119;&#97;&#110;&#103;&#x32;&#x33;&#49;&#x34;&#x40;&#x71;&#x71;&#46;&#x63;&#111;&#x6d;">&#x7a;&#x68;&#101;&#110;&#103;&#119;&#97;&#x6e;&#x67;&#x32;&#51;&#x31;&#x34;&#64;&#113;&#x71;&#46;&#99;&#111;&#109;</a></p>
 
 <p>在次打开cmd，进入到Octopress所在的目录  (cd octopress即可进入)，输入命令</p>
 

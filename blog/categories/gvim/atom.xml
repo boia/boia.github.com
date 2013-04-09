@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: ruby | boia's博客]]></title>
-  <link href="http://boia.github.com/blog/categories/ruby/atom.xml" rel="self"/>
+  <title><![CDATA[Category: gvim | boia's博客]]></title>
+  <link href="http://boia.github.com/blog/categories/gvim/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
   <updated>2013-04-09T11:03:55+08:00</updated>
   <id>http://boia.github.com/</id>
@@ -14,13 +14,13 @@
 
   
   <entry>
-    <title type="html"><![CDATA[WARN Could not determine content-length of response body.Set content-length of the response or set Response#chunked = true]]></title>
-    <link href="http://boia.github.com/blog/2013/03/28/set-response/"/>
-    <updated>2013-03-28T16:55:00+08:00</updated>
-    <id>http://boia.github.com/blog/2013/03/28/set-response</id>
-    <content type="html"><![CDATA[<h2>rake preview</h2>
+    <title type="html"><![CDATA[gvim中文乱码的解决方法以及一些简单配置]]></title>
+    <link href="http://boia.github.com/blog/2013/04/08/gvim/"/>
+    <updated>2013-04-08T17:11:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/04/08/gvim</id>
+    <content type="html"><![CDATA[<h2>初试Vim</h2>
 
-<p>今天rake preview的时候出现了一个警告，应该是我用iframe的时候去获得其他源的时候出现的问题，因为对ruby很浅的了解，所以只能发挥我seo的本领，最终还是解决了。</p>
+<p>因为笔记本没有按ubuntu，所以在windows系统中只好按gvim，我的版本是<a href="" title="http://119.147.99.43/gdown_group133/M00/0B/06/d5NjK05l5fIAAAAAAJEId3VUWeE9186457/gvim73_46.rar?k=tk1dDKwISpJv7ImuVmeyoA&amp;t=1365409424&amp;u=3683547893-75501363-eielyukb&amp;s=307200&amp;file=gvim73_46.rar">gvim7.346</a>，如果你也碰到了中文编码问题的话，可以按我说的去解决。</p>
 
 <!-- more -->
 
@@ -28,17 +28,25 @@
 <br><br>
 
 
-<p>错误是这样的,如下图所示</p>
+<h2>打开_vimrc</h2>
 
-<p><img src="/images/post/response.png" title="set response" ><br></p>
+<p>打开<code>_vimrc</code>这个文件，这个文件在你安装gvim的根目录可以找到，然后用编译器打开，最好别用记事本。</p>
 
-<p>杜绝一切警告和错误是一个良好coder的优秀品质，因为coder固有的强迫症，有一个警告都是不允许的事情，改之义不容缓。<br></p>
+<h2>添加配置</h2>
 
-<p>找到<code>F:software\Ruby193\lib\ruby\1.9.1\webrick\httpresponse.rb</code>,你别跟我说你找不到路径...<br><br></p>
+<p>set encoding=utf-8
+set fileencodings=utf-8,gbk,gb18030,gk2312
+"解决菜单乱码
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+"解决consle输出乱码
+language messages zh_CN.utf-8
+“打开语法高亮
+syntax on
+“gvim 配色方案
+colorscheme torte</p>
 
-<p>在205行，你能看到<code>if chunked? || @header['content-length']</code><br><br></p>
-
-<p>只要改成<code>if chunked? || @header['content-length'] || @status == 304 || @status == 204</code>  就行了，不要问我为什么？我真的不懂。</p>
+<p>OK，做得好！！！</p>
 
 <p>
 [Ruby]:			http://www.ruby-lang.org						"Ruby"

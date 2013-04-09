@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>WARN Could not determine content-length of response body.Set content-length of the response or set Response#chunked = true - boia's博客</title>
+  <title>Category: gvim - boia's博客</title>
   <meta name="author" content="boia">
 
   
-  <meta name="description" content="遨游在技术的海洋">
+  <meta name="description" content="Category: gvim">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://boia.github.com/blog/2013/03/28/set-response">
+  <link rel="canonical" href="http://boia.github.comblog/categories/gvim">
   <link href="/favicon.ico" rel="icon">
     
   <link href="/stylesheets/bootstrap/bootstrap.min.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -98,173 +98,38 @@
   <div class="container">
     <div class="row-fluid">
       
-<article class="hentry span9" role="article">
-
-  <div class="articlebox">
-
-  <header class="page-header">
-    
-      <h1 class="entry-title">WARN Could Not Determine Content-length of Response body.Set Content-length of the Response or Set Response#chunked = True</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
+<article role="article" class="span9">
 
   
-
-
-<time datetime="2013-03-28T16:55:00+08:00" pubdate data-updated="true">Mar 28<span>th</span>, 2013</time>
-        
-      </p>
+  <header class="page-header">
+    <h1 class="entry-title">Category: Gvim</h1>
     
   </header>
+  
+  <div id="blog-archives" class="category">
 
 
-<div class="entry-content"><h2>rake preview</h2>
 
-<p>今天rake preview的时候出现了一个警告，应该是我用iframe的时候去获得其他源的时候出现的问题，因为对ruby很浅的了解，所以只能发挥我seo的本领，最终还是解决了。</p>
+  
+  <h1>2013</h1>
 
-<!-- more -->
+<article>
+  <div class="well">
 
+<h2><a href="/blog/2013/04/08/gvim/">gvim中文乱码的解决方法以及一些简单配置</a></h2>
+<time datetime="2013-04-08T17:11:00+08:00" pubdate><span class='month'>Apr</span> <span class='day'>08</span> <span class='year'>2013</span></time>
 
-<br><br>
-
-
-<p>错误是这样的,如下图所示</p>
-
-<p><img src="/images/post/response.png" title="set response" ><br></p>
-
-<p>杜绝一切警告和错误是一个良好coder的优秀品质，因为coder固有的强迫症，有一个警告都是不允许的事情，改之义不容缓。<br></p>
-
-<p>找到<code>F:software\Ruby193\lib\ruby\1.9.1\webrick\httpresponse.rb</code>,你别跟我说你找不到路径&#8230;<br><br></p>
-
-<p>在205行，你能看到<code>if chunked? || @header['content-length']</code><br><br></p>
-
-<p>只要改成<code>if chunked? || @header['content-length'] || @status == 304 || @status == 204</code>  就行了，不要问我为什么？我真的不懂。</p>
-</div>
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/ide/'>IDE</a>, <a class='category' href='/blog/categories/gvim/'>gvim</a></span>
+</footer>
 
 </div>
 
-  <footer>
-    <p class="meta">
-      
-  
-
-<span class="byline author vcard">Posted by <span class="fn">boia</span></span>
-
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-28T16:55:00+08:00" pubdate data-updated="true">Mar 28<span>th</span>, 2013</time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/octopress/'>octopress</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>
-  
-</span>
-
-
-    </p>
-	<p>
-    
-      <div class="sharing">
-  <!--
-  
-  -->
-	<!-- JiaThis Button BEGIN -->
-	
-	<!--<div id="ckepop">
-		<span class="jiathis_txt">分享到：</span>
-		<a class="jiathis_button_tsina">新浪微博</a>
-		<a class="jiathis_button_tqq">腾讯微博</a>
-		<a class="jiathis_button_qzone">QQ空间</a>
-		<a class="jiathis_button_renren">人人网</a>
-		<a href="http://www.jiathis.com/share?uid=1661313" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
-	</div>
-	<script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script>
-	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1344396774557760" charset="utf-8"></script>
-	
-
-<-- JiaThis Button END -->
-<!-- Baidu Button BEGIN -->
-<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
-<span class="bds_more">分享到：</span>
-<a class="bds_tsina">新浪微博</a>
-<a class="bds_tqq">腾讯微博</a>
-<a class="bds_renren">人人网</a>
-<a class="bds_t163">网易微博</a>
-<a class="bds_qzone">QQ空间</a>
-<a class="shareCount"></a>
-</div>
-<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=0" ></script>
-<script type="text/javascript" id="bdshell_js"></script>
-<script type="text/javascript">
-document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
-</script>
-<!-- Baidu Button END -->
+</article>
 
 </div>
-    
-	</p>
-	<br><br>
-	<ul class="pager">
-	
-    <li class="previous"><a class="basic-alignment left"
-        href="/blog/2013/03/28/flot-course1/" title="Previous Post:
-        jquery-flot教程">&laquo; jquery-flot教程</a></li>
-    
 
-      <li><a href="/blog/archives">所有文章</a></li>
-      
-      <li class="next"><a class="basic-alignment right" href="/blog/2013/04/08/gvim/"
-        title="Next Post: gvim中文乱码的解决方法以及一些简单配置">gvim中文乱码的解决方法以及一些简单配置
-        &raquo;</a></li>
-      -
-	</ul>
-
-    
-	
-	
-	<section id="comment">
-		<br><br><br>
-		<h1 class="title">发表评论</h1>
-	   <!-- Duoshuo Comment BEGIN -->
-	<div class="ds-thread"></div>
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"boiawang"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = 'http://static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		|| document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- Duoshuo Comment END -->
-
-
-	</section>
-	
-
-  </footer>
+  
 </article>
 
 <aside class="sidebar-nav span3">
@@ -340,8 +205,6 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
 
   
 </aside>
-
-
 
 
     </div>
