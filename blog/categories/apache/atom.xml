@@ -4,7 +4,7 @@
   <title><![CDATA[Category: apache | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/apache/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-04-09T11:27:32+08:00</updated>
+  <updated>2013-04-09T11:29:34+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -65,7 +65,32 @@ Allow from all
 
 <p>最后一步了，如果你玩过代理翻墙，那么你就可能会知道(不排除你用自由门)需要在hosts文件中修改IP指向那个你需要翻墙的网址，这里咱们就要设置一下将IP指向咱们的虚拟目录。添加以下内容</p>
 
-<p>127.0.0.2       virtual</p>
+<p>127.0.0.2       virtual<br><br></p>
+
+<h2>You don't have permission to access / on this server.</h2>
+
+<p>这里提一个小插曲，你可以会被服务器拒绝说没有权限，在httpd-conf的文件中找到
+```
+<Directory /></p>
+
+<pre><code>Options FollowSymLinks
+AllowOverride None
+Order deny,allow
+Deny from all 
+</code></pre>
+
+<p></Directory>
+<code>&lt;br&gt;
+改成
+</code>
+<Directory /></p>
+
+<pre><code>Options Indexes FollowSymLinks
+AllowOverride None
+</code></pre>
+
+<p></Directory>
+```<br><br></p>
 
 <p>OK！！！重启一下开始新的旅程吧</p>
 

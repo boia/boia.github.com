@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-04-09T11:27:32+08:00</updated>
+  <updated>2013-04-09T11:29:34+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -71,7 +71,43 @@
 
 <p>最后一步了，如果你玩过代理翻墙，那么你就可能会知道(不排除你用自由门)需要在hosts文件中修改IP指向那个你需要翻墙的网址，这里咱们就要设置一下将IP指向咱们的虚拟目录。添加以下内容</p>
 
-<p>127.0.0.2       virtual</p>
+<p>127.0.0.2       virtual<br><br></p>
+
+<h2>You don&#8217;t have permission to access / on this server.</h2>
+
+<p>这里提一个小插曲，你可以会被服务器拒绝说没有权限，在httpd-conf的文件中找到</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;Directory /&gt;
+</span><span class='line'>    Options FollowSymLinks
+</span><span class='line'>    AllowOverride None
+</span><span class='line'>    Order deny,allow
+</span><span class='line'>    Deny from all 
+</span><span class='line'>&lt;/Directory&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<br>
+
+
+<p>改成</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;Directory /&gt;
+</span><span class='line'>    Options Indexes FollowSymLinks
+</span><span class='line'>    AllowOverride None
+</span><span class='line'>&lt;/Directory&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<br><br>
+
 
 <p>OK！！！重启一下开始新的旅程吧</p>
 ]]></content>
@@ -1183,7 +1219,7 @@ google App就能每天用1G，我就一口气申请了10个App，然后每天无
 </span><span class='line'>LC_ALL=zh_CN.UTF-8</span></code></pre></td></tr></table></div></figure>
 
 
-<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#122;&#x68;&#x65;&#110;&#x67;&#119;&#97;&#x6e;&#103;&#50;&#x33;&#49;&#52;&#x40;&#x71;&#x71;&#46;&#x63;&#111;&#109;">&#x7a;&#104;&#101;&#x6e;&#103;&#x77;&#97;&#x6e;&#x67;&#x32;&#51;&#x31;&#52;&#x40;&#113;&#113;&#46;&#x63;&#111;&#109;</a></p>
+<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x7a;&#x68;&#x65;&#110;&#103;&#119;&#97;&#x6e;&#103;&#x32;&#x33;&#49;&#52;&#x40;&#x71;&#113;&#x2e;&#x63;&#x6f;&#109;">&#122;&#x68;&#x65;&#110;&#103;&#119;&#x61;&#110;&#x67;&#50;&#x33;&#x31;&#x34;&#64;&#113;&#x71;&#x2e;&#99;&#111;&#109;</a></p>
 
 <p>在次打开cmd，进入到Octopress所在的目录  (cd octopress即可进入)，输入命令</p>
 
