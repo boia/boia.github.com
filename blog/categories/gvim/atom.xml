@@ -4,7 +4,7 @@
   <title><![CDATA[Category: gvim | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/gvim/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-04-09T11:09:20+08:00</updated>
+  <updated>2013-04-09T11:11:57+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -37,17 +37,27 @@
 
 <h2>添加配置</h2>
 
-<p>set encoding=utf-8
-set fileencodings=utf-8,gbk,gb18030,gk2312
-"解决菜单乱码
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
-"解决consle输出乱码
-language messages zh_CN.utf-8
-“打开语法高亮
-syntax on
-“gvim 配色方案
-colorscheme torte</p>
+<p>set encoding=utf-8</p>
+
+<p>set fileencodings=utf-8,gbk,gb18030,gk2312</p>
+
+<p>"解决菜单乱码"</p>
+
+<p>source $VIMRUNTIME/delmenu.vim</p>
+
+<p>source $VIMRUNTIME/menu.vim</p>
+
+<p>"解决consle输出乱码"</p>
+
+<p>language messages zh_CN.utf-8</p>
+
+<p>"打开语法高亮"</p>
+
+<p>syntax on</p>
+
+<p>"gvim 配色方案"</p>
+
+<p>colorscheme torte</p>
 
 <p>OK，做得好！！！</p>
 

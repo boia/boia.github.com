@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-04-09T11:09:20+08:00</updated>
+  <updated>2013-04-09T11:11:57+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -46,17 +46,27 @@
 
 <h2>添加配置</h2>
 
-<p>set encoding=utf-8
-set fileencodings=utf-8,gbk,gb18030,gk2312
-&#8220;解决菜单乱码
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
-&#8220;解决consle输出乱码
-language messages zh_CN.utf-8
-“打开语法高亮
-syntax on
-“gvim 配色方案
-colorscheme torte</p>
+<p>set encoding=utf-8</p>
+
+<p>set fileencodings=utf-8,gbk,gb18030,gk2312</p>
+
+<p>&#8220;解决菜单乱码&#8221;</p>
+
+<p>source $VIMRUNTIME/delmenu.vim</p>
+
+<p>source $VIMRUNTIME/menu.vim</p>
+
+<p>&#8220;解决consle输出乱码&#8221;</p>
+
+<p>language messages zh_CN.utf-8</p>
+
+<p>&#8220;打开语法高亮&#8221;</p>
+
+<p>syntax on</p>
+
+<p>&#8220;gvim 配色方案&#8221;</p>
+
+<p>colorscheme torte</p>
 
 <p>OK，做得好！！！</p>
 ]]></content>
@@ -1118,7 +1128,7 @@ google App就能每天用1G，我就一口气申请了10个App，然后每天无
 </span><span class='line'>LC_ALL=zh_CN.UTF-8</span></code></pre></td></tr></table></div></figure>
 
 
-<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#122;&#104;&#x65;&#x6e;&#x67;&#x77;&#97;&#110;&#103;&#50;&#51;&#49;&#52;&#64;&#x71;&#113;&#46;&#x63;&#111;&#109;">&#x7a;&#104;&#101;&#110;&#103;&#119;&#x61;&#110;&#103;&#50;&#x33;&#49;&#52;&#x40;&#x71;&#113;&#46;&#99;&#111;&#x6d;</a></p>
+<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#x6d;&#97;&#105;&#x6c;&#116;&#111;&#58;&#x7a;&#104;&#101;&#x6e;&#103;&#119;&#97;&#x6e;&#103;&#x32;&#51;&#49;&#52;&#64;&#113;&#113;&#46;&#99;&#x6f;&#x6d;">&#x7a;&#104;&#x65;&#x6e;&#103;&#x77;&#x61;&#110;&#x67;&#50;&#51;&#49;&#52;&#64;&#113;&#x71;&#46;&#99;&#x6f;&#109;</a></p>
 
 <p>在次打开cmd，进入到Octopress所在的目录  (cd octopress即可进入)，输入命令</p>
 
