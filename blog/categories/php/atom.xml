@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: php | boia's博客]]></title>
+  <link href="http://boia.github.com/blog/categories/php/atom.xml" rel="self"/>
+  <link href="http://boia.github.com/"/>
+  <updated>2013-04-13T15:42:53+08:00</updated>
+  <id>http://boia.github.com/</id>
+  <author>
+    <name><![CDATA[boia]]></name>
+    <email><![CDATA[zhengwang2314@qq.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[全面解析ubuntu下安装php、pear]]></title>
+    <link href="http://boia.github.com/blog/2013/04/13/ubuntu-php/"/>
+    <updated>2013-04-13T14:42:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/04/13/ubuntu-php</id>
+    <content type="html"><![CDATA[<h2>前言</h2>
+
+<p>因为在windows下搞pear没有成功，老出现无缘无故的问题，所以今天用ubuntu搭建了一个php。众所周知开源代码和linux总是有无懈的缘分，而我作为一个开源的忠实粉丝，却还抱着windows系统不放，总有些惭愧，下一个wamp毫无技术可言就搞定了。少说废话，下面就开始。</p>
+
+<!-- more -->
+
+
+<br><br>
+
+
+<h2>ubuntu搭建php</h2>
+
+<p>① apache2</p>
+
+<ul>
+<li><code>sudo apt-get install apache2</code></li>
+</ul>
+
+
+<p>...大概几秒钟时间</p>
+
+<p>打开浏览器输入http://localhost/</p>
+
+<p>it works总是令人那么激动，只是你还有很多东西要做<br><br></p>
+
+<p>② PHP5</p>
+
+<ul>
+<li><p><code>sudo apt-get install php5</code></p></li>
+<li><p><code>sudo apt-get install libapache2-mod-php5</code></p></li>
+<li><p><code>sudo /etc/init.d/apache2 restart</code></p></li>
+</ul>
+
+
+<p>然后php应该被安装到了<code>/etc/php5/</code>下</p>
+
+<p>试试 <code>php -v</code></p>
+
+<p>查询到PHP 5.4.6<br><br></p>
+
+<p>③ MySql</p>
+
+<ul>
+<li><code>sudo apt-get install mysql-server</code></li>
+</ul>
+
+
+<p>MySql初始只允许本机(127.0.0.1)连接，如果想多台机子使用或者向Internet开放的话，编辑/etc/mysql/my.cnf</p>
+
+<ul>
+<li><code>sudo gedit /etc/mysql/my.cnf</code></li>
+</ul>
+
+
+<p>找到<code>bind-address = 127.0.0.1</code> 在前面加一个'#'注释掉<br><br></p>
+
+<p>④ MySql Administrator</p>
+
+<ul>
+<li><code>sudo apt-get install mysql-admin</code></li>
+</ul>
+
+
+<p>不知道为啥这个命令没有成功，如果你也不行，可以试下下面的命令</p>
+
+<ul>
+<li><code>sudo apt-get install libapache2-mod-auth-mysql</code></li>
+<li><code>sudo apt-get install php5-mysql</code></li>
+<li><code>sudo apt-get install phpmyadmin</code></li>
+</ul>
+
+
+<p>要让PHP与MySql一起工作，编辑</p>
+
+<ul>
+<li><code>sudo gedit /etc/php5/apache2/php.ini</code></li>
+</ul>
+
+
+<p>取消对;extension=mysql.so的注释</p>
+
+<p>重启apache</p>
+
+<ul>
+<li><code>sudo /etc/init.d/apache2 restart</code></li>
+</ul>
+
+
+<p>打开浏览器输入<code>http://localhost/phpmyadmin</code>，我在这里输的时候，出现了一个问题</p>
+
+<blockquote>
+Not Found
+The requested URL /phpmyadmin/ was not found on this server.
+Apache/2.2.14 (Ubuntu) Server at localhost Port 80
+</blockquote>
+
+
+<p>然后各种纠结，百度了以后才知道得让phpAdministrator和php建立一个软连接</p>
+
+<p>打开<code>var/www</code></p>
+
+<ul>
+<li><code>sudo ln -s /usr/share/phpmyadmin</code><br><br></li>
+</ul>
+
+
+<p>⑤ pear</p>
+
+<p>下载pear在php中是一个很简单的事情，只要输入一行代码</p>
+
+<ul>
+<li><code>curl -o go-pear.php http://pear.php.net/go-pear</code></li>
+</ul>
+
+
+<p>如果你没有按curl，请输入一行命令</p>
+
+<ul>
+<li><code>sudo apt-get install curl libcurl3 libcurl3-dev php5-curl</code></li>
+</ul>
+
+
+<p>重启下服务器</p>
+
+<ul>
+<li><code>sudo /etc/init.d/apache2 restart</code><br><br></li>
+</ul>
+
+
+<p>⑥ 运行go-pear.php</p>
+
+<p>找到<code>go-pear.php</code></p>
+
+<ul>
+<li><code>php go-pear.php</code><br><br></li>
+</ul>
+
+
+<p>```
+1. Installation base ($prefix)                   : /usr/local/php5
+2. Temporary directory for processing            : /tmp/pear/install
+3. Temporary directory for downloads             : /tmp/pear/install
+4. Binaries directory                            : /usr/local/php5/bin
+5. PHP code directory ($php_dir)                 : /usr/local/php5/lib/php
+6. Documentation directory                       : /usr/local/php5/docs
+7. Data directory                                : /usr/local/php5/data
+8. User-modifiable configuration files directory : /usr/local/php5/cfg
+9. Public Web Files directory                    : /usr/local/php5/www
+10. Tests directory                               : /usr/local/php5/tests
+11. Name of configuration file                    : /usr/local/php5/etc/pear.conf
+1-11, ‘all’ or Enter to continue:
+Beginning install…
+Configuration written to /usr/local/php5/etc/pear.conf…
+Initialized registry…
+Preparing to install…
+installing phar://go-pear.phar/PEAR/go-pear-tarballs/Archive_Tar-1.3.7.tar…
+installing phar://go-pear.phar/PEAR/go-pear-tarballs/Console_Getopt-1.3.0.tar…
+installing phar://go-pear.phar/PEAR/go-pear-tarballs/PEAR-1.9.4.tar…
+installing phar://go-pear.phar/PEAR/go-pear-tarballs/Structures_Graph-1.0.4.tar…
+installing phar://go-pear.phar/PEAR/go-pear-tarballs/XML_Util-1.2.1.tar…
+install ok: channel://pear.php.net/Archive_Tar-1.3.7
+install ok: channel://pear.php.net/Console_Getopt-1.3.0
+install ok: channel://pear.php.net/Structures_Graph-1.0.4
+install ok: channel://pear.php.net/XML_Util-1.2.1
+install ok: channel://pear.php.net/PEAR-1.9.4
+PEAR: Optional feature webinstaller available (PEAR’s web-based installer)
+PEAR: Optional feature gtkinstaller available (PEAR’s PHP-GTK-based installer)
+PEAR: Optional feature gtk2installer available (PEAR’s PHP-GTK2-based installer)
+PEAR: To install optional features use “pear install pear/PEAR#featurename”
+<strong> WARNING! Old version found at /usr/local/php5/bin, please remove it or be sure to use the new /usr/local/php5/bin/pear command
+The ‘pear’ command is now at your service at /usr/local/php5/bin/pear
+</strong> The ‘pear’ command is not currently in your PATH, so you need to
+<strong> use ‘/usr/local/php5/bin/pear’ until you have added
+</strong> ‘/usr/local/php5/bin’ to your PATH environment variable.
+Run it without parameters to see the available actions, try ‘pear list’
+to see what packages are installed, or ‘pear help’ for help.
+For more information about PEAR, see:
+http://pear.php.net/faq.php
+http://pear.php.net/manual/</p>
+
+<p>```</p>
+
+<p>
+[Ruby]:			http://www.ruby-lang.org						"Ruby"
+[git]:			http://git-scm.com/								"Git"
+[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
+[Octopress]:	http://octopress.org							"Octopress"
+[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
+[Google]:		http://www.google.com							"Google"
+[Yahoo]:		http://www.yahoo.com							"Yahoo"
+[Twitter]:		http://twitter.com/								"Twitter"
+
+[Firebug]:		http://getfirebug.com/							"Firebug"
+
+[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
+[维基百科]:		http://zh.wikipedia.org							"维基中文"
+
+[煎蛋]:			http://jandan.net								"煎蛋"
+[小众软件]:		http://appinn.com								"小众软件"
+[小众]:			http://appinn.com								"小众软件"
+[新浪微博]:		http://weibo.com								"新浪微博"
+[微博]:			http://weibo.com								"新浪微博"
+[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
+[知乎]:			http://www.zhihu.com							"知乎"
+
+[CSSer]:		http://www.csser.com/							"CSSer"
+
+[Node.JS]:		http://nodejs.org								"Node.JS"
+[NPM]:			http://search.npmjs.org/						"NPM Registry"
+[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
+[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
+[Coffee]:		http://coffeescript.org/						"CoffeeScript"
+[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
+[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
+[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
+
+[GitHub]:		https://github.com								"GitHub"
+
+</p>
+]]></content>
+  </entry>
+  
+</feed>
