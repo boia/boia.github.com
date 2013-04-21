@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>面试第一站—————联想(带题目和我做的) - boia's博客</title>
+  <title>gvim命令大全 - boia's博客</title>
   <meta name="author" content="boia">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://boia.github.com/blog/2013/03/06/lenovo">
+  <link rel="canonical" href="http://boia.github.com/blog/2013/04/21/gvim-order">
   <link href="/favicon.ico" rel="icon">
     
   <link href="/stylesheets/bootstrap/bootstrap.min.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -104,7 +104,7 @@
 
   <header class="page-header">
     
-      <h1 class="entry-title">面试第一站—————联想(带题目和我做的)</h1>
+      <h1 class="entry-title">Gvim命令大全</h1>
     
     
       <p class="meta">
@@ -120,53 +120,237 @@
   
 
 
-<time datetime="2013-03-06T10:54:00+08:00" pubdate data-updated="true">Mar 6<span>th</span>, 2013</time>
+<time datetime="2013-04-21T11:21:00+08:00" pubdate data-updated="true">Apr 21<span>st</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>昨天下午孤身来到联想面试，觉得最不顺利的事情就是没找到333(外)公交车。先挂个联想公司的招牌</p>
+<div class="entry-content"><h2>开始gvim</h2>
 
-<p><img src="/images/post/lenovo.png" title="Lenovo" ></p>
+<p>听说大神都用vim，耐不住寂寞，也班门弄斧搞了个gvim，对它的命令也不是特别熟练，我只好将它的命令记在博客里，以便日后能够查看。俗~~~~</p>
 
 <!-- more -->
 
 
-<p>见到HR，礼貌地问候一句，然后被他领到一个相对比较小的会议室里(大概就是面议室)，然后他叫我等下，随后找了面试官过来，面试官估计也是搞技术的，我们就很随意地聊起来了，问题也不多，而且主要还是我说的比较多，叽叽呱呱地一通。随便挑几个问题：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>他: 简历写得够简单的，怎么不加些链接可以访问下你以前做的东西呢？
-</span><span class='line'>我: 因为简历是上周赶出来的，而blog是最近几天弄好的，很多做的东西也没有从其他网站整理出    来。
-</span><span class='line'>...
-</span><span class='line'>他: 我对canvas的了解也不是太深，你能简单介绍下吗？
-</span><span class='line'>我: ...
-</span><span class='line'>...
-</span><span class='line'>他： 你能谈下物联网吗？(因为这是我毕设研究的)
-</span><span class='line'>我:  ...
-</span><span class='line'>他： 简单说下你大学的情况
-</span><span class='line'>我:  ...</span></code></pre></td></tr></table></div></figure>
+<br><br>
 
 
-<h2>题目</h2>
+<h2>操纵文件</h2>
 
-<p>然后他给我出了一道关于html5的题目，画一个饼状图然后将鼠标移到上面可以得到信息。
-我6点开始写，写到10点左右弄好后，就给他发邮件了，其他就看造化了。</p>
+<p>Vim命令                            动作</p>
 
-<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/7hkyx/embedded/result,js,html,css/light/"></iframe>
+<p>:e filename   打开一个新文件，可以用TAB键自动补全</p>
+
+<p>:w filename   保存更改。如果不指定文件名，Vim会存为你正在编辑的文件。如果要存为不同的文件，需要指定文件名</p>
+
+<p>:q            退出Vim。如果有未保存的更改，Vim会拒绝退出。</p>
+
+<p>:q!           强制退出！</p>
+
+<p>:wq           写文件并退出</p>
+
+<p>:x            几乎和:wq一样，如果你修改了文件，它会写文件并退出。如果你没有修改文件，Vim会不写文件直接退出。</p>
+
+<br><br> 
 
 
-<p>程序比较简单，主要是canvas事件处理问题，以后可以将这道题目发个教程。</p>
+<h2>文件内的移动</h2>
+
+<p>These Vim commands and keys work both in command mode and visual mode.</p>
+
+<p>Vim命令                            动作</p>
+
+<p>j or Up Arrow            向上移动一行</p>
+
+<p>k or Down Arrow          向下移动一行</p>
+
+<p>l or Right Arrow         向右移动一个字符</p>
+
+<p>h or Left Arrow          向左移动一个字符</p>
+
+<p>e                        移动到一个词（word）尾</p>
+
+<p>E                        移动到白空格（whitespace）分隔的词尾</p>
+
+<p>b                        移动到一个词（word）的开头</p>
+
+<p>B                        移动到白空格（whitespace）分隔的词头</p>
+
+<p>0                        移动到行首</p>
+
+<p>^                        移动到一行的首个非白空格的字符</p>
+
+<p>$                        移动到行尾</p>
+
+<p>H                        移动到屏幕的第一行</p>
+
+<p>M                        移动到屏幕的中间一行</p>
+
+<p>L                        移动到屏幕的最后一行</p>
+
+<p>:n                       跳至屏幕的第n行</p>
+
+<br><br>
+
+
+<h2>插入和替换文本</h2>
+
+<p>Vim命令                     动作</p>
+
+<p>i                        在光标之前插入</p>
+
+<p>I                        在该行行首插入</p>
+
+<p>a                        在光标之后插入</p>
+
+<p>A                        在该行行尾插入</p>
+
+<p>o                        在下一行新建一行并插入</p>
+
+<p>O                        在上一行新建一行并插入</p>
+
+<p>C                        Change the rest of the current line.</p>
+
+<p>r                        覆盖一个字符。在覆盖完成以后，回到命令模式。</p>
+
+<p>R                        进入插入模式，但是不再是插入文本，而是覆盖文本。跟word里insert键的作用类似</p>
+
+<p>ESC                      退出插入/改写 模式，回到命令模式。</p>
+
+<br><br>
+
+
+<h2>删除文本</h2>
+
+<p>Vim命令                     动作</p>
+
+<p>x                       删除光标后的字符</p>
+
+<p>X                       删除光标前的字符</p>
+
+<p>dd or :d                删除当前行</p>
+
+<br><br>
+
+
+<h2>进入可视模式（Visual mode）</h2>
+
+<p>Vim命令                                 动作</p>
+
+<p>v                       开始定义高亮字符，用定位键（j or 向下键等）来选择要高亮的文本。</p>
+
+<p>V                       开始定义高亮行。</p>
+
+<p>ESC                     退出可视模式(visual mode)并返回命令模式</p>
+
+<br><br>
+
+
+<h2>编辑块文本</h2>
+
+<p>The Vim commands marked with (V) work in visual mode, when you&#8217;ve selected some text. The other commands work in the command mode, when you haven&#8217;t selected any text.</p>
+
+<p>Vim命令                                 动作</p>
+
+<p>~                       改变字符的大小写。在命令模式和可视模式下都可以工作。在可视模式下，它用来改变高亮文本的大小写。在命令模式下，改变光标处字符的大小写。</p>
+
+<blockquote><p>(V)                   右移</p></blockquote>
+
+<p>&lt; (V)                   左移</p>
+
+<p>c (V)                   改变高亮的文本</p>
+
+<p>y (V)                   拖动（Yank）高亮的文本。在Windows术语中叫做：拷贝选定的文本到剪切板</p>
+
+<p>d (V)                   删除高亮文本。</p>
+
+<p>yy or :y or Y           拖动（yank）当前行，你不必首先高亮该行。</p>
+
+<p>dd or :d                删除当前行。同样，你不必先高亮该行。</p>
+
+<p>p                       在windows术语中，“粘贴”“剪切板”的内容。在Vim术语中，你“放置”“拖动（yank）”或删除的文本。如果是字符则放在光标后面，如果是行则放在当前行下面。</p>
+
+<p>P                       如果是字符则放在光标前面，如果是行则放在当前行上面。</p>
+
+<br><br>
+
+
+<h2>撤销（undo）和重做（redo）</h2>
+
+<p>Vim命令                     动作</p>
+
+<p>u                       撤销上一个动作</p>
+
+<p>U                       撤销所有最近针对该行的更改。</p>
+
+<p>Ctrl + r                重做</p>
+
+<br><br>
+
+
+<h2>搜索</h2>
+
+<p>Vim命令                          动作</p>
+
+<p>/pattern                根据模式(pattern)搜索文件。</p>
+
+<p>n                       搜索同方向的下一个匹配。</p>
+
+<p>N                       搜索反方向的下一个匹配。</p>
+
+<br><br>
+
+
+<h2>替换</h2>
+
+<p>Vim命令                             动作</p>
+
+<p>:rs/foo/bar/a           用bar来替换foo。r确定替换的范围，a确定替换的参数。
+替换范围（r）可以是：
+空白（nothing）     只在当前行起作用
+数字（number）      在你指定的哪一行起作用</p>
+
+<p>%                   整个文件
+参数（a）可以是：</p>
+
+<p>g                  替换该行内所有的匹配。如果不要该参数，Vim仅仅替换第一次的匹配。</p>
+
+<p>i                  在搜索模式中忽略大小写。</p>
+
+<p>I                  不忽略大小写。</p>
+
+<p>c                  对每一次替换都确认。你可以键入y来替换这次匹配，n去跳过这次匹配，或者a来替换所有剩下的匹配，或者q来退出替换。</p>
+
+<br><br>
+
+
+<h2>例子：</h2>
+
+<p>:452s/foo/bar/</p>
+
+<p>替换第452行首次出现的foo为bar。</p>
+
+<p>:s/foo/bar/g</p>
+
+<p>替换当前行中所有出现的foo为bar</p>
+
+<p>:%s/foo/bar/g</p>
+
+<p>替换整个文件中所有出现的foo为bar</p>
+
+<p>:%s/foo/bar/gi</p>
+
+<p>和上面一样，不过忽略大小写。</p>
+
+<p>:%s/foo/bar/gc</p>
+
+<p>和第三个一样，不过每次替换都要确认。</p>
+
+<p>:%s/foo/bar/c</p>
+
+<p>对文件的每一行，替换foo的首次出现为bar并且每次替换都要确认。</p>
 </div>
 
 </div>
@@ -190,12 +374,12 @@
   
 
 
-<time datetime="2013-03-06T10:54:00+08:00" pubdate data-updated="true">Mar 6<span>th</span>, 2013</time>
+<time datetime="2013-04-21T11:21:00+08:00" pubdate data-updated="true">Apr 21<span>st</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/生活/'>生活</a>, <a class='category' href='/blog/categories/面试/'>面试</a>
+    <a class='category' href='/blog/categories/gvim/'>gvim</a>
   
 </span>
 
@@ -246,15 +430,11 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
 	<ul class="pager">
 	
     <li class="previous"><a class="basic-alignment left"
-        href="/blog/2013/03/04/flickr-sidebar/" title="Previous Post:
-        octopress侧边栏放上Flickr相片">&laquo; octopress侧边栏放上Flickr相片</a></li>
+        href="/blog/2013/04/13/ubuntu-php/" title="Previous Post:
+        全面解析ubuntu下安装php、pear">&laquo; 全面解析ubuntu下安装php、pear</a></li>
     
 
       <li><a href="/blog/archives">所有文章</a></li>
-      
-      <li class="next"><a class="basic-alignment right" href="/blog/2013/03/06/octopress/"
-        title="Next Post: invalid byte sequence in GBK">invalid byte sequence in GBK
-        &raquo;</a></li>
       -
 	</ul>
 

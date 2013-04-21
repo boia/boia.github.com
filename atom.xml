@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-04-13T15:42:53+08:00</updated>
+  <updated>2013-04-21T11:36:37+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -12,6 +12,238 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[gvim命令大全]]></title>
+    <link href="http://boia.github.com/blog/2013/04/21/gvim-order/"/>
+    <updated>2013-04-21T11:21:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/04/21/gvim-order</id>
+    <content type="html"><![CDATA[<h2>开始gvim</h2>
+
+<p>听说大神都用vim，耐不住寂寞，也班门弄斧搞了个gvim，对它的命令也不是特别熟练，我只好将它的命令记在博客里，以便日后能够查看。俗~~~~</p>
+
+<!-- more -->
+
+
+<br><br>
+
+
+<h2>操纵文件</h2>
+
+<p>Vim命令                            动作</p>
+
+<p>:e filename   打开一个新文件，可以用TAB键自动补全</p>
+
+<p>:w filename   保存更改。如果不指定文件名，Vim会存为你正在编辑的文件。如果要存为不同的文件，需要指定文件名</p>
+
+<p>:q            退出Vim。如果有未保存的更改，Vim会拒绝退出。</p>
+
+<p>:q!           强制退出！</p>
+
+<p>:wq           写文件并退出</p>
+
+<p>:x            几乎和:wq一样，如果你修改了文件，它会写文件并退出。如果你没有修改文件，Vim会不写文件直接退出。</p>
+
+<br><br> 
+
+
+<h2>文件内的移动</h2>
+
+<p>These Vim commands and keys work both in command mode and visual mode.</p>
+
+<p>Vim命令                            动作</p>
+
+<p>j or Up Arrow            向上移动一行</p>
+
+<p>k or Down Arrow          向下移动一行</p>
+
+<p>l or Right Arrow         向右移动一个字符</p>
+
+<p>h or Left Arrow          向左移动一个字符</p>
+
+<p>e                        移动到一个词（word）尾</p>
+
+<p>E                        移动到白空格（whitespace）分隔的词尾</p>
+
+<p>b                        移动到一个词（word）的开头</p>
+
+<p>B                        移动到白空格（whitespace）分隔的词头</p>
+
+<p>0                        移动到行首</p>
+
+<p>^                        移动到一行的首个非白空格的字符</p>
+
+<p>$                        移动到行尾</p>
+
+<p>H                        移动到屏幕的第一行</p>
+
+<p>M                        移动到屏幕的中间一行</p>
+
+<p>L                        移动到屏幕的最后一行</p>
+
+<p>:n                       跳至屏幕的第n行</p>
+
+<br><br>
+
+
+<h2>插入和替换文本</h2>
+
+<p>Vim命令                     动作</p>
+
+<p>i                        在光标之前插入</p>
+
+<p>I                        在该行行首插入</p>
+
+<p>a                        在光标之后插入</p>
+
+<p>A                        在该行行尾插入</p>
+
+<p>o                        在下一行新建一行并插入</p>
+
+<p>O                        在上一行新建一行并插入</p>
+
+<p>C                        Change the rest of the current line.</p>
+
+<p>r                        覆盖一个字符。在覆盖完成以后，回到命令模式。</p>
+
+<p>R                        进入插入模式，但是不再是插入文本，而是覆盖文本。跟word里insert键的作用类似</p>
+
+<p>ESC                      退出插入/改写 模式，回到命令模式。</p>
+
+<br><br>
+
+
+<h2>删除文本</h2>
+
+<p>Vim命令                     动作</p>
+
+<p>x                       删除光标后的字符</p>
+
+<p>X                       删除光标前的字符</p>
+
+<p>dd or :d                删除当前行</p>
+
+<br><br>
+
+
+<h2>进入可视模式（Visual mode）</h2>
+
+<p>Vim命令                                 动作</p>
+
+<p>v                       开始定义高亮字符，用定位键（j or 向下键等）来选择要高亮的文本。</p>
+
+<p>V                       开始定义高亮行。</p>
+
+<p>ESC                     退出可视模式(visual mode)并返回命令模式</p>
+
+<br><br>
+
+
+<h2>编辑块文本</h2>
+
+<p>The Vim commands marked with (V) work in visual mode, when you&#8217;ve selected some text. The other commands work in the command mode, when you haven&#8217;t selected any text.</p>
+
+<p>Vim命令                                 动作</p>
+
+<p>~                       改变字符的大小写。在命令模式和可视模式下都可以工作。在可视模式下，它用来改变高亮文本的大小写。在命令模式下，改变光标处字符的大小写。</p>
+
+<blockquote><p>(V)                   右移</p></blockquote>
+
+<p>&lt; (V)                   左移</p>
+
+<p>c (V)                   改变高亮的文本</p>
+
+<p>y (V)                   拖动（Yank）高亮的文本。在Windows术语中叫做：拷贝选定的文本到剪切板</p>
+
+<p>d (V)                   删除高亮文本。</p>
+
+<p>yy or :y or Y           拖动（yank）当前行，你不必首先高亮该行。</p>
+
+<p>dd or :d                删除当前行。同样，你不必先高亮该行。</p>
+
+<p>p                       在windows术语中，“粘贴”“剪切板”的内容。在Vim术语中，你“放置”“拖动（yank）”或删除的文本。如果是字符则放在光标后面，如果是行则放在当前行下面。</p>
+
+<p>P                       如果是字符则放在光标前面，如果是行则放在当前行上面。</p>
+
+<br><br>
+
+
+<h2>撤销（undo）和重做（redo）</h2>
+
+<p>Vim命令                     动作</p>
+
+<p>u                       撤销上一个动作</p>
+
+<p>U                       撤销所有最近针对该行的更改。</p>
+
+<p>Ctrl + r                重做</p>
+
+<br><br>
+
+
+<h2>搜索</h2>
+
+<p>Vim命令                          动作</p>
+
+<p>/pattern                根据模式(pattern)搜索文件。</p>
+
+<p>n                       搜索同方向的下一个匹配。</p>
+
+<p>N                       搜索反方向的下一个匹配。</p>
+
+<br><br>
+
+
+<h2>替换</h2>
+
+<p>Vim命令                             动作</p>
+
+<p>:rs/foo/bar/a           用bar来替换foo。r确定替换的范围，a确定替换的参数。
+替换范围（r）可以是：
+空白（nothing）     只在当前行起作用
+数字（number）      在你指定的哪一行起作用</p>
+
+<p>%                   整个文件
+参数（a）可以是：</p>
+
+<p>g                  替换该行内所有的匹配。如果不要该参数，Vim仅仅替换第一次的匹配。</p>
+
+<p>i                  在搜索模式中忽略大小写。</p>
+
+<p>I                  不忽略大小写。</p>
+
+<p>c                  对每一次替换都确认。你可以键入y来替换这次匹配，n去跳过这次匹配，或者a来替换所有剩下的匹配，或者q来退出替换。</p>
+
+<br><br>
+
+
+<h2>例子：</h2>
+
+<p>:452s/foo/bar/</p>
+
+<p>替换第452行首次出现的foo为bar。</p>
+
+<p>:s/foo/bar/g</p>
+
+<p>替换当前行中所有出现的foo为bar</p>
+
+<p>:%s/foo/bar/g</p>
+
+<p>替换整个文件中所有出现的foo为bar</p>
+
+<p>:%s/foo/bar/gi</p>
+
+<p>和上面一样，不过忽略大小写。</p>
+
+<p>:%s/foo/bar/gc</p>
+
+<p>和第三个一样，不过每次替换都要确认。</p>
+
+<p>:%s/foo/bar/c</p>
+
+<p>对文件的每一行，替换foo的首次出现为bar并且每次替换都要确认。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[全面解析ubuntu下安装php、pear]]></title>
@@ -1359,158 +1591,6 @@ Apache/2.2.14 (Ubuntu) Server at localhost Port 80
 
 
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Octopress初级安装]]></title>
-    <link href="http://boia.github.com/blog/2013/03/02/my-first/"/>
-    <updated>2013-03-02T12:30:00+08:00</updated>
-    <id>http://boia.github.com/blog/2013/03/02/my-first</id>
-    <content type="html"><![CDATA[<p>用github有一段时间了，也看过<a href="http://www.worldhello.net/" title="Title">蒋鑫</a>老师的<strong>git权威指南</strong>，
-可是总不能很好的理解git版本管理问题，但经过这次一折腾，总归还是懂了些，所以有些东西别只是看，
-也要踏踏实实地去做一遍，这样才能更好的去理解。</p>
-
-<p>今天我们学习Octopress的安装，在windows下运行Octopress博客并发布到Github Pages上。</p>
-
-<!-- more -->
-
-
-<h2>①安装Git</h2>
-
-<p><a href="https://code.google.com/p/msysgit/downloads/list?q=full+installer+official+git" title="title">msysgit</a>
-是一git在windows下的管理软件，这里要注意的一点是有一个<strong>SSH Keys</strong>的问题，你必须生成密钥然后
-放在<strong><a href="http://github.com" title="Title">git</a></strong>网站对应的地方，否则push的话会出现error</p>
-
-<h2>②安装Ruby</h2>
-
-<p>因为Octopress是用ruby写的，所以安装ruby也是必须的，最新的Octopress指定的Ruby版本好像是1.9.3，
-所以我也推荐大家下<strong><a href="http://rubyinstaller.org/" title="Title">ruby1.9.3</a></strong>，在windows的安装就不用我教大家了
-安装好以后，在cmd中敲击以下代码</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ruby --version</span></code></pre></td></tr></table></div></figure>
-
-
-<p>如果出现版本号的话说明你安装正确了</p>
-
-<h2>③安装Devkit</h2>
-
-<p>接着安装Devkit，我下的是4.5.2版本，<a href="https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe" title="Title">DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe</a>
-下载到E:盘，在win的cmd窗口进入到e，然后敲击下面的命令:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>cd E:DevKit
-</span><span class='line'>ruby dk.rb init
-</span><span class='line'>ruby dk.rb install</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>④安装python</h2>
-
-<p>安装Python是为了博客代码加亮，在windows下最好下载<strong><a href="http://www.activestate.com/activepython/downloads" title="Title">python2.7</a>，</strong>
-别下载Python3，继续在cmd中执行下面命令:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>easy_install pygments</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>⑤下载Octopress</h2>
-
-<p>以前玩rails的时候，用gem install rails总是出现错误，然后就谷歌、百度轮番找，发现原来是网站被河蟹了，
-马上就翻墙了，自由门是最常用的，最近谷歌出了个好玩意儿，goagent(不过这东西下载前还得翻墙)，只要有一个
-google App就能每天用1G，我就一口气申请了10个App，然后每天无止境的翻墙了，而且至今没出现不稳定或者崩溃的问题。
-这里就不写goagent的教程了，大家可以百度一下，步骤还是很简单的。</p>
-
-<p>为什么这里要说vpn呢？其实是因为要安装bundler(是一个ruby的包)，所以应该需要翻墙吧。</p>
-
-<p>首先下载Octopress源码，打开cmd &lt;&lt;E回车，选择了E盘以后，输入命令:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git  octopress</span></code></pre></td></tr></table></div></figure>
-
-
-<p>如果你ssh keys没设置对的话，估计这里也成功不了</p>
-
-<p>接着安装Octopress的依赖项，还是在cmd中敲命令</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>cd octopress
-</span><span class='line'>gem install bundler
-</span><span class='line'>bundle install</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>⑥创建版本库</h2>
-
-<p>登录到<a href="https://github.com/" title="Title">Github</a>，点击Create A Repository，这时候需要输入版本名，
-非常非常重要的一点版本名的格式<strong>username.github.com</strong>，你自己username不用我教吧？</p>
-
-<h2>⑦将Octopress发布到Github</h2>
-
-<p>说发布之前，咱们还要对windows环境变量配置一下为了支持中文编码</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>LANG=zh_CN.UTF-8
-</span><span class='line'>LC_ALL=zh_CN.UTF-8</span></code></pre></td></tr></table></div></figure>
-
-
-<p>这样说我不知道懂不懂，不懂的话，可以写信发我邮箱<a href="&#109;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#x7a;&#x68;&#101;&#x6e;&#x67;&#119;&#x61;&#x6e;&#103;&#50;&#x33;&#49;&#x34;&#64;&#x71;&#x71;&#46;&#x63;&#111;&#x6d;">&#x7a;&#104;&#101;&#110;&#x67;&#119;&#x61;&#x6e;&#103;&#x32;&#x33;&#49;&#52;&#64;&#113;&#113;&#46;&#99;&#111;&#109;</a></p>
-
-<p>在次打开cmd，进入到Octopress所在的目录  (cd octopress即可进入)，输入命令</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages</span></code></pre></td></tr></table></div></figure>
-
-
-<p>按提示输入刚才新建的Repo地址，类似： git@github.com:username/username.github.com 或
-git@github.com:username/username.github.com.git。</p>
-
-<p>完成以后输入命令</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake install
-</span><span class='line'>rake generate
-</span><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
-
-
-<p>对了，这里还有一个可能会遇到的错误，错误提示是关于rake版本，然后说use bundle exex可能可以解决，
-那么你只要在输rake前加上bundle exec就好了</p>
-
-<p>其中rake install是安装Octopress默认主题的，
-rake gnerate是生成静态页面的，这两个命令是必须运行的，
-而rake preview则是用来本地浏览的（运行时看屏幕上提示，按Ctrl+C并输入Y来终止批处理操作），
-运行后打开浏览器，输入 http://localhost:4000/ 就可以看到如下的界面了，
-不想预览的话也可以不运行，直接进入下一步。</p>
-
-<h2>⑧将博客发布到Github</h2>
-
-<p>cmd输入下面命令</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake deploy  </span></code></pre></td></tr></table></div></figure>
-
-
-<p>这样，生成的内容将会自动发布到master分支，并且可以使用 http://username.github.com 访问内容。</p>
-
-<h2>⑨将源文件发布到source分支下</h2>
-
-<p>可以说你的工作已经全部最好了，可你想万一其他配置文件丢失了怎么办？这时候你就要将源文件放到git中</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git add .
-</span><span class='line'>git commit -m "1st"
-</span><span class='line'>git push origin source</span></code></pre></td></tr></table></div></figure>
-
-
-<p>终于OK了，今天讲的是安装，以后会有更多惊喜。</p>
 ]]></content>
   </entry>
   
