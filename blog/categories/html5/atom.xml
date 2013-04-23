@@ -4,7 +4,7 @@
   <title><![CDATA[Category: html5 | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/html5/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-04-23T17:13:33+08:00</updated>
+  <updated>2013-04-23T17:45:37+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -27,11 +27,156 @@
 <!-- more -->
 
 
-<h2>代码</h2>
+<h2>jsfiddle上效果</h2>
 
 <p>先在jsfiddle中看看效果</p>
 
-<p><iframe style="width: 100%; height: 480px" src="http://jsfiddle.net/DbGPe/embedded/result,js,html,css/presentation/"></iframe><br></p>
+<p><iframe style="width: 100%; height: 480px" src="http://jsfiddle.net/DbGPe/embedded/result,js,html,css/presentation/"></iframe></p>
+
+<br><br>
+
+
+<h2>代码分析</h2>
+
+<p>① 如何取得进度条上的值</p>
+
+<p>在杀毒的正式版本中，后台会给我发实时变化的数据，因为我在调试，所以自己加了进度条控件
+<code>&lt;input type="range" value="60" id="range" /&gt;</code>，在Chrome浏览器上是一个可以左右拉并且有范围的控件。</p>
+
+<p>获得控件上的值只要用DOM的getElementById方法
+```javascript
+var range = document.getElementById('range');
+var num1 = parseInt(range.value);
+range.onchange = function(){</p>
+
+<pre><code>num1 = parseInt(range.value);   
+move(point);
+</code></pre>
+
+<p>};
+```</p>
+
+<p>我这里因为是测试版本，所以用了num1命名，不建议你写代码用这些没有意义的命名，num1实际上就是查毒时你得的分数，这里千万要注意的是用range.value获得类型是字符串的，但咱们需要的是一个int类型的，所以你可以用<code>new Number(range.value)</code>或者<code>parseInt(range.value)</code>两种方法将字符串转化为整数类型。你先别考虑move(point)这个函数调用。这里特别要强调的是range.onchange，这其实是控件改变时触发事件，这个事件也很管用，很多网站注册账号时，当你输入一个新的账号，他就能立刻将数据返回到后台，查询数据库，进行验证。</p>
+
+<br>
+
+
+<p>② 初始化</p>
+
+<p>其实第一步咱们需要进行一些初始化
+```
+var canvas = document.getElementById('mycanvas');
+var ctx = canvas.getContext('2d');
+var x = 100,</p>
+
+<pre><code>y = 100,
+r = 40,
+ringWidth = 10;     
+</code></pre>
+
+<p>var num = num1;
+var point = 50;
+```</p>
+
+<p>(x,y,r,ringwidth)依次对应(旋转条相对于canvas的圆心坐标，圆心半径，圆环宽度)，因为在函数中咱可能会重复用到，所以咱们命名了变量。point是一个实时变化的分数，动画效果是逐渐+1或者-1来实现的，用一个point咱可以随意地操作进度条。num咱们在函数中介绍。</p>
+
+<br>
+
+
+<p>③ 动画函数</p>
+
+<p>```javascript
+var move = function(point){</p>
+
+<pre><code>    num = num1;
+    /*每次画图先将图像擦除*/
+    ctx.clearRect(x-r-5,y-r-5,2*(r+5),2*(r+5));
+
+    /*画圆环*/
+    ctx.beginPath();
+    ctx.fillStyle = "transparent";
+    ctx.arc(x,y,r+ringWidth/2,0,2*Math.PI);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.fillStyle = "transparent";
+    ctx.arc(x,y,r-ringWidth/2,0,2*Math.PI); 
+    ctx.fill(); 
+    ctx.beginPath();
+    ctx.lineWidth = ringWidth;
+    var angle = 1.5*Math.PI-point*Math.PI/50;
+
+    /*canvas中只有线性渐变和放射型渐变，我还没想出好的方法，所以讲圆分成了左右两个半圆来处理*/
+    var leftGrad,rightGrad;
+
+    /*每个分值都会有不同的渐变*/
+    if(point &lt;= 50){
+        leftGrad =  ctx.createLinearGradient(x,y-r,x,y+r);
+        leftGrad.addColorStop(0.1,'#ff5151');   // 红
+        leftGrad.addColorStop(0.5,'#ECD806');   // 黄
+        leftGrad.addColorStop(1,'#dfd706');     // 黄
+        ctx.strokeStyle = leftGrad;
+        ctx.arc(x,y,r,1.5*Math.PI,angle,true);
+    }
+    else if(point &lt;= 70){
+        leftGrad =  ctx.createLinearGradient(x,y-r,x,y+r);          
+        leftGrad.addColorStop(0.1,'#ff5151');   // 红
+        leftGrad.addColorStop(0.5,'#ECD806');   // 黄 
+        leftGrad.addColorStop(0.8,'#dfd706');   // 黄  
+        leftGrad.addColorStop(1,'#7FCF00');     //绿
+        ctx.beginPath();
+        ctx.strokeStyle = leftGrad;     
+        ctx.arc(x,y,r,1.5*Math.PI,0.5*Math.PI,true);
+        ctx.stroke();
+        ctx.beginPath();
+        rightGrad = ctx.createLinearGradient(x,y+r+ringWidth/2.5,x,y);
+        rightGrad.addColorStop(0.2,'#7FCF00');  //绿
+        ctx.strokeStyle = rightGrad;
+        ctx.arc(x,y,r,0.5*Math.PI,angle,true);
+    }
+    else if(point &lt; 100){
+        leftGrad =  ctx.createLinearGradient(x,y-r,x,y+r);          
+        leftGrad.addColorStop(0.1,'#ff5151');   // 红
+        leftGrad.addColorStop(0.5,'#ECD806');   // 黄 
+        leftGrad.addColorStop(0.8,'#dfd706');   // 黄
+        leftGrad.addColorStop(1,'#7FCF00');
+        ctx.beginPath();
+        ctx.strokeStyle = leftGrad;     
+        ctx.arc(x,y,r,1.5*Math.PI,0.5*Math.PI,true);
+        ctx.stroke();
+        ctx.beginPath();
+        rightGrad = ctx.createLinearGradient(x,y+r,x,y);
+        rightGrad.addColorStop(1,'#7FCF00');  //绿
+        ctx.strokeStyle = rightGrad;
+        ctx.arc(x,y,r,0.5*Math.PI,angle,true);      
+    }
+    else if(point === 100){
+        ctx.strokeStyle = "#7FCF00";
+        ctx.arc(x,y,r,0,2*Math.PI,true);            
+    }   
+    ctx.stroke();
+    /*当动画的分数小于杀毒分数时，动画分数增加*/
+    if(num &gt; point){
+        point++;        
+    }
+    /*当动画的分数大于杀毒分数时，动画分数减小*/
+    if(num &lt; point){
+        point--;
+    }
+    /*实现动画*/
+    setTimeout(function(){
+        move(point);
+    },30);  
+</code></pre>
+
+<p>};
+```</p>
+
+<p>再次说明尽量不要这样写函数，我本来是想拿出一个对象来讲的，我这样写的规范完全是蒙蔽了初学者，所以尽量不要照搬代码，我这里只是说思想罢了。</p>
+
+<p>在移动控件的时候，动画会有抖动，我分析应该是因为控件的变化是实时的，像mousemove那样，超过了动画的帧，造成了抖动。</p>
+
+<br>
+
 
 <p>
 [Ruby]:			http://www.ruby-lang.org						"Ruby"

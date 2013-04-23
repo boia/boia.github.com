@@ -136,12 +136,243 @@
 <!-- more -->
 
 
-<h2>代码</h2>
+<h2>jsfiddle上效果</h2>
 
 <p>先在jsfiddle中看看效果</p>
 
 <iframe style="width: 100%; height: 480px" src="http://jsfiddle.net/DbGPe/embedded/result,js,html,css/presentation/"></iframe>
 
+
+
+
+<br><br>
+
+
+<h2>代码分析</h2>
+
+<p>① 如何取得进度条上的值</p>
+
+<p>在杀毒的正式版本中，后台会给我发实时变化的数据，因为我在调试，所以自己加了进度条控件
+<code>&lt;input type="range" value="60" id="range" /&gt;</code>，在Chrome浏览器上是一个可以左右拉并且有范围的控件。</p>
+
+<p>获得控件上的值只要用DOM的getElementById方法</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">range</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;range&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">num1</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">range</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+</span><span class='line'><span class="nx">range</span><span class="p">.</span><span class="nx">onchange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>  <span class="nx">num1</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">range</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>   
+</span><span class='line'>  <span class="nx">move</span><span class="p">(</span><span class="nx">point</span><span class="p">);</span>
+</span><span class='line'><span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>我这里因为是测试版本，所以用了num1命名，不建议你写代码用这些没有意义的命名，num1实际上就是查毒时你得的分数，这里千万要注意的是用range.value获得类型是字符串的，但咱们需要的是一个int类型的，所以你可以用<code>new Number(range.value)</code>或者<code>parseInt(range.value)</code>两种方法将字符串转化为整数类型。你先别考虑move(point)这个函数调用。这里特别要强调的是range.onchange，这其实是控件改变时触发事件，这个事件也很管用，很多网站注册账号时，当你输入一个新的账号，他就能立刻将数据返回到后台，查询数据库，进行验证。</p>
+
+<br>
+
+
+<p>② 初始化</p>
+
+<p>其实第一步咱们需要进行一些初始化</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span>    <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;mycanvas&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="kd">var</span>   <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">&#39;2d&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">y</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">r</span> <span class="o">=</span> <span class="mi">40</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">ringWidth</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>       
+</span><span class='line'><span class="kd">var</span> <span class="nx">num</span> <span class="o">=</span> <span class="nx">num1</span><span class="p">;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">point</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>(x,y,r,ringwidth)依次对应(旋转条相对于canvas的圆心坐标，圆心半径，圆环宽度)，因为在函数中咱可能会重复用到，所以咱们命名了变量。point是一个实时变化的分数，动画效果是逐渐+1或者-1来实现的，用一个point咱可以随意地操作进度条。num咱们在函数中介绍。</p>
+
+<br>
+
+
+<p>③ 动画函数</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">move</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">point</span><span class="p">){</span>
+</span><span class='line'>      <span class="nx">num</span> <span class="o">=</span> <span class="nx">num1</span><span class="p">;</span>
+</span><span class='line'>      <span class="cm">/*每次画图先将图像擦除*/</span>
+</span><span class='line'>      <span class="nx">ctx</span><span class="p">.</span><span class="nx">clearRect</span><span class="p">(</span><span class="nx">x</span><span class="o">-</span><span class="nx">r</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="nx">y</span><span class="o">-</span><span class="nx">r</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="nx">r</span><span class="o">+</span><span class="mi">5</span><span class="p">),</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="nx">r</span><span class="o">+</span><span class="mi">5</span><span class="p">));</span>
+</span><span class='line'>      
+</span><span class='line'>      <span class="cm">/*画圆环*/</span>
+</span><span class='line'>      <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+</span><span class='line'>      <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s2">&quot;transparent&quot;</span><span class="p">;</span>
+</span><span class='line'>      <span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">,</span><span class="nx">r</span><span class="o">+</span><span class="nx">ringWidth</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">);</span>
+</span><span class='line'>      <span class="nx">ctx</span><span class="p">.</span><span class="nx">fill</span><span class="p">();</span>
+</span><span class='line'>      <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+</span><span class='line'>      <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s2">&quot;transparent&quot;</span><span class="p">;</span>
+</span><span class='line'>      <span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">,</span><span class="nx">r</span><span class="o">-</span><span class="nx">ringWidth</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">);</span>    
+</span><span class='line'>      <span class="nx">ctx</span><span class="p">.</span><span class="nx">fill</span><span class="p">();</span>   
+</span><span class='line'>      <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+</span><span class='line'>      <span class="nx">ctx</span><span class="p">.</span><span class="nx">lineWidth</span> <span class="o">=</span> <span class="nx">ringWidth</span><span class="p">;</span>
+</span><span class='line'>      <span class="kd">var</span> <span class="nx">angle</span> <span class="o">=</span> <span class="mf">1.5</span><span class="o">*</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="o">-</span><span class="nx">point</span><span class="o">*</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="o">/</span><span class="mi">50</span><span class="p">;</span>
+</span><span class='line'>      
+</span><span class='line'>      <span class="cm">/*canvas中只有线性渐变和放射型渐变，我还没想出好的方法，所以讲圆分成了左右两个半圆来处理*/</span>
+</span><span class='line'>      <span class="kd">var</span> <span class="nx">leftGrad</span><span class="p">,</span><span class="nx">rightGrad</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="cm">/*每个分值都会有不同的渐变*/</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="nx">point</span> <span class="o">&lt;=</span> <span class="mi">50</span><span class="p">){</span>
+</span><span class='line'>          <span class="nx">leftGrad</span> <span class="o">=</span>   <span class="nx">ctx</span><span class="p">.</span><span class="nx">createLinearGradient</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="o">-</span><span class="nx">r</span><span class="p">,</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="o">+</span><span class="nx">r</span><span class="p">);</span>
+</span><span class='line'>          <span class="nx">leftGrad</span><span class="p">.</span><span class="nx">addColorStop</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="s1">&#39;#ff5151&#39;</span><span class="p">);</span>   <span class="c1">// 红</span>
+</span><span class='line'>          <span class="nx">leftGrad</span><span class="p">.</span><span class="nx">addColorStop</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="s1">&#39;#ECD806&#39;</span><span class="p">);</span>   <span class="c1">// 黄</span>
+</span><span class='line'>          <span class="nx">leftGrad</span><span class="p">.</span><span class="nx">addColorStop</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;#dfd706&#39;</span><span class="p">);</span>     <span class="c1">// 黄</span>
+</span><span class='line'>          <span class="nx">ctx</span><span class="p">.</span><span class="nx">strokeStyle</span> <span class="o">=</span> <span class="nx">leftGrad</span><span class="p">;</span>
+</span><span class='line'>          <span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">,</span><span class="nx">r</span><span class="p">,</span><span class="mf">1.5</span><span class="o">*</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">,</span><span class="nx">angle</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>      <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">point</span> <span class="o">&lt;=</span> <span class="mi">70</span><span class="p">){</span>
+</span><span class='line'>          <span class="nx">leftGrad</span> <span class="o">=</span>   <span class="nx">ctx</span><span class="p">.</span><span class="nx">createLinearGradient</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="o">-</span><span class="nx">r</span><span class="p">,</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="o">+</span><span class="nx">r</span><span class="p">);</span>          
+</span><span class='line'>          <span class="nx">leftGrad</span><span class="p">.</span><span class="nx">addColorStop</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="s1">&#39;#ff5151&#39;</span><span class="p">);</span>   <span class="c1">// 红</span>
+</span><span class='line'>          <span class="nx">leftGrad</span><span class="p">.</span><span class="nx">addColorStop</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="s1">&#39;#ECD806&#39;</span><span class="p">);</span>   <span class="c1">// 黄 </span>
+</span><span class='line'>          <span class="nx">leftGrad</span><span class="p">.</span><span class="nx">addColorStop</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span><span class="s1">&#39;#dfd706&#39;</span><span class="p">);</span>   <span class="c1">// 黄 </span>
+</span><span class='line'>          <span class="nx">leftGrad</span><span class="p">.</span><span class="nx">addColorStop</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;#7FCF00&#39;</span><span class="p">);</span>     <span class="c1">//绿</span>
+</span><span class='line'>          <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+</span><span class='line'>          <span class="nx">ctx</span><span class="p">.</span><span class="nx">strokeStyle</span> <span class="o">=</span> <span class="nx">leftGrad</span><span class="p">;</span>        
+</span><span class='line'>          <span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">,</span><span class="nx">r</span><span class="p">,</span><span class="mf">1.5</span><span class="o">*</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">,</span><span class="mf">0.5</span><span class="o">*</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+</span><span class='line'>          <span class="nx">ctx</span><span class="p">.</span><span class="nx">stroke</span><span class="p">();</span>
+</span><span class='line'>          <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+</span><span class='line'>          <span class="nx">rightGrad</span> <span class="o">=</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">createLinearGradient</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="o">+</span><span class="nx">r</span><span class="o">+</span><span class="nx">ringWidth</span><span class="o">/</span><span class="mf">2.5</span><span class="p">,</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">);</span>
+</span><span class='line'>          <span class="nx">rightGrad</span><span class="p">.</span><span class="nx">addColorStop</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="s1">&#39;#7FCF00&#39;</span><span class="p">);</span>  <span class="c1">//绿</span>
+</span><span class='line'>          <span class="nx">ctx</span><span class="p">.</span><span class="nx">strokeStyle</span> <span class="o">=</span> <span class="nx">rightGrad</span><span class="p">;</span>
+</span><span class='line'>          <span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">,</span><span class="nx">r</span><span class="p">,</span><span class="mf">0.5</span><span class="o">*</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">,</span><span class="nx">angle</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>      <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">point</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">){</span>
+</span><span class='line'>          <span class="nx">leftGrad</span> <span class="o">=</span>   <span class="nx">ctx</span><span class="p">.</span><span class="nx">createLinearGradient</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="o">-</span><span class="nx">r</span><span class="p">,</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="o">+</span><span class="nx">r</span><span class="p">);</span>          
+</span><span class='line'>          <span class="nx">leftGrad</span><span class="p">.</span><span class="nx">addColorStop</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="s1">&#39;#ff5151&#39;</span><span class="p">);</span>   <span class="c1">// 红</span>
+</span><span class='line'>          <span class="nx">leftGrad</span><span class="p">.</span><span class="nx">addColorStop</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="s1">&#39;#ECD806&#39;</span><span class="p">);</span>   <span class="c1">// 黄 </span>
+</span><span class='line'>          <span class="nx">leftGrad</span><span class="p">.</span><span class="nx">addColorStop</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span><span class="s1">&#39;#dfd706&#39;</span><span class="p">);</span>   <span class="c1">// 黄</span>
+</span><span class='line'>          <span class="nx">leftGrad</span><span class="p">.</span><span class="nx">addColorStop</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;#7FCF00&#39;</span><span class="p">);</span>
+</span><span class='line'>          <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+</span><span class='line'>          <span class="nx">ctx</span><span class="p">.</span><span class="nx">strokeStyle</span> <span class="o">=</span> <span class="nx">leftGrad</span><span class="p">;</span>        
+</span><span class='line'>          <span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">,</span><span class="nx">r</span><span class="p">,</span><span class="mf">1.5</span><span class="o">*</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">,</span><span class="mf">0.5</span><span class="o">*</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+</span><span class='line'>          <span class="nx">ctx</span><span class="p">.</span><span class="nx">stroke</span><span class="p">();</span>
+</span><span class='line'>          <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+</span><span class='line'>          <span class="nx">rightGrad</span> <span class="o">=</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">createLinearGradient</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="o">+</span><span class="nx">r</span><span class="p">,</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">);</span>
+</span><span class='line'>          <span class="nx">rightGrad</span><span class="p">.</span><span class="nx">addColorStop</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;#7FCF00&#39;</span><span class="p">);</span>  <span class="c1">//绿</span>
+</span><span class='line'>          <span class="nx">ctx</span><span class="p">.</span><span class="nx">strokeStyle</span> <span class="o">=</span> <span class="nx">rightGrad</span><span class="p">;</span>
+</span><span class='line'>          <span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">,</span><span class="nx">r</span><span class="p">,</span><span class="mf">0.5</span><span class="o">*</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">,</span><span class="nx">angle</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>        
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>      <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">point</span> <span class="o">===</span> <span class="mi">100</span><span class="p">){</span>
+</span><span class='line'>          <span class="nx">ctx</span><span class="p">.</span><span class="nx">strokeStyle</span> <span class="o">=</span> <span class="s2">&quot;#7FCF00&quot;</span><span class="p">;</span>
+</span><span class='line'>          <span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">,</span><span class="nx">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>          
+</span><span class='line'>      <span class="p">}</span>    
+</span><span class='line'>      <span class="nx">ctx</span><span class="p">.</span><span class="nx">stroke</span><span class="p">();</span>
+</span><span class='line'>      <span class="cm">/*当动画的分数小于杀毒分数时，动画分数增加*/</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="nx">num</span> <span class="o">&gt;</span> <span class="nx">point</span><span class="p">){</span>
+</span><span class='line'>          <span class="nx">point</span><span class="o">++</span><span class="p">;</span>      
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>      <span class="cm">/*当动画的分数大于杀毒分数时，动画分数减小*/</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="nx">num</span> <span class="o">&lt;</span> <span class="nx">point</span><span class="p">){</span>
+</span><span class='line'>          <span class="nx">point</span><span class="o">--</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>      <span class="cm">/*实现动画*/</span>
+</span><span class='line'>      <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>          <span class="nx">move</span><span class="p">(</span><span class="nx">point</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">},</span><span class="mi">30</span><span class="p">);</span>    
+</span><span class='line'><span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>再次说明尽量不要这样写函数，我本来是想拿出一个对象来讲的，我这样写的规范完全是蒙蔽了初学者，所以尽量不要照搬代码，我这里只是说思想罢了。</p>
+
+<p>在移动控件的时候，动画会有抖动，我分析应该是因为控件的变化是实时的，像mousemove那样，超过了动画的帧，造成了抖动。</p>
 
 <br>
 
