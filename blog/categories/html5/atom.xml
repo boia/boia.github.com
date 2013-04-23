@@ -4,7 +4,7 @@
   <title><![CDATA[Category: html5 | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/html5/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-04-23T16:52:05+08:00</updated>
+  <updated>2013-04-23T17:05:52+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -22,9 +22,16 @@
 
 <p>这两天公司在做手机管家，很意外也是第一次听说公司的手机管家是用JS写的，然后各种费解(又一次无知了)。正巧对canvas有一些见解，所以永哥叫我画一个随杀毒变化的圆形进度条，然后就不废话，直接上图吧。</p>
 
+<p><img width="98%" class="left half" src="http://boia.github.com/images/post/process.jpg" title="进度条" alt="进度条!"></p>
+
+<!-- more -->
+
+
 <h2>代码</h2>
 
-<p><img class="left half" src="http://boia.github.com/images/post/process.jpg" title="进度条" alt="进度条!"></p>
+<p>现在jsfiddle中看看效果</p>
+
+<p><iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/DbGPe/embedded/result,js,html,css/presentation/"></iframe></p>
 ]]></content>
   </entry>
   
