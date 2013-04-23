@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-04-21T11:36:37+08:00</updated>
+  <updated>2013-04-23T16:52:05+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[渐变的旋转进度条]]></title>
+    <link href="http://boia.github.com/blog/2013/04/23/process/"/>
+    <updated>2013-04-23T16:34:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/04/23/process</id>
+    <content type="html"><![CDATA[<h2>简介</h2>
+
+<p>这两天公司在做手机管家，很意外也是第一次听说公司的手机管家是用JS写的，然后各种费解(又一次无知了)。正巧对canvas有一些见解，所以永哥叫我画一个随杀毒变化的圆形进度条，然后就不废话，直接上图吧。</p>
+
+<h2>代码</h2>
+
+<p><img class="left half" src="http://boia.github.com/images/post/process.jpg" title="进度条" alt="进度条!"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[jquery-flot教程]]></title>
@@ -229,99 +244,6 @@
 
 
 <p><a href="/game/mush-bear/game.html">开始游戏</a></p>
-
-<p>
-[Ruby]:			http://www.ruby-lang.org						"Ruby"
-[git]:			http://git-scm.com/								"Git"
-[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
-[Octopress]:	http://octopress.org							"Octopress"
-[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
-[Google]:		http://www.google.com							"Google"
-[Yahoo]:		http://www.yahoo.com							"Yahoo"
-[Twitter]:		http://twitter.com/								"Twitter"
-
-[Firebug]:		http://getfirebug.com/							"Firebug"
-
-[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
-[维基百科]:		http://zh.wikipedia.org							"维基中文"
-
-[煎蛋]:			http://jandan.net								"煎蛋"
-[小众软件]:		http://appinn.com								"小众软件"
-[小众]:			http://appinn.com								"小众软件"
-[新浪微博]:		http://weibo.com								"新浪微博"
-[微博]:			http://weibo.com								"新浪微博"
-[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
-[知乎]:			http://www.zhihu.com							"知乎"
-
-[CSSer]:		http://www.csser.com/							"CSSer"
-
-[Node.JS]:		http://nodejs.org								"Node.JS"
-[NPM]:			http://search.npmjs.org/						"NPM Registry"
-[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
-[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
-[Coffee]:		http://coffeescript.org/						"CoffeeScript"
-[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
-[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
-[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
-
-[GitHub]:		https://github.com								"GitHub"
-
-</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[在octopress中加入jsfiddle]]></title>
-    <link href="http://boia.github.com/blog/2013/03/04/jsfiddle-for-octopress/"/>
-    <updated>2013-03-04T14:23:00+08:00</updated>
-    <id>http://boia.github.com/blog/2013/03/04/jsfiddle-for-octopress</id>
-    <content type="html"><![CDATA[<p><strong>jsFiddle</strong>是一个web开发人员的练习场，一个可以在很多方面应用的工具。我们可以用他来在线编辑一些HTML,CSS,javascript片段。你编辑的代码可以与其他人分享，或嵌入你的博客等。使用这个工具，javascript的开发者可以很容易的发现并解决BUG问题。你还可以选择你自己熟悉的流行的各种javascript库来进行开发，对XHR的支持也非常好，还可以模拟一些响应等。</p>
-
-<p>今天我们来学习将<strong>jsfiddle</strong>插件放入到octopress中。</p>
-
-<!-- more -->
-
-
-<h2>下载<strong>jsfiddle</strong>插件</h2>
-
-<p>先用git命令将插件下载下来</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/ShaunaGordon/octopress-jsfiddle.git</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>然后将里面的<code>jsfiddle.rb</code>拷贝到 <code>/plugins</code>中</p>
-
-<h2>一般语法</h2>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&#123;% jsfiddle shorttag [tabs] [skin] [height] [width] %}</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>缺省值如下:</p>
-
-<ul>
-<li>tabs: <code>js,resources,html,css,result</code></li>
-<li>skin: <code>light</code></li>
-<li>height: <code>300px</code></li>
-<li>width: <code>100%</code></li>
-</ul>
-
-
-<p>如果你就想设置height，而前面几个值都用默认的，那么填default就行了</p>
-
-<h3>举例</h3>
-
-<p>这里我直接拿<a href="http://www.cnblogs.com/iamzhanglei/archive/2011/10/07/2199306.html">张磊</a>的代码作为测试</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&#123;% jsfiddle LHWmv result,js,html,css presentation 500px %}</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h3>结果</h3>
-
-<p><iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/LHWmv/embedded/result,js,html,css/presentation/"></iframe></p>
-
-<h2>总结</h2>
-
-<p><strong>jsFiddle</strong>以前在张磊的博客看见的时候挺新颖的，现在在自己的blog里加上这个插件还是分外激动的，以后就不用上面一段代码，下面一个演示那么墨迹了。</p>
 
 <p>
 [Ruby]:			http://www.ruby-lang.org						"Ruby"
