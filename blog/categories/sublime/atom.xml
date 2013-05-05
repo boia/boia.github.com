@@ -4,7 +4,7 @@
   <title><![CDATA[Category: sublime | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/sublime/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-05-05T22:07:48+08:00</updated>
+  <updated>2013-05-05T22:17:46+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -21,6 +21,9 @@
     <content type="html"><![CDATA[<h2>开始sublime text</h2>
 
 <p>之前我一直在用editplus写js，不是说editplus不好用，只是有些功能真的不是特别友好，所以从今之后改稍微强大一点的sublime text，最新版本貌似已经到3了，这确实很棒，可也很贵，70$对美国人没什么，但对中国的一个普通程序猿就有点相形见绌了。</p>
+
+<br><br>
+
 
 <!-- more -->
 
@@ -43,6 +46,9 @@
 </ul>
 
 
+<br><br>
+
+
 <p>① 注册机</p>
 
 <p>打开注册机，点击Generate破解主文件，复制License中的内容，比如
@@ -63,9 +69,35 @@ BF830166E43BBB29F9D97383D210604A
 </code>
 这里必须把begin license到end license都得选中复制，然后点击patch key选中sublime_text.exe，打开Sublime Text，执行 Help->Enter license 粘贴你的License，点击OK，重启Sublime Text即可看到你的注册信息。</p>
 
+<br><br>
+
+
 <p>② 汉化</p>
 
 <p>运行Sublime Text 2 点击 Preferneces -> Browse Packages 会打开 X:\Program Files\Sublime Text\Data\Packages 目录，点击向上并找到X:\Program Files\Sublime Text\Data\Installed Packages目录，从附件中下载汉化包并解压，复制Default.sublime-package到这个目录，无需重启即可直接看到汉化效果。</p>
+
+<br><br>
+
+
+<h2>配置</h2>
+
+<p>在菜单 <code>Preferences</code> 下找到 <code>File Settings – User</code> 点击会打开<code>Base File.sublime-settings</code>这个文件</p>
+
+<p>将其中的 <code>font_face</code> 后修改添加想要的设置字体（如果没有font_face自行添加这一行注意英文”,”逗号隔开），设置代码片段示例如下：
+```
+{</p>
+
+<pre><code>"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+"font_face": "YaHei Consolas Hybrid",
+"font_size": 12.5,
+"theme": "Soda Light.sublime-theme"
+</code></pre>
+
+<p>}
+```</p>
+
+<br><br>
+
 
 <h2>快捷键和插件</h2>
 
@@ -198,6 +230,11 @@ BF830166E43BBB29F9D97383D210604A
 </table>
 
 
+
+
+<br><br>
+
+
 <p>① 安装包控制（Package Control）</p>
 
 <p>打开Sublime Text 2，按快捷键 <code>ctrl+</code> <code>或者点击</code>Tools → Command Palette` 调出控制台Console</p>
@@ -210,6 +247,9 @@ import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_p
 
 <p>重新启动Sublime Text 2，如果在Preferences → Package Settings 中看到 Package Control 这一项，就说明安装成功了。</p>
 
+<br><br>
+
+
 <p>② 安装Alignment插件</p>
 
 <p>对于喜欢整齐的玛民来说，这不失为一个省事的插件。该插件可以通过上面安装好的 Package Control 来安装：</p>
@@ -221,6 +261,9 @@ import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_p
 <p>输入<code>Alignment</code>，选中并按回车安装；</p>
 
 <p>重启Sublime Text 2，选中文本并按<code>ctrl + alt + a</code> 就可以进行对齐操作了。</p>
+
+<br><br>
+
 
 <p>③ 安装 Soda 主题</p>
 
@@ -237,6 +280,9 @@ import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_p
 <p><code>
 "theme": "Soda Light.sublime-theme"　或者　"theme" : "Soda Dark.sublime-theme"
 </code></p>
+
+<br><br>
+
 
 <p>④ 安装cTags插件</p>
 
@@ -256,13 +302,22 @@ import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_p
 
 <p>PS：安装这个插件折腾了我蛮久，主要是不知道还要从ctags官网下载压缩包，以及修改系统的变量，后来还是一博友给我发的国外的参考资料才知道要这样配置的。刚开始知道这软件之所以没用是因为没有像eclipse可以追踪函数的功能，后来才知道可以通过安装cTags插件来实现。装上此功能后，就更喜欢用Sublime Text 2了。</p>
 
+<br><br>
+
+
 <p>⑤ jsFormat插件</p>
 
 <p>格式化js：选中一段文本，<code>control+alt+f</code>。</p>
 
+<br><br>
+
+
 <p>⑥ DocBlockr</p>
 
 <p>在JS函数上方输入/**，然后回车，doc就生成好了非常好用。</p>
+
+<br><br>
+
 
 <p>⑦ sublime-jslint</p>
 
@@ -279,22 +334,84 @@ import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_p
 }
 </code></p>
 
+<br><br>
+
+
 <p>⑧ SideBarEnhancements
 推荐通过 <code>Package Control</code> 安装 <code>SideBarEnhancements</code> 这个插件，可以大大加强在侧栏目录树中右键的选项</p>
 
+<br><br>
+
+
 <p>⑨ Zen Coding</p>
+
+<br><br>
+
 
 <p>⑩ jQuery Package for sublime Text</p>
 
+<br><br>
+
+
 <p>⑪ Clipboard History</p>
+
+<br><br>
+
 
 <p>⑫ Bracket Highlighter</p>
 
+<br><br>
+
+
 <p>⑬ GBK to UTF8</p>
+
+<br><br>
+
 
 <p>⑭ Git</p>
 
+<br><br>
+
+
 <p>⑮ JsMinifier</p>
+
+<p>
+[Ruby]:			http://www.ruby-lang.org						"Ruby"
+[git]:			http://git-scm.com/								"Git"
+[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
+[Octopress]:	http://octopress.org							"Octopress"
+[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
+[Google]:		http://www.google.com							"Google"
+[Yahoo]:		http://www.yahoo.com							"Yahoo"
+[Twitter]:		http://twitter.com/								"Twitter"
+
+[Firebug]:		http://getfirebug.com/							"Firebug"
+
+[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
+[维基百科]:		http://zh.wikipedia.org							"维基中文"
+
+[煎蛋]:			http://jandan.net								"煎蛋"
+[小众软件]:		http://appinn.com								"小众软件"
+[小众]:			http://appinn.com								"小众软件"
+[新浪微博]:		http://weibo.com								"新浪微博"
+[微博]:			http://weibo.com								"新浪微博"
+[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
+[知乎]:			http://www.zhihu.com							"知乎"
+
+[CSSer]:		http://www.csser.com/							"CSSer"
+
+[Node.JS]:		http://nodejs.org								"Node.JS"
+[NPM]:			http://search.npmjs.org/						"NPM Registry"
+[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
+[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
+[Coffee]:		http://coffeescript.org/						"CoffeeScript"
+[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
+[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
+[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
+
+[GitHub]:		https://github.com								"GitHub"
+
+</p>
 ]]></content>
   </entry>
   
