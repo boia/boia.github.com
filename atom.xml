@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-05-05T21:54:53+08:00</updated>
+  <updated>2013-05-05T22:07:48+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -81,7 +81,7 @@
 
 <p>运行Sublime Text 2 点击 Preferneces -> Browse Packages 会打开 X:\Program Files\Sublime Text\Data\Packages 目录，点击向上并找到X:\Program Files\Sublime Text\Data\Installed Packages目录，从附件中下载汉化包并解压，复制Default.sublime-package到这个目录，无需重启即可直接看到汉化效果。</p>
 
-<h2>快捷键</h2>
+<h2>快捷键和插件</h2>
 
 <table class="table table-bordered table-striped table-condensed">
    <tr>
@@ -212,7 +212,112 @@
 </table>
 
 
+<p>① 安装包控制（Package Control）</p>
 
+<p>打开Sublime Text 2，按快捷键 <code>ctrl+</code> <code>或者点击</code>Tools → Command Palette` 调出控制台Console</p>
+
+<p>将以下代码复制粘贴进命令行后回车：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print 'Please restart Sublime Text to finish installation'  </span></code></pre></td></tr></table></div></figure>
+
+
+<p>重新启动Sublime Text 2，如果在Preferences → Package Settings 中看到 Package Control 这一项，就说明安装成功了。</p>
+
+<p>② 安装Alignment插件</p>
+
+<p>对于喜欢整齐的玛民来说，这不失为一个省事的插件。该插件可以通过上面安装好的 Package Control 来安装：</p>
+
+<p>按<code>ctrl + shift + P</code>调出命令面板；</p>
+
+<p>输入 <code>install</code> 调出 <code>Package Control：Install Package</code> 选项，并回车；</p>
+
+<p>输入<code>Alignment</code>，选中并按回车安装；</p>
+
+<p>重启Sublime Text 2，选中文本并按<code>ctrl + alt + a</code> 就可以进行对齐操作了。</p>
+
+<p>③ 安装 Soda 主题</p>
+
+<p>这里的主题不同于针对代码的 color scheme，而是针对Sublime Text 2该软件本身的主题，该主题也可以通过万能的 Package Control 来安装。</p>
+
+<p>按<code>ctrl + shift + P</code>调出命令面板；</p>
+
+<p>输入 <code>install</code> 调出 <code>Package Control：Install Package</code> 选项，并回车；</p>
+
+<p>输入 <code>theme soda</code> 选中后回车即可安装；</p>
+
+<p>安装完之后要激活主题，打开 <code>Preferences → Global Settings – User</code>，加上以下代码保存即可生效：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"theme": "Soda Light.sublime-theme"　或者　"theme" : "Soda Dark.sublime-theme"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>④ 安装cTags插件</p>
+
+<p>首先，从Ctags官网下载压缩包下来，解压到电脑的某个地方，比如<code>C:\Program Files\ctags</code>，然后把cTags添加到系统变量里去：</p>
+
+<p>在<code>我的电脑 右键属性 → 高级 → 环境变量 → 在“系统变量”里找到“Path”，点击“编辑” → 把C:\Program Files\ctags”（不包括双引号）复制到最后 → 最后一路“确定”保存</code>。</p>
+
+<p>然后通过 <code>Package Control</code> 来安装 cTags 插件：</p>
+
+<p>按<code>ctrl + shift + P</code>调出命令面板；</p>
+
+<p>输入 <code>install</code> 调出 <code>Package Control：Install Package</code> 选项，并回车；</p>
+
+<p>输入 <code>ctags</code> 选中后回车即可安装。</p>
+
+<p>安装完之后，在项目的当前目录下按<code>ctrl + t, ctrl + r</code>，会生成.tags的文件。当光标停留在某个函数上时，按快捷键 <code>ctrl+t</code>, ctrl+t就可以打开函数所在的文件，并跳转到相应的位置了。</p>
+
+<p>PS：安装这个插件折腾了我蛮久，主要是不知道还要从ctags官网下载压缩包，以及修改系统的变量，后来还是一博友给我发的国外的参考资料才知道要这样配置的。刚开始知道这软件之所以没用是因为没有像eclipse可以追踪函数的功能，后来才知道可以通过安装cTags插件来实现。装上此功能后，就更喜欢用Sublime Text 2了。</p>
+
+<p>⑤ jsFormat插件</p>
+
+<p>格式化js：选中一段文本，<code>control+alt+f</code>。</p>
+
+<p>⑥ DocBlockr</p>
+
+<p>在JS函数上方输入/**，然后回车，doc就生成好了非常好用。</p>
+
+<p>⑦ sublime-jslint</p>
+
+<p>打开一个js文件，<code>control+j</code>，即可输出jsLint检查的结果。打开Packages目录，找到插件目录sublime-jslint，打开<code>sublime-jslint.sublime-settings</code>文件，可以修改jsLint配置，还可以配置文件保存时自动检查等，如：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>{ 
+</span><span class='line'>// Path to the jslint jar. 
+</span><span class='line'>// Leave blank to use bundled jar. "jslint_jar": "",   
+</span><span class='line'>// Options pass to jslint. 
+</span><span class='line'>// Jerry Qu注：全部可用配置参考这里，https://github.com/fbzhong/sublime-jslint/wiki/Available-jslint4java-options "jslint_options": "--encoding utf-8 --bitwise --browser --cap --css --devel --debug --evil --forin --fragment --on --sub --white --windows --sloppy",   
+</span><span class='line'>// Ignore errors, regex. "ignore_errors": [ // "Expected an identifier and instead saw 'undefined' \(a reserved word\)" ],   
+</span><span class='line'>// run jslint on save. "run_on_save": false,   
+</span><span class='line'>// debug flag. "debug": false 
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>⑧ SideBarEnhancements
+推荐通过 <code>Package Control</code> 安装 <code>SideBarEnhancements</code> 这个插件，可以大大加强在侧栏目录树中右键的选项</p>
+
+<p>⑨ Zen Coding</p>
+
+<p>⑩ jQuery Package for sublime Text</p>
+
+<p>⑪ Clipboard History</p>
+
+<p>⑫ Bracket Highlighter</p>
+
+<p>⑬ GBK to UTF8</p>
+
+<p>⑭ Git</p>
+
+<p>⑮ JsMinifier</p>
 ]]></content>
   </entry>
   
