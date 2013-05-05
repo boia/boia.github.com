@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-04-23T17:45:37+08:00</updated>
+  <updated>2013-05-05T21:46:52+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -12,6 +12,183 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[前端神器Sublime Text 2基础入门]]></title>
+    <link href="http://boia.github.com/blog/2013/05/05/sublimetext2/"/>
+    <updated>2013-05-05T20:39:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/05/05/sublimetext2</id>
+    <content type="html"><![CDATA[<h2>开始sublime text</h2>
+
+<p>之前我一直在用editplus写js，不是说editplus不好用，只是有些功能真的不是特别友好，所以从今之后改稍微强大一点的sublime text，最新版本貌似已经到3了，这确实很棒，可也很贵，70$对美国人没什么，但对中国的一个普通程序猿就有点相形见绌了。</p>
+
+<!-- more -->
+
+
+<h2>下载及破解</h2>
+
+<p>并不推荐大家一定要用最新版，也会有一些极客因为执着而非得用3，这里我提供两个地址供大家选择</p>
+
+<ul>
+<li><p><a href="" title="http://www.sublimetext.com/3">Sublime Text 3 官方主页</a></p></li>
+<li><p><a href="" title="http://www.sublimetext.com/2">Sublime Text 2 官方主页</a></p></li>
+</ul>
+
+
+<p>你可以下载适合你电脑系统的版本，这真的很棒！！！</p>
+
+<ul>
+<li><p><a href="" title="http://xiumu-blog.stor.sinaapp.com/blog-uploads/2013/02/SublimeTextKeygen.7z">Sublime Text 3 注册机</a></p></li>
+<li><p><a href="" title="http://img.xiumu.org/blog-uploads/2013/02/Sublime_Text_CN.zip">Sublime Text 3 中文语言包</a></p></li>
+</ul>
+
+
+<p>① 注册机</p>
+
+<p>打开注册机，点击Generate破解主文件，复制License中的内容，比如</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-----BEGIN LICENSE-----
+</span><span class='line'>Mr. White
+</span><span class='line'>Unlimited User License
+</span><span class='line'>EA7E-31845
+</span><span class='line'>CF502875803A7265F0F83FA6731619B2
+</span><span class='line'>42DB6024BF085A26B4E6BBA79A109CBD
+</span><span class='line'>182A0C996874E7DF78537CF74E4EB596
+</span><span class='line'>E85AC9A8CD0248A872DE6579413DD9FF
+</span><span class='line'>77741FF482DF6925B627356EDFC6BD02
+</span><span class='line'>38C03F082A2ED8D79BC00536C8DE83C4
+</span><span class='line'>3AC650A7998B247673F109224259E0FF
+</span><span class='line'>BF830166E43BBB29F9D97383D210604A
+</span><span class='line'>-----END LICENSE-----</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这里必须把begin license到end license都得选中复制，然后点击patch key选中sublime_text.exe，打开Sublime Text，执行 Help->Enter license 粘贴你的License，点击OK，重启Sublime Text即可看到你的注册信息。</p>
+
+<p>② 汉化</p>
+
+<p>运行Sublime Text 2 点击 Preferneces -> Browse Packages 会打开 X:\Program Files\Sublime Text\Data\Packages 目录，点击向上并找到X:\Program Files\Sublime Text\Data\Installed Packages目录，从附件中下载汉化包并解压，复制Default.sublime-package到这个目录，无需重启即可直接看到汉化效果。</p>
+
+<h2>快捷键</h2>
+
+<table class="table table-bordered table-striped table-condensed">
+   <tr>
+      <td>Ctrl+L                 选择整行(按住-继续选择下行)</td>
+   </tr>
+   <tr>
+      <td>Ctrl+KK               从光标处删除至行尾</td>
+   </tr>
+   <tr>
+      <td>Ctrl+Shift+K        删除整行</td>
+   </tr>
+   <tr>
+      <td>Ctrl+Shift+D       复制光标所在整行，插入在该行之前</td>
+   </tr>
+   <tr>
+      <td>Ctrl+J                 合并行(已选择需要合并的多行时)</td>
+   </tr>
+   <tr>
+      <td>Ctrl+KU              改为大写</td>
+   </tr>
+   <tr>
+      <td>Ctrl+KL              改为小写</td>
+   </tr>
+   <tr>
+      <td>Ctrl+D               选词(按住-继续选择下个相同的字符串)</td>
+   </tr>
+   <tr>
+      <td>Ctrl+M              光标移动至括号内开始或结束的位置</td>
+   </tr>
+   <tr>
+      <td>Ctrl+Shift+M     选择括号内的内容(按住-继续选择父括号)</td>
+   </tr>
+   <tr>
+      <td>Ctrl+/                注释整行(如已选择内容，同“Ctrl+Shift+/”效果)</td>
+   </tr>
+   <tr>
+      <td>Ctrl+Shift+/       注释已选择内容</td>
+   </tr>
+   <tr>
+      <td>Ctrl+Space      自动完成(win与系统快捷键冲突，需修改)</td>
+   </tr>
+   <tr>
+      <td>Ctrl+Z              撤销</td>
+   </tr>
+   <tr>
+      <td>Ctrl+Y             恢复撤销</td>
+   </tr>
+   <tr>
+      <td>Ctrl+Shift+V    粘贴并自动缩进(其它兄弟写的，实测win系统自动缩进无效)</td>
+   </tr>
+   <tr>
+      <td>Ctrl+M            光标跳至对应的括号</td>
+   </tr>
+   <tr>
+      <td>Alt+.               闭合当前标签</td>
+   </tr>
+   <tr>
+      <td>Ctrl+Shift+A   选择光标位置父标签对儿</td>
+   </tr>
+   <tr>
+      <td>Ctrl+Shift+[    折叠代码</td>
+   </tr>
+   <tr>
+      <td>Ctrl+Shift+]    展开代码</td>
+   </tr>
+   <tr>
+      <td>Ctrl+KT         折叠属性</td>
+   </tr>
+   <tr>
+      <td>Ctrl+K0         展开所有</td>
+   </tr>
+   <tr>
+      <td>Ctrl+U           软撤销</td>
+   </tr>
+   <tr>
+      <td>Ctrl+T           词互换</td>
+   </tr>
+   <tr>
+      <td>Ctrl+Enter     插入行后</td>
+   </tr>
+   <tr>
+      <td>Ctrl+Shift Enter      插入行前</td>
+   </tr>
+   <tr>
+      <td>Ctrl+K Backspace  从光标处删除至行首</td>
+   </tr>
+   <tr>
+      <td>Ctrl+Shift+UP         与上行互换</td>
+   </tr>
+   <tr>
+      <td>Ctrl+Shift+DOWN  与下行互换</td>
+   </tr>
+   <tr>
+      <td>Shift+Tab              去除缩进</td>
+   </tr>
+   <tr>
+      <td>Tab                       缩进</td>
+   </tr>
+   <tr>
+      <td>F9                         行排序(按a-z)</td>
+   </tr>
+</table>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[渐变的旋转进度条]]></title>
@@ -263,7 +440,7 @@
 
 <p>再次说明尽量不要这样写函数，我本来是想拿出一个对象来讲的，我这样写的规范完全是蒙蔽了初学者，所以尽量不要照搬代码，我这里只是说思想罢了。</p>
 
-<p>在移动控件的时候，动画会有抖动，我分析应该是因为控件的变化是实时的，像mousemove那样，超过了动画的帧，造成了抖动。</p>
+<p>在移动控件的时候，动画会有抖动，我分析应该是因为控件的变化是实时的，像mousemove那样，超过了动画的帧，造成了抖动。在查毒测试中，是没有这样抖动的。</p>
 
 <br>
 
@@ -1711,65 +1888,6 @@ Apache/2.2.14 (Ubuntu) Server at localhost Port 80
 
 
 <p>flickr_user不是用户名，是用户id，你可以从<a href="http://idgettr.com/">idgettr.com</a>获得</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[在octopress中加入jsfiddle]]></title>
-    <link href="http://boia.github.com/blog/2013/03/04/jsfiddle-for-octopress/"/>
-    <updated>2013-03-04T14:23:00+08:00</updated>
-    <id>http://boia.github.com/blog/2013/03/04/jsfiddle-for-octopress</id>
-    <content type="html"><![CDATA[<p><strong>jsFiddle</strong>是一个web开发人员的练习场，一个可以在很多方面应用的工具。我们可以用他来在线编辑一些HTML,CSS,javascript片段。你编辑的代码可以与其他人分享，或嵌入你的博客等。使用这个工具，javascript的开发者可以很容易的发现并解决BUG问题。你还可以选择你自己熟悉的流行的各种javascript库来进行开发，对XHR的支持也非常好，还可以模拟一些响应等。</p>
-
-<p>今天我们来学习将<strong>jsfiddle</strong>插件放入到octopress中。</p>
-
-<!-- more -->
-
-
-<h2>下载<strong>jsfiddle</strong>插件</h2>
-
-<p>先用git命令将插件下载下来</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/ShaunaGordon/octopress-jsfiddle.git</span></code></pre></td></tr></table></div></figure>
-
-
-<p>然后将里面的<code>jsfiddle.rb</code>拷贝到 <code>/plugins</code>中</p>
-
-<h2>一般语法</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&#123;% jsfiddle shorttag [tabs] [skin] [height] [width] %}</span></code></pre></td></tr></table></div></figure>
-
-
-<p>缺省值如下:</p>
-
-<ul>
-<li>tabs: <code>js,resources,html,css,result</code></li>
-<li>skin: <code>light</code></li>
-<li>height: <code>300px</code></li>
-<li>width: <code>100%</code></li>
-</ul>
-
-
-<p>如果你就想设置height，而前面几个值都用默认的，那么填default就行了</p>
-
-<h3>举例</h3>
-
-<p>这里我直接拿<a href="http://www.cnblogs.com/iamzhanglei/archive/2011/10/07/2199306.html">张磊</a>的代码作为测试</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&#123;% jsfiddle LHWmv result,js,html,css presentation 500px %}</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>结果</h3>
-
-<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/LHWmv/embedded/result,js,html,css/presentation/"></iframe>
-
-
-<h2>总结</h2>
-
-<p><strong>jsFiddle</strong>以前在张磊的博客看见的时候挺新颖的，现在在自己的blog里加上这个插件还是分外激动的，以后就不用上面一段代码，下面一个演示那么墨迹了。</p>
 ]]></content>
   </entry>
   
