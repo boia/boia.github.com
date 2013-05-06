@@ -4,7 +4,7 @@
   <title><![CDATA[Category: css3 | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/css3/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-05-06T17:57:13+08:00</updated>
+  <updated>2013-05-06T18:02:12+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -19,6 +19,9 @@
     <updated>2013-05-06T17:45:00+08:00</updated>
     <id>http://boia.github.com/blog/2013/05/06/css3-before-after</id>
     <content type="html"><![CDATA[<h2>开始CSS3</h2>
+
+<br>
+
 
 <p>作为一个非专业前端的前端实习生，对前端总是抱着一种既可恨又崇拜的心情。如果没有那么多兼容问题，或许会很美好。</p>
 
@@ -36,7 +39,9 @@
 <br><br>
 
 
+<h2>分析源码</h2>
 
+<p>代码其实很简答，总体围绕着<code>:before</code>和<code>:after</code>架构，</p>
 ]]></content>
   </entry>
   
