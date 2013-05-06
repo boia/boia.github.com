@@ -1,0 +1,161 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <meta  charset="utf-8" />
+  <title>before和after案例</title>
+  <style>
+  body{
+      font-family:\5B8B\4F53,Arial Narrow,arial,serif;
+      font-size:12px;
+      color:#000;
+      line-height:1.5em;
+      background:#bbb;
+      padding:50px  0;
+  }
+  #main{
+      margin:0 auto;
+      width:300px; 
+      height:300px;
+      background:#000;
+      position:relative;
+      border-radius:300px;
+      box-shadow:0px 0px 10px #B7E5A5;
+  }
+  #main:before,#main:after{
+      content:"";
+      position:absolute;
+      top:0;
+      width:0;
+      height:0;
+      border-style:solid;
+      border-color:#000 transparent;
+      border-width:0 40px 70px 40px;
+      display:block;
+  }
+  #main:before{
+      left:-25px;
+      -moz-transform:rotate(-50deg);
+      -webkit-transform:rotate(-50deg);
+      -o-transform:rotate(-50deg);
+      transform:rotate(-50deg);
+  }
+  #main:after{
+      right:-25px;
+      -moz-transform:rotate(50deg);
+      -webkit-transform:rotate(50deg);
+      -o-transform:rotate(50deg);
+      transform:rotate(50deg);
+  }
+  #main.hide *{
+      display: none;
+  }
+  .lefteye,.righteye{
+      position:absolute;
+      top:55px;
+      width:129px;
+      height:129px;
+      background:#fff;
+      border-radius:128px;
+      z-index:99;
+  }
+  .lefteye{
+      left:12px;
+  }
+  .righteye{
+      right:22px;
+  }
+  .lefteye:before,.righteye:before{
+      content:"";
+      position:absolute;
+      top:52px;
+      width:20px;
+      height:20px;
+      background:#000;
+      display:block;
+      border-radius:20px;
+  }
+  .lefteye:before{
+      right:2px;
+  }
+  .righteye:before{
+      left:2px;
+  }
+  .tear{
+      position:absolute;
+      right:32px;
+      bottom:77px;
+      width:26px;
+      height:32px;
+      background:#fff;
+      border-radius:26px;
+  }
+  .tear p{
+      position:absolute;
+      left:4px;
+      top:-30px;
+      width:16px;
+      height:45px;
+      background:#fff;
+      z-index:1;
+  }
+  .tear:before{
+      content:"";
+      position:absolute;
+      left:2px;
+      top:-24px;
+      z-index:15;
+      width:50px;
+      height:50px;
+      background:#000;
+      border-bottom-right-radius:50px;
+      -webkit-transform:translate(-39px, 8px) rotate(-13deg);
+      -moz-transform:translate(-39px, 8px) rotate(-13deg);
+      -ms-transform:translate(-39px, 8px) rotate(-13deg);
+      -o-transform:translate(-39px, 8px) rotate(-13deg);
+      transform:translate(-39px, 8px) rotate(-13deg);
+  }
+  .tear:after{
+      content:"";
+      position:absolute;
+      right:-57px;
+      top:-32px;
+      z-index:15;
+      width:33px;
+      height:33px;
+      background:#000;
+      border-bottom-left-radius:30px;
+      -webkit-transform:translate(-39px, 8px) rotate(23deg);
+      -moz-transform:translate(-39px, 8px) rotate(23deg);
+      -ms-transform:translate(-39px, 8px) rotate(23deg);
+      -o-transform:translate(-39px, 8px) rotate(23deg);
+      transform:translate(-39px, 8px) rotate(23deg);
+  }
+  </style>
+  </head>
+  <body>
+  <div id="main">
+    <div class="lefteye">
+    &nbsp;
+    </div>
+    <div class="righteye">
+    &nbsp;
+    </div>
+    <div class="tear">
+      <p>&nbsp;</p>
+    </div>
+  </div>
+  <script>
+      var main = document.getElementById('main');
+      function blink(){
+        main.className = 'hide';
+        setTimeout(function(){main.className = '';}, 120);
+      }
+      (function(){
+        var func = arguments.callee;
+        setTimeout(blink, 1000);
+        setTimeout(blink, 1200);
+        setTimeout(func, 2000)
+      })();
+  </script>
+  </body>
+  </html>

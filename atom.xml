@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-05-05T22:17:46+08:00</updated>
+  <updated>2013-05-06T17:57:13+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[css3中:before和:after经典例子]]></title>
+    <link href="http://boia.github.com/blog/2013/05/06/css3-before-after/"/>
+    <updated>2013-05-06T17:45:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/05/06/css3-before-after</id>
+    <content type="html"><![CDATA[<h2>开始CSS3</h2>
+
+<p>作为一个非专业前端的前端实习生，对前端总是抱着一种既可恨又崇拜的心情。如果没有那么多兼容问题，或许会很美好。</p>
+
+<p>前几天，借一朋友吉言开始使用before和after，试了一下，发现要火。</p>
+
+<p>先看例子</p>
+
+<p><a href="http://boia.github.com/art/cry.html">演示</a></p>
+
+<!-- more -->
+
+
+
+
+<br><br>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[前端神器Sublime Text 2基础入门]]></title>
@@ -2048,65 +2075,6 @@ Apache/2.2.14 (Ubuntu) Server at localhost Port 80
 
 
 <p>程序比较简单，主要是canvas事件处理问题，以后可以将这道题目发个教程。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[octopress侧边栏放上Flickr相片]]></title>
-    <link href="http://boia.github.com/blog/2013/03/04/flickr-sidebar/"/>
-    <updated>2013-03-04T22:35:00+08:00</updated>
-    <id>http://boia.github.com/blog/2013/03/04/flickr-sidebar</id>
-    <content type="html"><![CDATA[<p>今天来点生活式的技术，在侧边栏，当然你也可以在页面上放上Flickr相片</p>
-
-<h2>Demo</h2>
-
-<p><a href="http://boia.github.com/blog/archives/">octopress放入<strong>Flickr</strong>相册</a></p>
-
-<!-- more -->
-
-
-<h2>注册Flickr</h2>
-
-<p><a href="http://www.flickr.com/">Flickr</a>来自yahoo，所以注册的是雅虎账号</p>
-
-<h2>下载Flickr-Badge</h2>
-
-<p>Flickr-Badge是一个octopress插件，它托管在github上</p>
-
-<p>输以下命令</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&#123;% git clone https://github.com/chronon/Octopress-Flickr-Badge.git %}</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>文件</h2>
-
-<p> 把<code>flickr.html</code>放到<code>source/_includes/custom/asides/</code>中
-<code>_styles.scss</code>放到 <code>sass/custom</code>中，如果你的<code>_styles.scss</code>以前有过修改，就把里面代码copy出来然后放到以前文件的尾部</p>
-
-<h2>配置</h2>
-
-<p>将<code>custom/asides/flickr.html</code> 放到<code>_config.yml</code>中default_asides的[]中.</p>
-
-<p>在<code>_config.yml</code>的尾部加以下内容</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># Flickr Badge
-</span><span class='line'>flickr_user:            # user id (not username)
-</span><span class='line'>flickr_count:           # 照片数量
-</span><span class='line'>flickr_display:         # random or latest(随机或者最新)
-</span><span class='line'>flickr_size:            # t (thumbnail), s (small square), m (medium)
-</span><span class='line'>flickr_source:          # user, user_tag, all, all_tag
-</span><span class='line'>flickr_tag:             # tagname - set if flickr_source is set to user_tag or all_tag</span></code></pre></td></tr></table></div></figure>
-
-
-<p>flickr_user不是用户名，是用户id，你可以从<a href="http://idgettr.com/">idgettr.com</a>获得</p>
 ]]></content>
   </entry>
   
