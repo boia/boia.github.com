@@ -9,7 +9,7 @@
   <meta name="author" content="boia">
 
   
-  <meta name="description" content="遨游在技术的海洋">
+  <meta name="description" content="在这里，你可以看到美妙的html5、css3，你能分享我前端的技术，也能一起讨论后台例如nodejs的异军突起。">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -150,7 +150,45 @@
 
 <h2>分析源码</h2>
 
-<p>代码其实很简答，总体围绕着<code>:before</code>和<code>:after</code>架构，</p>
+<br>
+
+
+<p>代码其实很简答，总体围绕着<code>:before</code>和<code>:after</code>架构，因为代码比较多，而且咱们只要去懂得逻辑，没必要纠结于简单的css代码</p>
+
+<br><br>
+
+
+<h3>① unicode</h3>
+
+<p><code>font-family:\5B8B\4F53...</code></p>
+
+<p>有些浏览器可能会不支持中文，所以我们常常用中文的unicode编码，这里的<code>\5B8B\4F53</code>实际上是&#8221;宋体&#8221;，百度应用里有一个中文转换成unicode的工具，那么你就不用时刻记住它了</p>
+
+<p><a href="http://www.baidu.com/s?ie=utf-8&amp;bs=unicode&amp;f=8&amp;rsv_bp=1&amp;wd=%E4%B8%AD%E6%96%87unicode&amp;rsv_sug3=3&amp;rsv_sug1=3&amp;rsv_sug4=106&amp;rsv_sug=1&amp;inputT=1170">unicode中文</a></p>
+
+<br><br>
+
+
+<h3>② CSS3画圆和三角</h3>
+
+<br><br>
+
+
+<p>在很久很久以前，CSS3还没出现的时候，如果你想画圆、三角，甚至一些不规则形状的图形，你必须使用图片，但并不是每个人都会PS，所以CSS3的出现在一定程度上也解决了前端工程师不懂PS的窘境。</p>
+
+<p>在这里我想要提两个CSS3的小技术，在上面那个例程我也多次使用了这两个技术。</p>
+
+<br><br>
+
+
+<h4>画圆</h4>
+
+<p>规定一个块(如div)的宽和高相同，假设100px，在将<code>border-radius</code>也赋值为100px，一个简单的圆就绘制出来了。</p>
+
+<br><br>
+
+
+<h4>三角</h4>
 </div>
 
 </div>
