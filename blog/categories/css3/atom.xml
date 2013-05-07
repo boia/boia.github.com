@@ -4,7 +4,7 @@
   <title><![CDATA[Category: css3 | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/css3/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-05-07T17:09:56+08:00</updated>
+  <updated>2013-05-07T17:28:03+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -80,6 +80,58 @@
 
 
 <h4>三角</h4>
+
+<p>将一个块的宽和高都定义为0，然后给<code>border</code>赋值，20px，现在你看到的只是一个边长为20px的正方形，这时候你加上<code>border-color: red green orange blue</code>，神奇的事情发生了，同样是正方形，却被割成了4个不同颜色的三角形，也许你懂了，我们只要将代码改成<code>border-color: red transparent transparent transparent</code>，这时候我们就能看到一个向下的三角形。</p>
+
+<br><br>
+
+
+<h4>:before和:after</h4>
+
+<p>这是css3中的伪元素，它的出现注定要改变互联网，因为只要你有想象力，可以做出很多不可能完成的任务，但是这里我不想做介绍，因为靠字面意思就能懂了，而且在前端你一定懂得比我多，班门弄斧总是会砸到自己的脚。</p>
+
+<br><br>
+
+
+<p>谢谢你读完了我整篇博客，如果你有类似的创意，可以发给我，和我一起交流，只有分享才会有进步。</p>
+
+<p>
+[Ruby]:			http://www.ruby-lang.org						"Ruby"
+[git]:			http://git-scm.com/								"Git"
+[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
+[Octopress]:	http://octopress.org							"Octopress"
+[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
+[Google]:		http://www.google.com							"Google"
+[Yahoo]:		http://www.yahoo.com							"Yahoo"
+[Twitter]:		http://twitter.com/								"Twitter"
+
+[Firebug]:		http://getfirebug.com/							"Firebug"
+
+[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
+[维基百科]:		http://zh.wikipedia.org							"维基中文"
+
+[煎蛋]:			http://jandan.net								"煎蛋"
+[小众软件]:		http://appinn.com								"小众软件"
+[小众]:			http://appinn.com								"小众软件"
+[新浪微博]:		http://weibo.com								"新浪微博"
+[微博]:			http://weibo.com								"新浪微博"
+[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
+[知乎]:			http://www.zhihu.com							"知乎"
+
+[CSSer]:		http://www.csser.com/							"CSSer"
+
+[Node.JS]:		http://nodejs.org								"Node.JS"
+[NPM]:			http://search.npmjs.org/						"NPM Registry"
+[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
+[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
+[Coffee]:		http://coffeescript.org/						"CoffeeScript"
+[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
+[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
+[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
+
+[GitHub]:		https://github.com								"GitHub"
+
+</p>
 ]]></content>
   </entry>
   
