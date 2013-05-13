@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 工作 | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/工作/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-05-08T11:09:00+08:00</updated>
+  <updated>2013-05-13T19:56:04+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -27,7 +27,7 @@
 
 <h2>有图有真相</h2>
 
-<p><img src="/images/post/che.png" title="新车" ></p>
+<p>{% img /images/post/che.png 新车 %}</p>
 ]]></content>
   </entry>
   

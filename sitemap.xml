@@ -97,6 +97,10 @@
         <lastmod>2013-05-07T17:27:58+08:00</lastmod>
     </url>
     <url>
+        <loc>http://boia.github.com/blog/2013/05/13/npm/</loc>
+        <lastmod>2013-05-13T19:55:32+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://boia.github.com/404.html</loc>
         <lastmod>2013-03-13T19:10:27+08:00</lastmod>
     </url>
@@ -106,11 +110,11 @@
     </url>
     <url>
         <loc>http://boia.github.com/blog/archives/</loc>
-        <lastmod>2013-05-07T17:27:58+08:00</lastmod>
+        <lastmod>2013-05-13T19:55:32+08:00</lastmod>
     </url>
     <url>
         <loc>http://boia.github.com/blog/categories/</loc>
-        <lastmod>2013-05-07T17:27:58+08:00</lastmod>
+        <lastmod>2013-05-13T19:55:32+08:00</lastmod>
     </url>
     <url>
         <loc>http://boia.github.com/game/</loc>
@@ -122,6 +126,6 @@
     </url>
     <url>
         <loc>http://boia.github.com/</loc>
-        <lastmod>2013-05-07T17:27:58+08:00</lastmod>
+        <lastmod>2013-05-13T19:55:32+08:00</lastmod>
     </url>
 </urlset>

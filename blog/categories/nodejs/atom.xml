@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: nodejs | boia's博客]]></title>
+  <link href="http://boia.github.com/blog/categories/nodejs/atom.xml" rel="self"/>
+  <link href="http://boia.github.com/"/>
+  <updated>2013-05-13T19:56:04+08:00</updated>
+  <id>http://boia.github.com/</id>
+  <author>
+    <name><![CDATA[boia]]></name>
+    <email><![CDATA[zhengwang2314@qq.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[npm常用命令]]></title>
+    <link href="http://boia.github.com/blog/2013/05/13/npm/"/>
+    <updated>2013-05-13T18:18:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/05/13/npm</id>
+    <content type="html"><![CDATA[<p>今天我们来学习下npm的基本指令，把这些基本指令记下来，方便以后使用的时候可以查看。
+如果你在玩nodejs，那么npm命令就必须要记住，那么npm到底是什么呢？如果你熟悉ruby的gem，Python的PyPL、setuptools，PHP的pear，那么你就知道NPM的作用是什么了，其实npm就是nodejs的包管理。</p>
+
+<br><br>
+
+
+<!-- more -->
+
+
+<h2>npm 基本指令</h2>
+
+<br><br>
+
+
+<p>其实有一个更方便地查看npm命令的方法，打开cmd，输入<code>$ npm -help</code>，你就可以看到npm的大部分的命令，然后随便输入一个命令，如<code>npm faq</code>，就会有本地的帮助文档跳出来说明这个命令的用处。</p>
+
+<p>接下来咱们要介绍一些常用的命令</p>
+
+<br><br>
+
+
+<p><code>
+将套件于全域安装. 全域安装的​​套件通常只是为了执行档而已.
+$ npm install &lt;package name&gt; -g
+</code></p>
+
+<br>
+
+
+
+
+<br>
+
+
+<p><code>
+安装完后现在我们可以用 &lt;code&gt;express&lt;/code&gt; 來产生专案
+$ express new app
+</code></p>
+
+<br>
+
+
+<p><code>`
+将套件安装在专案里.套件在每一个不同的专案里都要重装一次不然会require不到.
+$ cd /path/to/the/project
+$ npm install &lt;package name&gt;
+$ npm install express
+</code></p>
+
+<br>
+
+
+<p>現在就可以在专案里用 <code>var express = require( 'express' );</code> 來使用 express 這個套件了.</p>
+
+<br>
+
+
+<p><code>
+移除全域套件.
+$ npm uninstall &lt;package name&gt; -g
+</code></p>
+
+<br>
+
+
+<p><code>
+移除专案里的套件.
+$ cd /path/to/the/project
+$ npm uninstall &lt;package name&gt;
+</code></p>
+
+<br>
+
+
+<p><code>
+搜寻套件.
+$ npm search &lt;package name&gt;
+</code></p>
+
+<br>
+
+
+<p><code>
+列出全域套件.
+$ npm ls -g
+</code></p>
+
+<br>
+
+
+<p><code>
+列出全域套件详细资讯.
+$ npm ls -gl
+</code></p>
+
+<br>
+
+
+<p><code>
+列出专案里的套件.
+$ cd /path/to/the/project
+$ npm ls
+</code></p>
+
+<br>
+
+
+<p><code>
+列出专案里的套件详细资讯.
+$ cd /path/to/the/project
+$ npm ls -l
+</code></p>
+
+<br>
+
+
+<p><code>
+更新全域套件.
+$ npm update -g
+</code></p>
+
+<br>
+
+
+<p><code>
+更新案里的套件.
+$ cd /path/to/the/project
+$ npm update
+</code></p>
+
+<br><br>
+
+
+<p>用<code>package.json</code> 来管理专案里的套件</p>
+
+<p>只要将package.json这个档案放在专案的根目录里,就不需要一个个的手动安装套件.</p>
+
+<p>原本应该是要
+<code>
+$ cd /path/to/the/project
+$ npm install mongoose
+$ npm install express
+$ npm install jade
+</code></p>
+
+<br>
+
+
+<p>有了package.json在专案的根目录就只要
+```
+$ cd /path/to/the/project
+$ touch package.json
+package.json
+{</p>
+
+<pre><code>"name": "your app name"
+</code></pre>
+
+<p>  , "version": "0.0.1"
+  , "private": true
+  , "dependencies": {</p>
+
+<pre><code>  "express": "&gt;=2.5.0"
+, "jade": "&gt;= 0.16.4"
+, "mongoose": "&gt;=2.3.10"
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<br>
+
+
+<p>然后在终端 里输入下面的指令就全部安装完成了.
+<code>
+$ npm install -l
+</code></p>
+
+<br>
+
+
+<p>更完整的说明文件请见<a href="https://npmjs.org/doc/">这里</a> .</p>
+
+<p>{% include links %}</p>
+]]></content>
+  </entry>
+  
+</feed>
