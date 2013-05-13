@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 电影 | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/电影/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-05-13T20:11:01+08:00</updated>
+  <updated>2013-05-13T22:20:29+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -18,7 +18,7 @@
     <link href="http://boia.github.com/blog/2013/03/13/yidaizongshi/"/>
     <updated>2013-03-13T22:05:00+08:00</updated>
     <id>http://boia.github.com/blog/2013/03/13/yidaizongshi</id>
-    <content type="html"><![CDATA[<p>{% img /images/post/yidaizongshi.png 一代宗师 %}</p>
+    <content type="html"><![CDATA[<p><img src="/images/post/yidaizongshi.png" title="一代宗师" ></p>
 
 <!-- more -->
 
@@ -47,7 +47,7 @@
 
 <p>没有吐槽，没有吐槽，对中国电影只能用<strong>一言难尽</strong>来形容有木有。</p>
 
-<p>{% include link %}</p>
+<p>Included file 'link' not found in _includes directory</p>
 ]]></content>
   </entry>
   

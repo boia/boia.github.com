@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-05-08T11:09:00+08:00</updated>
+  <updated>2013-05-13T22:20:29+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -12,6 +12,249 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[npm常用命令]]></title>
+    <link href="http://boia.github.com/blog/2013/05/13/npm/"/>
+    <updated>2013-05-13T18:18:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/05/13/npm</id>
+    <content type="html"><![CDATA[<p>今天我们来学习下npm的基本指令，把这些基本指令记下来，方便以后使用的时候可以查看。
+如果你在玩nodejs，那么npm命令就必须要记住，那么npm到底是什么呢？如果你熟悉ruby的gem，Python的PyPL、setuptools，PHP的pear，那么你就知道NPM的作用是什么了，其实npm就是nodejs的包管理。</p>
+
+<br><br>
+
+
+<!-- more -->
+
+
+<h2>npm 基本指令</h2>
+
+<br><br>
+
+
+<p>其实有一个更方便地查看npm命令的方法，打开cmd，输入<code>$ npm -help</code>，你就可以看到npm的大部分的命令，然后随便输入一个命令，如<code>npm faq</code>，就会有本地的帮助文档跳出来说明这个命令的用处。</p>
+
+<p>接下来咱们要介绍一些常用的命令</p>
+
+<br><br>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>将套件于全域安装. 全域安装的​​套件通常只是为了执行档而已.
+</span><span class='line'>$ npm install &lt;package name&gt; -g</span></code></pre></td></tr></table></div></figure>
+
+
+<br>
+
+
+
+
+<br>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>安装完后现在我们可以用 &lt;code&gt;express&lt;/code&gt; 來产生专案
+</span><span class='line'>$ express new app</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<br>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>将套件安装在专案里.套件在每一个不同的专案里都要重装一次不然会require不到.
+</span><span class='line'>$ cd /path/to/the/project
+</span><span class='line'>$ npm install &lt;package name&gt;
+</span><span class='line'>$ npm install express</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<br>
+
+
+<p>現在就可以在专案里用 <code>var express = require( 'express' );</code> 來使用 express 這個套件了.</p>
+
+<br>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>移除全域套件.
+</span><span class='line'>$ npm uninstall &lt;package name&gt; -g</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<br>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>移除专案里的套件.
+</span><span class='line'>$ cd /path/to/the/project
+</span><span class='line'>$ npm uninstall &lt;package name&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<br>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>搜寻套件.
+</span><span class='line'>$ npm search &lt;package name&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<br>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>列出全域套件.
+</span><span class='line'>$ npm ls -g</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<br>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>列出全域套件详细资讯.
+</span><span class='line'>$ npm ls -gl</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<br>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>列出专案里的套件.
+</span><span class='line'>$ cd /path/to/the/project
+</span><span class='line'>$ npm ls</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<br>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>列出专案里的套件详细资讯.
+</span><span class='line'>$ cd /path/to/the/project
+</span><span class='line'>$ npm ls -l</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<br>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>更新全域套件.
+</span><span class='line'>$ npm update -g</span></code></pre></td></tr></table></div></figure>
+
+
+<br>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>更新案里的套件.
+</span><span class='line'>$ cd /path/to/the/project
+</span><span class='line'>$ npm update</span></code></pre></td></tr></table></div></figure>
+
+
+<br><br>
+
+
+<p>用<code>package.json</code> 来管理专案里的套件</p>
+
+<p>只要将package.json这个档案放在专案的根目录里,就不需要一个个的手动安装套件.</p>
+
+<p>原本应该是要</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ cd /path/to/the/project
+</span><span class='line'>$ npm install mongoose
+</span><span class='line'>$ npm install express
+</span><span class='line'>$ npm install jade</span></code></pre></td></tr></table></div></figure>
+
+
+<br>
+
+
+<p>有了package.json在专案的根目录就只要</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ cd /path/to/the/project
+</span><span class='line'>$ touch package.json
+</span><span class='line'>package.json
+</span><span class='line'>{
+</span><span class='line'>    "name": "your app name"
+</span><span class='line'>  , "version": "0.0.1"
+</span><span class='line'>  , "private": true
+</span><span class='line'>  , "dependencies": {
+</span><span class='line'>      "express": "&gt;=2.5.0"
+</span><span class='line'>    , "jade": "&gt;= 0.16.4"
+</span><span class='line'>    , "mongoose": "&gt;=2.3.10"
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<br>
+
+
+<p>然后在终端 里输入下面的指令就全部安装完成了.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ npm install -l</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<br>
+
+
+<p>更完整的说明文件请见<a href="https://npmjs.org/doc/">这里</a> .</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[css3中:before和:after经典例子]]></title>
@@ -2084,54 +2327,6 @@ Apache/2.2.14 (Ubuntu) Server at localhost Port 80
 
 
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[面试第一站—————联想(带题目和我做的)]]></title>
-    <link href="http://boia.github.com/blog/2013/03/06/lenovo/"/>
-    <updated>2013-03-06T10:54:00+08:00</updated>
-    <id>http://boia.github.com/blog/2013/03/06/lenovo</id>
-    <content type="html"><![CDATA[<p>昨天下午孤身来到联想面试，觉得最不顺利的事情就是没找到333(外)公交车。先挂个联想公司的招牌</p>
-
-<p><img src="http://boia.github.com/images/post/lenovo.png" title="Lenovo" ></p>
-
-<!-- more -->
-
-
-<p>见到HR，礼貌地问候一句，然后被他领到一个相对比较小的会议室里(大概就是面议室)，然后他叫我等下，随后找了面试官过来，面试官估计也是搞技术的，我们就很随意地聊起来了，问题也不多，而且主要还是我说的比较多，叽叽呱呱地一通。随便挑几个问题：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>他: 简历写得够简单的，怎么不加些链接可以访问下你以前做的东西呢？
-</span><span class='line'>我: 因为简历是上周赶出来的，而blog是最近几天弄好的，很多做的东西也没有从其他网站整理出    来。
-</span><span class='line'>...
-</span><span class='line'>他: 我对canvas的了解也不是太深，你能简单介绍下吗？
-</span><span class='line'>我: ...
-</span><span class='line'>...
-</span><span class='line'>他： 你能谈下物联网吗？(因为这是我毕设研究的)
-</span><span class='line'>我:  ...
-</span><span class='line'>他： 简单说下你大学的情况
-</span><span class='line'>我:  ...</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>题目</h2>
-
-<p>然后他给我出了一道关于html5的题目，画一个饼状图然后将鼠标移到上面可以得到信息。
-我6点开始写，写到10点左右弄好后，就给他发邮件了，其他就看造化了。</p>
-
-<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/7hkyx/embedded/result,js,html,css/light/"></iframe>
-
-
-<p>程序比较简单，主要是canvas事件处理问题，以后可以将这道题目发个教程。</p>
 ]]></content>
   </entry>
   
