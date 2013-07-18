@@ -4,7 +4,7 @@
   <title><![CDATA[Category: css3 | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/css3/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-05-13T22:20:29+08:00</updated>
+  <updated>2013-07-18T16:17:30+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -12,6 +12,156 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[css-reset-style]]></title>
+    <link href="http://boia.github.com/blog/2013/07/18/css-reset-style/"/>
+    <updated>2013-07-18T16:03:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/07/18/css-reset-style</id>
+    <content type="html"><![CDATA[<h2>默认样式</h2>
+
+<br>
+
+
+<p>在浏览器中，它有自己的默认样式，而且每个浏览器的默认样式还不相同，而且，默认样式对于有些实际的项目不能兼容，所以很多人都在写重置样式。</p>
+
+<!-- more -->
+
+
+<br>
+
+
+<h2>重置样式</h2>
+
+<br>
+
+
+<p>刚开始时候，大家都比较习惯性地这样写
+```css
+*{</p>
+
+<pre><code>margin:  0;
+padding: 0;
+</code></pre>
+
+<p>}
+```</p>
+
+<br>
+
+
+<p>这样写的确很方便，也很简单。但这样会应用到所有的元素上，包括了文本框和下拉框等等，已经不能满足大多数人。所以写一个更复杂的重置样式势在必行。</p>
+
+<p>一个比较流行的重置样式如下
+```css
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {</p>
+
+<pre><code>margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+</code></pre>
+
+<p>}
+/<em> HTML5 display-role reset for older browsers </em>/
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {</p>
+
+<pre><code>display: block;
+</code></pre>
+
+<p>}
+body {</p>
+
+<pre><code>line-height: 1;
+</code></pre>
+
+<p>}
+ol, ul {</p>
+
+<pre><code>list-style: none;
+</code></pre>
+
+<p>}
+blockquote, q {</p>
+
+<pre><code>quotes: none;
+</code></pre>
+
+<p>}
+blockquote:before, blockquote:after,
+q:before, q:after {</p>
+
+<pre><code>content: '';
+content: none;
+</code></pre>
+
+<p>}
+table {</p>
+
+<pre><code>border-collapse: collapse;
+border-spacing: 0;
+</code></pre>
+
+<p>}
+```</p>
+
+<br>
+
+
+<p>
+[Ruby]:			http://www.ruby-lang.org						"Ruby"
+[git]:			http://git-scm.com/								"Git"
+[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
+[Octopress]:	http://octopress.org							"Octopress"
+[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
+[Google]:		http://www.google.com							"Google"
+[Yahoo]:		http://www.yahoo.com							"Yahoo"
+[Twitter]:		http://twitter.com/								"Twitter"
+
+[Firebug]:		http://getfirebug.com/							"Firebug"
+
+[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
+[维基百科]:		http://zh.wikipedia.org							"维基中文"
+
+[煎蛋]:			http://jandan.net								"煎蛋"
+[小众软件]:		http://appinn.com								"小众软件"
+[小众]:			http://appinn.com								"小众软件"
+[新浪微博]:		http://weibo.com								"新浪微博"
+[微博]:			http://weibo.com								"新浪微博"
+[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
+[知乎]:			http://www.zhihu.com							"知乎"
+
+[CSSer]:		http://www.csser.com/							"CSSer"
+
+[Node.JS]:		http://nodejs.org								"Node.JS"
+[NPM]:			http://search.npmjs.org/						"NPM Registry"
+[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
+[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
+[Coffee]:		http://coffeescript.org/						"CoffeeScript"
+[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
+[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
+[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
+
+[GitHub]:		https://github.com								"GitHub"
+
+</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[css3中:before和:after经典例子]]></title>

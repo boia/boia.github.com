@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>全面解析ubuntu下安装php、pear - boia's博客</title>
+  <title>css-reset-style - boia's博客</title>
   <meta name="author" content="boia">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://boia.github.com/blog/2013/04/13/ubuntu-php">
+  <link rel="canonical" href="http://boia.github.com/blog/2013/07/18/css-reset-style">
   <link href="/favicon.ico" rel="icon">
     
   <link href="/stylesheets/bootstrap/bootstrap.min.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -104,7 +104,7 @@
 
   <header class="page-header">
     
-      <h1 class="entry-title">全面解析ubuntu下安装php、pear</h1>
+      <h1 class="entry-title">Css-reset-style</h1>
     
     
       <p class="meta">
@@ -120,152 +120,52 @@
   
 
 
-<time datetime="2013-04-13T14:42:00+08:00" pubdate data-updated="true">Apr 13<span>th</span>, 2013</time>
+<time datetime="2013-07-18T16:03:00+08:00" pubdate data-updated="true">Jul 18<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h2>前言</h2>
+<div class="entry-content"><h2>默认样式</h2>
 
-<p>因为在windows下搞pear没有成功，老出现无缘无故的问题，所以今天用ubuntu搭建了一个php。众所周知开源代码和linux总是有无懈的缘分，而我作为一个开源的忠实粉丝，却还抱着windows系统不放，总有些惭愧，下一个wamp毫无技术可言就搞定了。少说废话，下面就开始。</p>
+<br>
+
+
+<p>在浏览器中，它有自己的默认样式，而且每个浏览器的默认样式还不相同，而且，默认样式对于有些实际的项目不能兼容，所以很多人都在写重置样式。</p>
 
 <!-- more -->
 
 
-<br><br>
+<br>
 
 
-<h2>ubuntu搭建php</h2>
+<h2>重置样式</h2>
 
-<p>① apache2</p>
-
-<ul>
-<li><code>sudo apt-get install apache2</code></li>
-</ul>
+<br>
 
 
-<p>&#8230;大概几秒钟时间</p>
+<p>刚开始时候，大家都比较习惯性地这样写</p>
 
-<p>打开浏览器输入http://localhost/</p>
-
-<p>it works总是令人那么激动，只是你还有很多东西要做<br><br></p>
-
-<p>② PHP5</p>
-
-<ul>
-<li><p><code>sudo apt-get install php5</code></p></li>
-<li><p><code>sudo apt-get install libapache2-mod-php5</code></p></li>
-<li><p><code>sudo /etc/init.d/apache2 restart</code></p></li>
-</ul>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">*</span><span class="p">{</span>
+</span><span class='line'>  <span class="k">margin</span><span class="o">:</span>  <span class="m">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
-<p>然后php应该被安装到了<code>/etc/php5/</code>下</p>
-
-<p>试试 <code>php -v</code></p>
-
-<p>查询到PHP 5.4.6<br><br></p>
-
-<p>③ MySql</p>
-
-<ul>
-<li><code>sudo apt-get install mysql-server</code></li>
-</ul>
+<br>
 
 
-<p>MySql初始只允许本机(127.0.0.1)连接，如果想多台机子使用或者向Internet开放的话，编辑/etc/mysql/my.cnf</p>
+<p>这样写的确很方便，也很简单。但这样会应用到所有的元素上，包括了文本框和下拉框等等，已经不能满足大多数人。所以写一个更复杂的重置样式势在必行。</p>
 
-<ul>
-<li><code>sudo gedit /etc/mysql/my.cnf</code></li>
-</ul>
+<p>一个比较流行的重置样式如下</p>
 
-
-<p>找到<code>bind-address = 127.0.0.1</code> 在前面加一个&#8217;#&#8217;注释掉<br><br></p>
-
-<p>④ MySql Administrator</p>
-
-<ul>
-<li><code>sudo apt-get install mysql-admin</code></li>
-</ul>
-
-
-<p>不知道为啥这个命令没有成功，如果你也不行，可以试下下面的命令</p>
-
-<ul>
-<li><code>sudo apt-get install libapache2-mod-auth-mysql</code></li>
-<li><code>sudo apt-get install php5-mysql</code></li>
-<li><code>sudo apt-get install phpmyadmin</code></li>
-</ul>
-
-
-<p>要让PHP与MySql一起工作，编辑</p>
-
-<ul>
-<li><code>sudo gedit /etc/php5/apache2/php.ini</code></li>
-</ul>
-
-
-<p>取消对;extension=mysql.so的注释</p>
-
-<p>重启apache</p>
-
-<ul>
-<li><code>sudo /etc/init.d/apache2 restart</code></li>
-</ul>
-
-
-<p>打开浏览器输入<code>http://localhost/phpmyadmin</code>，我在这里输的时候，出现了一个问题</p>
-
-<blockquote>
-Not Found
-The requested URL /phpmyadmin/ was not found on this server.
-Apache/2.2.14 (Ubuntu) Server at localhost Port 80
-</blockquote>
-
-
-<p>然后各种纠结，百度了以后才知道得让phpAdministrator和php建立一个软连接</p>
-
-<p>打开<code>var/www</code></p>
-
-<ul>
-<li><code>sudo ln -s /usr/share/phpmyadmin</code><br><br></li>
-</ul>
-
-
-<p>⑤ pear</p>
-
-<p>下载pear在php中是一个很简单的事情，只要输入一行代码</p>
-
-<ul>
-<li><code>curl -o go-pear.php http://pear.php.net/go-pear</code></li>
-</ul>
-
-
-<p>如果你没有按curl，请输入一行命令</p>
-
-<ul>
-<li><code>sudo apt-get install curl libcurl3 libcurl3-dev php5-curl</code></li>
-</ul>
-
-
-<p>重启下服务器</p>
-
-<ul>
-<li><code>sudo /etc/init.d/apache2 restart</code><br><br></li>
-</ul>
-
-
-<p>⑥ 运行go-pear.php</p>
-
-<p>找到<code>go-pear.php</code></p>
-
-<ul>
-<li><code>php go-pear.php</code><br><br></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -305,47 +205,56 @@ Apache/2.2.14 (Ubuntu) Server at localhost Port 80
 <span class='line-number'>38</span>
 <span class='line-number'>39</span>
 <span class='line-number'>40</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>1. Installation base ($prefix)                   : /usr/local/php5
-</span><span class='line'>2. Temporary directory for processing            : /tmp/pear/install
-</span><span class='line'>3. Temporary directory for downloads             : /tmp/pear/install
-</span><span class='line'>4. Binaries directory                            : /usr/local/php5/bin
-</span><span class='line'>5. PHP code directory ($php_dir)                 : /usr/local/php5/lib/php
-</span><span class='line'>6. Documentation directory                       : /usr/local/php5/docs
-</span><span class='line'>7. Data directory                                : /usr/local/php5/data
-</span><span class='line'>8. User-modifiable configuration files directory : /usr/local/php5/cfg
-</span><span class='line'>9. Public Web Files directory                    : /usr/local/php5/www
-</span><span class='line'>10. Tests directory                               : /usr/local/php5/tests
-</span><span class='line'>11. Name of configuration file                    : /usr/local/php5/etc/pear.conf
-</span><span class='line'>1-11, ‘all’ or Enter to continue:
-</span><span class='line'>Beginning install…
-</span><span class='line'>Configuration written to /usr/local/php5/etc/pear.conf…
-</span><span class='line'>Initialized registry…
-</span><span class='line'>Preparing to install…
-</span><span class='line'>installing phar://go-pear.phar/PEAR/go-pear-tarballs/Archive_Tar-1.3.7.tar…
-</span><span class='line'>installing phar://go-pear.phar/PEAR/go-pear-tarballs/Console_Getopt-1.3.0.tar…
-</span><span class='line'>installing phar://go-pear.phar/PEAR/go-pear-tarballs/PEAR-1.9.4.tar…
-</span><span class='line'>installing phar://go-pear.phar/PEAR/go-pear-tarballs/Structures_Graph-1.0.4.tar…
-</span><span class='line'>installing phar://go-pear.phar/PEAR/go-pear-tarballs/XML_Util-1.2.1.tar…
-</span><span class='line'>install ok: channel://pear.php.net/Archive_Tar-1.3.7
-</span><span class='line'>install ok: channel://pear.php.net/Console_Getopt-1.3.0
-</span><span class='line'>install ok: channel://pear.php.net/Structures_Graph-1.0.4
-</span><span class='line'>install ok: channel://pear.php.net/XML_Util-1.2.1
-</span><span class='line'>install ok: channel://pear.php.net/PEAR-1.9.4
-</span><span class='line'>PEAR: Optional feature webinstaller available (PEAR’s web-based installer)
-</span><span class='line'>PEAR: Optional feature gtkinstaller available (PEAR’s PHP-GTK-based installer)
-</span><span class='line'>PEAR: Optional feature gtk2installer available (PEAR’s PHP-GTK2-based installer)
-</span><span class='line'>PEAR: To install optional features use “pear install pear/PEAR#featurename”
-</span><span class='line'>** WARNING! Old version found at /usr/local/php5/bin, please remove it or be sure to use the new /usr/local/php5/bin/pear command
-</span><span class='line'>The ‘pear’ command is now at your service at /usr/local/php5/bin/pear
-</span><span class='line'>** The ‘pear’ command is not currently in your PATH, so you need to
-</span><span class='line'>** use ‘/usr/local/php5/bin/pear’ until you have added
-</span><span class='line'>** ‘/usr/local/php5/bin’ to your PATH environment variable.
-</span><span class='line'>Run it without parameters to see the available actions, try ‘pear list’
-</span><span class='line'>to see what packages are installed, or ‘pear help’ for help.
-</span><span class='line'>For more information about PEAR, see:
-</span><span class='line'>http://pear.php.net/faq.php
-</span><span class='line'>http://pear.php.net/manual/
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">html</span><span class="o">,</span> <span class="nt">body</span><span class="o">,</span> <span class="nt">div</span><span class="o">,</span> <span class="nt">span</span><span class="o">,</span> <span class="nt">applet</span><span class="o">,</span> <span class="nt">object</span><span class="o">,</span> <span class="nt">iframe</span><span class="o">,</span>
+</span><span class='line'><span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span><span class="o">,</span> <span class="nt">p</span><span class="o">,</span> <span class="nt">blockquote</span><span class="o">,</span> <span class="nt">pre</span><span class="o">,</span>
+</span><span class='line'><span class="nt">a</span><span class="o">,</span> <span class="nt">abbr</span><span class="o">,</span> <span class="nt">acronym</span><span class="o">,</span> <span class="nt">address</span><span class="o">,</span> <span class="nt">big</span><span class="o">,</span> <span class="nt">cite</span><span class="o">,</span> <span class="nt">code</span><span class="o">,</span>
+</span><span class='line'><span class="nt">del</span><span class="o">,</span> <span class="nt">dfn</span><span class="o">,</span> <span class="nt">em</span><span class="o">,</span> <span class="nt">img</span><span class="o">,</span> <span class="nt">ins</span><span class="o">,</span> <span class="nt">kbd</span><span class="o">,</span> <span class="nt">q</span><span class="o">,</span> <span class="nt">s</span><span class="o">,</span> <span class="nt">samp</span><span class="o">,</span>
+</span><span class='line'><span class="nt">small</span><span class="o">,</span> <span class="nt">strike</span><span class="o">,</span> <span class="nt">strong</span><span class="o">,</span> <span class="nt">sub</span><span class="o">,</span> <span class="nt">sup</span><span class="o">,</span> <span class="nt">tt</span><span class="o">,</span> <span class="nt">var</span><span class="o">,</span>
+</span><span class='line'><span class="nt">b</span><span class="o">,</span> <span class="nt">u</span><span class="o">,</span> <span class="nt">i</span><span class="o">,</span> <span class="nt">center</span><span class="o">,</span>
+</span><span class='line'><span class="nt">dl</span><span class="o">,</span> <span class="nt">dt</span><span class="o">,</span> <span class="nt">dd</span><span class="o">,</span> <span class="nt">ol</span><span class="o">,</span> <span class="nt">ul</span><span class="o">,</span> <span class="nt">li</span><span class="o">,</span>
+</span><span class='line'><span class="nt">fieldset</span><span class="o">,</span> <span class="nt">form</span><span class="o">,</span> <span class="nt">label</span><span class="o">,</span> <span class="nt">legend</span><span class="o">,</span>
+</span><span class='line'><span class="nt">table</span><span class="o">,</span> <span class="nt">caption</span><span class="o">,</span> <span class="nt">tbody</span><span class="o">,</span> <span class="nt">tfoot</span><span class="o">,</span> <span class="nt">thead</span><span class="o">,</span> <span class="nt">tr</span><span class="o">,</span> <span class="nt">th</span><span class="o">,</span> <span class="nt">td</span><span class="o">,</span>
+</span><span class='line'><span class="nt">article</span><span class="o">,</span> <span class="nt">aside</span><span class="o">,</span> <span class="nt">canvas</span><span class="o">,</span> <span class="nt">details</span><span class="o">,</span> <span class="nt">embed</span><span class="o">,</span>
+</span><span class='line'><span class="nt">figure</span><span class="o">,</span> <span class="nt">figcaption</span><span class="o">,</span> <span class="nt">footer</span><span class="o">,</span> <span class="nt">header</span><span class="o">,</span> <span class="nt">hgroup</span><span class="o">,</span>
+</span><span class='line'><span class="nt">menu</span><span class="o">,</span> <span class="nt">nav</span><span class="o">,</span> <span class="nt">output</span><span class="o">,</span> <span class="nt">ruby</span><span class="o">,</span> <span class="nt">section</span><span class="o">,</span> <span class="nt">summary</span><span class="o">,</span>
+</span><span class='line'><span class="nt">time</span><span class="o">,</span> <span class="nt">mark</span><span class="o">,</span> <span class="nt">audio</span><span class="o">,</span> <span class="nt">video</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">border</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">font-size</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">font</span><span class="o">:</span> <span class="k">inherit</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">vertical-align</span><span class="o">:</span> <span class="k">baseline</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c">/* HTML5 display-role reset for older browsers */</span>
+</span><span class='line'><span class="nt">article</span><span class="o">,</span> <span class="nt">aside</span><span class="o">,</span> <span class="nt">details</span><span class="o">,</span> <span class="nt">figcaption</span><span class="o">,</span> <span class="nt">figure</span><span class="o">,</span>
+</span><span class='line'><span class="nt">footer</span><span class="o">,</span> <span class="nt">header</span><span class="o">,</span> <span class="nt">hgroup</span><span class="o">,</span> <span class="nt">menu</span><span class="o">,</span> <span class="nt">nav</span><span class="o">,</span> <span class="nt">section</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nt">body</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nt">ol</span><span class="o">,</span> <span class="nt">ul</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">list-style</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nt">blockquote</span><span class="o">,</span> <span class="nt">q</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">quotes</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nt">blockquote</span><span class="nd">:before</span><span class="o">,</span> <span class="nt">blockquote</span><span class="nd">:after</span><span class="o">,</span>
+</span><span class='line'><span class="nt">q</span><span class="nd">:before</span><span class="o">,</span> <span class="nt">q</span><span class="nd">:after</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">content</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">content</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nt">table</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border-collapse</span><span class="o">:</span> <span class="k">collapse</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">border-spacing</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
+
+
+<br>
 
 
 
@@ -372,12 +281,12 @@ Apache/2.2.14 (Ubuntu) Server at localhost Port 80
   
 
 
-<time datetime="2013-04-13T14:42:00+08:00" pubdate data-updated="true">Apr 13<span>th</span>, 2013</time>
+<time datetime="2013-07-18T16:03:00+08:00" pubdate data-updated="true">Jul 18<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/php/'>php</a>
+    <a class='category' href='/blog/categories/css3/'>css3</a>
   
 </span>
 
@@ -428,15 +337,11 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
 	<ul class="pager">
 	
     <li class="previous"><a class="basic-alignment left"
-        href="/blog/2013/04/11/cross-domain-request/" title="Previous Post:
-        cross-domain request">&laquo; cross-domain request</a></li>
+        href="/blog/2013/05/13/npm/" title="Previous Post:
+        npm常用命令">&laquo; npm常用命令</a></li>
     
 
       <li><a href="/blog/archives">所有文章</a></li>
-      
-      <li class="next"><a class="basic-alignment right" href="/blog/2013/04/21/gvim-order/"
-        title="Next Post: gvim命令大全">gvim命令大全
-        &raquo;</a></li>
       -
 	</ul>
 
