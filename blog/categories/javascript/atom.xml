@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-08-12T15:23:31+08:00</updated>
+  <updated>2013-08-12T15:35:36+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -70,10 +70,10 @@ JS框架的作用一开始就是为了兼容不同浏览器下DOM的操作，在
 <blockquote><p>Y.one('#demo').set('background','green') 、 Y.one('#demo').get('color')</p></blockquote></li>
 <li>改变元素里面的内容
 
-<blockquote><p>Y.one('#demo').setHTML('<p>这是个测试</p>') 、 Y.one('#demo').getHTML()</p></blockquote></li>
+<blockquote><p>Y.one('#demo').setHTML('这是个测试') 、 Y.one('#demo').getHTML()</p></blockquote></li>
 <li>创建新元素
 
-<blockquote><p>children = Y.Node.create('<li>子节点</li>') 、 Y.one('#parent').append(children)</p></blockquote></li>
+<blockquote><p>children = Y.Node.create('子节点') 、 Y.one('#parent').append(children)</p></blockquote></li>
 </ol>
 </blockquote>
 
