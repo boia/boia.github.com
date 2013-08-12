@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-07-18T16:17:30+08:00</updated>
+  <updated>2013-08-12T15:23:31+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -12,6 +12,82 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[yui3学习笔记<一>]]></title>
+    <link href="http://boia.github.com/blog/2013/08/12/yui3-1/"/>
+    <updated>2013-08-12T14:13:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/08/12/yui3-1</id>
+    <content type="html"><![CDATA[<h2>学习YUI3</h2>
+
+<br>
+
+
+<p>工作了将近一个月了，也没抽出时间写下博客，这几天事情比较多，刚好碰到舅舅住院，然后一天到晚不是在去医院的路上就是在医院，要不在去宿舍的路上就是在宿舍睡觉，能看书的时间只能在公交上了，周末在公交上读了一本东野圭吾的加贺系列的<em>《谁杀了她》</em>。废话不多说了，说正事儿。因为公司里的框架是<strong>liferay</strong>的，所以前端需要学习AUI，而AUI基本都是从YUI3中扩展出来的，所以对YUI3熟练的话，AUI也就不再话下了。</p>
+
+<!-- more -->
+
+
+<br>
+
+
+<h2>概念</h2>
+
+<br>
+
+
+<p>YUI3是一种模块化编程的思想，不同于jQuery的全部加载思想，YUI3可以自己决定加载什么模块，你想使用拖拽功能，你只要把<em>&#8216;dd-drag&#8217;</em>这个模块包含进去，你就能使用拖拽了，这样做的好处显而易见可以加载更少的代码，你只要把要实现效果的模块加进去，你就能使用了。</p>
+
+<br>
+
+
+<h2>使用YUI3</h2>
+
+<br>
+
+
+<p>一开始就说Global Object的话可能会摸不到头绪，跟jQuery一样，YUI3也有十分强大的选择器功能，对于熟悉jQuery的孩子们对$(&#8216;div&#8217;)、$(&#8216;.demo&#8217;)、$(&#8216;#demo&#8217;)在熟悉不过了，对于YUI也有类似的方法Y.one(&#8216;div&#8217;)、Y.all(&#8216;.demo&#8217;)和Y.one(&#8216;#demo&#8217;)，这里很明显，one方法是取出第一个元素，而all是取出所有class是demo的元素，大家可能都注意到了Y，其实和jQuery的$一样，是YUI里面的一个全局变量，如果放到了闭包里面，那么他就是局部变量，使用jQuery的时候我们总要把代码放在jQuery.ready()中，和它类似的，YUI的代码都放在了YUI().use()中。<br><br></p>
+
+<br>
+
+
+<h2>玩转DOM</h2>
+
+<br>
+
+
+<p>[Node]<br>
+JS框架的作用一开始就是为了兼容不同浏览器下DOM的操作，在YUI3中，Node对象封装了原生的属性和方法并且兼容了不同浏览器的差异还扩展了一些方法和属性，诸如get、set、remove和chilren等，对于常用的DOM操作更简单。<br></p>
+
+<blockquote><h3>常用操作</h3>
+
+<ol>
+<li>操作CSS类
+
+<blockquote><p>Y.one(&#8216;#demo&#8217;).addClass(&#8216;style&#8217;) 、 Y.one(&#8216;#demo&#8217;).removeClass(&#8216;style&#8217;)</p></blockquote></li>
+<li>获取和设置DOM属性
+
+<blockquote><p>Y.one(&#8216;#demo&#8217;).set(&#8216;background&#8217;,&#8217;green&#8217;) 、 Y.one(&#8216;#demo&#8217;).get(&#8216;color&#8217;)</p></blockquote></li>
+<li>改变元素里面的内容
+
+<blockquote><p>Y.one(&#8216;#demo&#8217;).setHTML(&#8217;<p>这是个测试</p>&#8217;) 、 Y.one(&#8216;#demo&#8217;).getHTML()</p></blockquote></li>
+<li>创建新元素
+
+<blockquote><p>children = Y.Node.create(&#8217;<li>子节点</li>&#8217;) 、 Y.one(&#8216;#parent&#8217;).append(children)</p></blockquote></li>
+</ol>
+</blockquote>
+
+<br><br>
+
+
+<h2>另外操作</h2>
+
+<br>
+
+
+<p>其他操作还有诸如Y.one(&#8216;demo&#8217;).setStyle()和Y.one(&#8216;demo&#8217;).getStyle()等，对于这些API可以参考<a href="" title="http://yuilibrary.com/yui/docs/api/classes/Node.html">YUI Node</a>。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[css-reset-style]]></title>
@@ -2408,28 +2484,6 @@ Apache/2.2.14 (Ubuntu) Server at localhost Port 80
 
 
 <p><a href="http://boia.github.com/game/sudu/sudu.html">开始游戏</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[蘑菇和小熊的游戏]]></title>
-    <link href="http://boia.github.com/blog/2013/03/07/mushroom_bear/"/>
-    <updated>2013-03-07T14:56:00+08:00</updated>
-    <id>http://boia.github.com/blog/2013/03/07/mushroom_bear</id>
-    <content type="html"><![CDATA[<p>把一个游戏移植过来，游戏是从一个<a href="http://jacebook.co.uk/blog/2010/09/11/html5-writing-a-game/">老外</a>那里看见的，他写了关于这个游戏的教程,我发现他的代码并不是特别好，也比较地乱，然后我就想着自己做一个，素材就直接从他那里盗过来了，终归我对设计并不是特别感兴趣,还有很多bug需要修改，不要吐槽。</p>
-
-<!-- more -->
-
-
-<br><br><br>
-
-
-<p><img src="http://boia.github.com/images/post/mush_bear.png" title="mushroom_bear" ></p>
-
-<br>
-
-
-<p><a href="http://boia.github.com/game/mush-bear/game.html">开始游戏</a></p>
 ]]></content>
   </entry>
   

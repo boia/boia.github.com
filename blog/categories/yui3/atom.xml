@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: yui3 | boia's博客]]></title>
+  <link href="http://boia.github.com/blog/categories/yui3/atom.xml" rel="self"/>
+  <link href="http://boia.github.com/"/>
+  <updated>2013-08-12T15:23:31+08:00</updated>
+  <id>http://boia.github.com/</id>
+  <author>
+    <name><![CDATA[boia]]></name>
+    <email><![CDATA[zhengwang2314@qq.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[yui3学习笔记<一>]]></title>
+    <link href="http://boia.github.com/blog/2013/08/12/yui3-1/"/>
+    <updated>2013-08-12T14:13:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/08/12/yui3-1</id>
+    <content type="html"><![CDATA[<h2>学习YUI3</h2>
+
+<br>
+
+
+<p>工作了将近一个月了，也没抽出时间写下博客，这几天事情比较多，刚好碰到舅舅住院，然后一天到晚不是在去医院的路上就是在医院，要不在去宿舍的路上就是在宿舍睡觉，能看书的时间只能在公交上了，周末在公交上读了一本东野圭吾的加贺系列的<em>《谁杀了她》</em>。废话不多说了，说正事儿。因为公司里的框架是<strong>liferay</strong>的，所以前端需要学习AUI，而AUI基本都是从YUI3中扩展出来的，所以对YUI3熟练的话，AUI也就不再话下了。</p>
+
+<!-- more -->
+
+
+<br>
+
+
+<h2>概念</h2>
+
+<br>
+
+
+<p>YUI3是一种模块化编程的思想，不同于jQuery的全部加载思想，YUI3可以自己决定加载什么模块，你想使用拖拽功能，你只要把<em>'dd-drag'</em>这个模块包含进去，你就能使用拖拽了，这样做的好处显而易见可以加载更少的代码，你只要把要实现效果的模块加进去，你就能使用了。</p>
+
+<br>
+
+
+<h2>使用YUI3</h2>
+
+<br>
+
+
+<p>一开始就说Global Object的话可能会摸不到头绪，跟jQuery一样，YUI3也有十分强大的选择器功能，对于熟悉jQuery的孩子们对$('div')、$('.demo')、$('#demo')在熟悉不过了，对于YUI也有类似的方法Y.one('div')、Y.all('.demo')和Y.one('#demo')，这里很明显，one方法是取出第一个元素，而all是取出所有class是demo的元素，大家可能都注意到了Y，其实和jQuery的$一样，是YUI里面的一个全局变量，如果放到了闭包里面，那么他就是局部变量，使用jQuery的时候我们总要把代码放在jQuery.ready()中，和它类似的，YUI的代码都放在了YUI().use()中。<br><br></p>
+
+<br>
+
+
+<h2>玩转DOM</h2>
+
+<br>
+
+
+<p>[Node]<br>
+JS框架的作用一开始就是为了兼容不同浏览器下DOM的操作，在YUI3中，Node对象封装了原生的属性和方法并且兼容了不同浏览器的差异还扩展了一些方法和属性，诸如get、set、remove和chilren等，对于常用的DOM操作更简单。<br></p>
+
+<blockquote><h3>常用操作</h3>
+
+<ol>
+<li>操作CSS类
+
+<blockquote><p>Y.one('#demo').addClass('style') 、 Y.one('#demo').removeClass('style')</p></blockquote></li>
+<li>获取和设置DOM属性
+
+<blockquote><p>Y.one('#demo').set('background','green') 、 Y.one('#demo').get('color')</p></blockquote></li>
+<li>改变元素里面的内容
+
+<blockquote><p>Y.one('#demo').setHTML('<p>这是个测试</p>') 、 Y.one('#demo').getHTML()</p></blockquote></li>
+<li>创建新元素
+
+<blockquote><p>children = Y.Node.create('<li>子节点</li>') 、 Y.one('#parent').append(children)</p></blockquote></li>
+</ol>
+</blockquote>
+
+<br><br>
+
+
+<h2>另外操作</h2>
+
+<br>
+
+
+<p>其他操作还有诸如Y.one('demo').setStyle()和Y.one('demo').getStyle()等，对于这些API可以参考<a href="" title="http://yuilibrary.com/yui/docs/api/classes/Node.html">YUI Node</a>。</p>
+
+<p>
+[Ruby]:			http://www.ruby-lang.org						"Ruby"
+[git]:			http://git-scm.com/								"Git"
+[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
+[Octopress]:	http://octopress.org							"Octopress"
+[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
+[Google]:		http://www.google.com							"Google"
+[Yahoo]:		http://www.yahoo.com							"Yahoo"
+[Twitter]:		http://twitter.com/								"Twitter"
+
+[Firebug]:		http://getfirebug.com/							"Firebug"
+
+[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
+[维基百科]:		http://zh.wikipedia.org							"维基中文"
+
+[煎蛋]:			http://jandan.net								"煎蛋"
+[小众软件]:		http://appinn.com								"小众软件"
+[小众]:			http://appinn.com								"小众软件"
+[新浪微博]:		http://weibo.com								"新浪微博"
+[微博]:			http://weibo.com								"新浪微博"
+[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
+[知乎]:			http://www.zhihu.com							"知乎"
+
+[CSSer]:		http://www.csser.com/							"CSSer"
+
+[Node.JS]:		http://nodejs.org								"Node.JS"
+[NPM]:			http://search.npmjs.org/						"NPM Registry"
+[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
+[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
+[Coffee]:		http://coffeescript.org/						"CoffeeScript"
+[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
+[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
+[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
+
+[GitHub]:		https://github.com								"GitHub"
+
+</p>
+]]></content>
+  </entry>
+  
+</feed>
