@@ -4,7 +4,7 @@
   <title><![CDATA[Category: yui3 | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/yui3/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-08-13T16:37:05+08:00</updated>
+  <updated>2013-08-13T23:39:05+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -12,6 +12,113 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[aui写一个图片轮播控件]]></title>
+    <link href="http://boia.github.com/blog/2013/08/13/slide/"/>
+    <updated>2013-08-13T15:58:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/08/13/slide</id>
+    <content type="html"><![CDATA[<h2>查看效果</h2>
+
+<br><br>
+
+
+<p>{% img /images/post/slide.png slide %}</p>
+
+<br>
+
+
+<p><a href="{{%20root_url%20}}/aui-demo/slide.html">Demo</a></p>
+
+<!-- more -->
+
+
+<h2>why？</h2>
+
+<br>
+
+
+<p>如果用原生写这种图片轮播效果的话，可以思路可以更明了一点，只要对原生熟悉，花一上午应该是可以搞定的，最近本来就在熟悉YUI3，所以就试着做了一个轮播，以后逐渐完善的话，可以做一个插件。</p>
+
+<br>
+
+
+<h2>HOW?</h2>
+
+<br>
+
+
+<p>写代码前必须去构想，对于CSS部分，图片轮播不像渐隐渐现那么简单用<code>display:none</code>和<code>display:block</code>就可以搞定了，图片轮播需要在所有图片和滑动数字外面加一层div，然后给图片设置一个宽度和高度，这个高度最好和每张图片的宽高度是相同的（这里假设每张图片的尺寸相同）。将div设置成相对定位，<code>position:relative</code>，然后设置overflow为hidden，这样可以使在外面的图片隐藏。然后可以把所有图片放在ul标签或者div里，这样是为了操作整个div，而不用操作每张图片的位置，给这个div的宽度设置为所有图片的宽度总和，这样做是为了可以把所有图片都放在同一行上，然后把图片设置浮动，<code>float:left</code>。</p>
+
+<br>
+
+
+<p>```CSS</p>
+
+<pre><code>.scrollBar{width: 380px;height: 206px;position: relative;overflow: hidden;margin: 100px auto;}
+.scrollPic{width: 2280px;position: absolute;left: 0;}
+.scrollPic img{float: left;opacity: 0.7;width: 380px;height: 206px;}
+.scrollNum{position: absolute;right: 20px;color: white;bottom: 5px;}
+.scrollNum .page{cursor: pointer;margin-right: 3px;}
+#scrollBar .simple{font-size: 0.6em;color: white;}
+#scrollBar .changeStyle{font-size: 2.0em;color: yellow;}
+</code></pre>
+
+<p>```</p>
+
+<br>
+
+
+<p>对于JS部分，首先在AUI中必须引入anim模块，动画部分主要是将几张图片看成一个整体就行移动，所以传入到A.Anim里的对象分配的node就是所有图片外面一层固定的div，在这个轮播中，我们首先需要有一个自动轮播的功能，所以需要写一个auto函数，然后用setTimeout去调用它，而在auto函数中，首先设置一个index变量，这个变量对应的是显现图片的索引，索引增加，显现的图片就会变化，给动画对象的to和from对象设置不同的值就能造成一个自动轮播的假象。<br>
+```javascript</p>
+
+<pre><code>var startPos = -1*index*boxLength;
+sliderBar.set('from', {
+    left: startPos
+});
+sliderBar.set('to',{
+    left: startPos-boxLength
+}); 
+if(index === 4){
+    index = 0;
+}else{
+    index++;
+}
+sliderBar.run();
+select(page,index);
+autoSlide = setTimeout(auto,1000);
+</code></pre>
+
+<p>```</p>
+
+<br>
+
+
+<p>而手动点击数字改变图片显现的原理和自动轮播其实是一样的
+```javascript</p>
+
+<pre><code>var target = e.target;
+clearTimeout(autoSlide);
+index = parseInt(target.getAttribute('index'));         
+sliderBar.set('from', sliderBar.get('to'));
+
+sliderBar.set('to',{
+    left: -1*boxLength*(index)
+});
+
+sliderBar.run();
+select(page,index);
+sliderBar.on('end',function(){      
+    this.destroy('end');        //这里很重要，否则每次run完都会执行这个事件
+    setTimeout(auto,1000);
+}); 
+</code></pre>
+
+<p>```</p>
+
+<p>{% include links %}</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[yui3学习笔记<一>]]></title>
@@ -87,43 +194,7 @@ JS框架的作用一开始就是为了兼容不同浏览器下DOM的操作，在
 
 <p>其他操作还有诸如Y.one('demo').setStyle()和Y.one('demo').getStyle()等，对于这些API可以参考<a href="" title="http://yuilibrary.com/yui/docs/api/classes/Node.html">YUI Node</a>。</p>
 
-<p>
-[Ruby]:			http://www.ruby-lang.org						"Ruby"
-[git]:			http://git-scm.com/								"Git"
-[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
-[Octopress]:	http://octopress.org							"Octopress"
-[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
-[Google]:		http://www.google.com							"Google"
-[Yahoo]:		http://www.yahoo.com							"Yahoo"
-[Twitter]:		http://twitter.com/								"Twitter"
-
-[Firebug]:		http://getfirebug.com/							"Firebug"
-
-[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
-[维基百科]:		http://zh.wikipedia.org							"维基中文"
-
-[煎蛋]:			http://jandan.net								"煎蛋"
-[小众软件]:		http://appinn.com								"小众软件"
-[小众]:			http://appinn.com								"小众软件"
-[新浪微博]:		http://weibo.com								"新浪微博"
-[微博]:			http://weibo.com								"新浪微博"
-[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
-[知乎]:			http://www.zhihu.com							"知乎"
-
-[CSSer]:		http://www.csser.com/							"CSSer"
-
-[Node.JS]:		http://nodejs.org								"Node.JS"
-[NPM]:			http://search.npmjs.org/						"NPM Registry"
-[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
-[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
-[Coffee]:		http://coffeescript.org/						"CoffeeScript"
-[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
-[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
-[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
-
-[GitHub]:		https://github.com								"GitHub"
-
-</p>
+<p>{% include links %}</p>
 ]]></content>
   </entry>
   
