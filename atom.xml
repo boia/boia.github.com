@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-08-12T15:35:36+08:00</updated>
+  <updated>2013-08-13T16:14:10+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[yui3]]></title>
+    <link href="http://boia.github.com/blog/2013/08/13/yui3/"/>
+    <updated>2013-08-13T15:58:00+08:00</updated>
+    <id>http://boia.github.com/blog/2013/08/13/yui3</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[yui3学习笔记<一>]]></title>
@@ -2458,32 +2467,6 @@ Apache/2.2.14 (Ubuntu) Server at localhost Port 80
 
 
 <p><img class="left" src="http://boia.github.com/images/post/arduino3.png" title="Arduino Yeelink" alt="Arduino Yeelink"></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[数独(无canvas)]]></title>
-    <link href="http://boia.github.com/blog/2013/03/07/sudu/"/>
-    <updated>2013-03-07T15:38:00+08:00</updated>
-    <id>http://boia.github.com/blog/2013/03/07/sudu</id>
-    <content type="html"><![CDATA[<h2>简介</h2>
-
-<p>闲来无事玩数独，就想到了用javascript来写一个数独游戏，觉得用DOM写比canvas要简单的多，只是对DOM的API特别熟悉，不过API并不是太多，看了一下就开始写了，在设计和美工方面并没有用太多时间，所以美工也很糙，主要suduku的算法确实卡了好长一段时间，不过也写出了平庸的算法，没辙啊，对算法不感冒是很悲哀的，一直没明白，为什么选关以后数据就会变乱了。</p>
-
-<!-- more -->
-
-
-
-
-<br><br><br>
-
-
-<p><img src="http://boia.github.com/images/post/sudu.png" title="sudu" ></p>
-
-<br>
-
-
-<p><a href="http://boia.github.com/game/sudu/sudu.html">开始游戏</a></p>
 ]]></content>
   </entry>
   
