@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-08-13T16:37:05+08:00</updated>
+  <updated>2013-08-14T09:10:50+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -14,11 +14,124 @@
 
   
   <entry>
-    <title type="html"><![CDATA[yui3]]></title>
-    <link href="http://boia.github.com/blog/2013/08/13/yui3/"/>
+    <title type="html"><![CDATA[aui写一个图片轮播控件]]></title>
+    <link href="http://boia.github.com/blog/2013/08/13/slide/"/>
     <updated>2013-08-13T15:58:00+08:00</updated>
-    <id>http://boia.github.com/blog/2013/08/13/yui3</id>
-    <content type="html"><![CDATA[
+    <id>http://boia.github.com/blog/2013/08/13/slide</id>
+    <content type="html"><![CDATA[<h2>查看效果</h2>
+
+<br><br>
+
+
+<p><img src="http://boia.github.com/images/post/slide.png" title="slide" ></p>
+
+<br>
+
+
+<p><a href="http://boia.github.com/aui-demo/slide.html">Demo</a></p>
+
+<!-- more -->
+
+
+<h2>why？</h2>
+
+<br>
+
+
+<p>如果用原生写这种图片轮播效果的话，可以思路可以更明了一点，只要对原生熟悉，花一上午应该是可以搞定的，最近本来就在熟悉YUI3，所以就试着做了一个轮播，以后逐渐完善的话，可以做一个插件。</p>
+
+<br>
+
+
+<h2>HOW?</h2>
+
+<br>
+
+
+<p>写代码前必须去构想，对于CSS部分，图片轮播不像渐隐渐现那么简单用<code>display:none</code>和<code>display:block</code>就可以搞定了，图片轮播需要在所有图片和滑动数字外面加一层div，然后给图片设置一个宽度和高度，这个高度最好和每张图片的宽高度是相同的（这里假设每张图片的尺寸相同）。将div设置成相对定位，<code>position:relative</code>，然后设置overflow为hidden，这样可以使在外面的图片隐藏。然后可以把所有图片放在ul标签或者div里，这样是为了操作整个div，而不用操作每张图片的位置，给这个div的宽度设置为所有图片的宽度总和，这样做是为了可以把所有图片都放在同一行上，然后把图片设置浮动，<code>float:left</code>。</p>
+
+<br>
+
+
+
+
+<br>
+
+
+<p>对于JS部分，首先在AUI中必须引入anim模块，动画部分主要是将几张图片看成一个整体就行移动，所以传入到A.Anim里的对象分配的node就是所有图片外面一层固定的div，在这个轮播中，我们首先需要有一个自动轮播的功能，所以需要写一个auto函数，然后用setTimeout去调用它，而在auto函数中，首先设置一个index变量，这个变量对应的是显现图片的索引，索引增加，显现的图片就会变化，给动画对象的to和from对象设置不同的值就能造成一个自动轮播的假象。<br></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">startPos</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="nx">index</span><span class="o">*</span><span class="nx">boxLength</span><span class="p">;</span>
+</span><span class='line'><span class="nx">sliderBar</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;from&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">left</span><span class="o">:</span> <span class="nx">startPos</span>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'><span class="nx">sliderBar</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;to&#39;</span><span class="p">,{</span>
+</span><span class='line'>  <span class="nx">left</span><span class="o">:</span> <span class="nx">startPos</span><span class="o">-</span><span class="nx">boxLength</span>
+</span><span class='line'><span class="p">});</span>    
+</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="nx">index</span> <span class="o">===</span> <span class="mi">4</span><span class="p">){</span>
+</span><span class='line'>  <span class="nx">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span><span class='line'>  <span class="nx">index</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nx">sliderBar</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
+</span><span class='line'><span class="nx">select</span><span class="p">(</span><span class="nx">page</span><span class="p">,</span><span class="nx">index</span><span class="p">);</span>
+</span><span class='line'><span class="nx">autoSlide</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">auto</span><span class="p">,</span><span class="mi">1000</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<br>
+
+
+<p>而手动点击数字改变图片显现的原理和自动轮播其实是一样的</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span>
+</span><span class='line'><span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">autoSlide</span><span class="p">);</span>
+</span><span class='line'><span class="nx">index</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">));</span>            
+</span><span class='line'><span class="nx">sliderBar</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;from&#39;</span><span class="p">,</span> <span class="nx">sliderBar</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;to&#39;</span><span class="p">));</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">sliderBar</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;to&#39;</span><span class="p">,{</span>
+</span><span class='line'>  <span class="nx">left</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="nx">boxLength</span><span class="o">*</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">sliderBar</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
+</span><span class='line'><span class="nx">select</span><span class="p">(</span><span class="nx">page</span><span class="p">,</span><span class="nx">index</span><span class="p">);</span>
+</span><span class='line'><span class="nx">sliderBar</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>        
+</span><span class='line'>  <span class="k">this</span><span class="p">.</span><span class="nx">destroy</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">);</span>        <span class="c1">//这里很重要，否则每次run完都会执行这个事件</span>
+</span><span class='line'>  <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">auto</span><span class="p">,</span><span class="mi">1000</span><span class="p">);</span>
+</span><span class='line'><span class="p">});</span>    
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 ]]></content>
   </entry>
   
