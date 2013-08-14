@@ -4,7 +4,7 @@
   <title><![CDATA[Category: yui3 | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/yui3/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-08-14T09:10:50+08:00</updated>
+  <updated>2013-08-14T09:12:43+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -53,7 +53,18 @@
 <br>
 
 
+<p>```css</p>
 
+<pre><code>.scrollBar{width: 380px;height: 206px;position: relative;overflow: hidden;margin: 100px auto;}
+.scrollPic{width: 2280px;position: absolute;left: 0;}
+.scrollPic img{float: left;opacity: 0.7;width: 380px;height: 206px;}
+.scrollNum{position: absolute;right: 20px;color: white;bottom: 5px;}
+.scrollNum .page{cursor: pointer;margin-right: 3px;}
+.simple{font-size: 0.6em;color: white;}
+.changeStyle{font-size: 2.0em;color: yellow;}
+</code></pre>
+
+<p>```</p>
 
 <br>
 

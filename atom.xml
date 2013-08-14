@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-08-14T09:10:50+08:00</updated>
+  <updated>2013-08-14T09:12:43+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -53,6 +53,21 @@
 <br>
 
 
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.scrollBar</span><span class="p">{</span><span class="k">width</span><span class="o">:</span> <span class="m">380px</span><span class="p">;</span><span class="k">height</span><span class="o">:</span> <span class="m">206px</span><span class="p">;</span><span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span><span class="k">overflow</span><span class="o">:</span> <span class="k">hidden</span><span class="p">;</span><span class="k">margin</span><span class="o">:</span> <span class="m">100px</span> <span class="k">auto</span><span class="p">;}</span>
+</span><span class='line'><span class="nc">.scrollPic</span><span class="p">{</span><span class="k">width</span><span class="o">:</span> <span class="m">2280px</span><span class="p">;</span><span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span><span class="k">left</span><span class="o">:</span> <span class="m">0</span><span class="p">;}</span>
+</span><span class='line'><span class="nc">.scrollPic</span> <span class="nt">img</span><span class="p">{</span><span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span><span class="k">opacity</span><span class="o">:</span> <span class="m">0</span><span class="o">.</span><span class="m">7</span><span class="p">;</span><span class="k">width</span><span class="o">:</span> <span class="m">380px</span><span class="p">;</span><span class="k">height</span><span class="o">:</span> <span class="m">206px</span><span class="p">;}</span>
+</span><span class='line'><span class="nc">.scrollNum</span><span class="p">{</span><span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span><span class="k">right</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span><span class="k">color</span><span class="o">:</span> <span class="nb">white</span><span class="p">;</span><span class="k">bottom</span><span class="o">:</span> <span class="m">5px</span><span class="p">;}</span>
+</span><span class='line'><span class="nc">.scrollNum</span> <span class="nc">.page</span><span class="p">{</span><span class="k">cursor</span><span class="o">:</span> <span class="k">pointer</span><span class="p">;</span><span class="k">margin-right</span><span class="o">:</span> <span class="m">3px</span><span class="p">;}</span>
+</span><span class='line'><span class="nc">.simple</span><span class="p">{</span><span class="k">font-size</span><span class="o">:</span> <span class="m">0.6em</span><span class="p">;</span><span class="k">color</span><span class="o">:</span> <span class="nb">white</span><span class="p">;}</span>
+</span><span class='line'><span class="nc">.changeStyle</span><span class="p">{</span><span class="k">font-size</span><span class="o">:</span> <span class="m">2.0em</span><span class="p">;</span><span class="k">color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <br>
