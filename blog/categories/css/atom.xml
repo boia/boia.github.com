@@ -4,7 +4,7 @@
   <title><![CDATA[Category: css | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-10-14T12:50:40+08:00</updated>
+  <updated>2013-10-14T12:53:06+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -25,7 +25,7 @@
 </ol>
 
 
-<p>根据 <a href="http://meyerweb.com/eric/tools/css/reset" title="Eric Meyer">"Eric Meyer’s reset codes"</a> 提供的css reset方法，最好别用通配符把所有的元素的margin和padding都设为0</p>
+<p>根据 <a href="http://meyerweb.com/eric/tools/css/reset" title="Eric Meyer">Eric-Meyer's-reset-codes</a> 提供的css reset方法，最好别用通配符把所有的元素的margin和padding都设为0</p>
 
 <div class="code-box">
 ```css
@@ -81,9 +81,6 @@ table {
 
 
 <p>在之前的<a href="http://boia.github.io/blog/2013/07/18/css-reset-style/" title="css-reset-style">文章</a>中已经说过这段代码，现在在加深下印象。</p>
-
-<p><a href="http://meyerweb.com/eric/tools/css/reset" title="Eric Meyer">"Eric Meyer’s reset codes"</a>
-<a href="http://meyerweb.com/eric/tools/css/reset" title="Eric Meyer">Eric</a></p>
 
 <!-- more -->
 
