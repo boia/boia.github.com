@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-10-14T12:53:06+08:00</updated>
+  <updated>2013-10-14T14:58:05+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -20,12 +20,15 @@
     <id>http://boia.github.com/blog/2013/10/14/css</id>
     <content type="html"><![CDATA[<h2>经典的css片段</h2>
 
-<ol>
-<li>CSS Resets</li>
-</ol>
+<div class="blank"></div>
 
 
-<p>根据 <a href="http://meyerweb.com/eric/tools/css/reset" title="Eric Meyer">Eric-Meyer&#8217;s-reset-codes</a> 提供的css reset方法，最好别用通配符把所有的元素的margin和padding都设为0</p>
+<h3>1. CSS Resets</h3>
+
+<p>根据 [Eric-Meyer&#8217;s-reset-codes](http://meyerweb.com/eric/tools/css/reset &#8220;Eric Meyer&#8221;) 提供的css reset方法，最好别用通配符把所有的元素的margin和padding都设为0</p>
+
+
+
 
 <div class="code-box">
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -126,9 +129,325 @@
 </div>
 
 
-<p>在之前的<a href="http://boia.github.io/blog/2013/07/18/css-reset-style/" title="css-reset-style">文章</a>中已经说过这段代码，现在在加深下印象。</p>
+
+
+<p>在之前的[文章](http://boia.github.io/blog/2013/07/18/css-reset-style/ &#8220;css-reset-style&#8221;)中已经说过这段代码，现在在加深下印象。</p>
+
+
+
 
 <!-- more -->
+
+
+<h3>2.经典的CSS Clearfix</h3>
+
+<div class="code-box">
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.clearfix</span><span class="nd">:after</span> <span class="p">{</span> <span class="k">content</span><span class="o">:</span> <span class="s2">&quot;.&quot;</span><span class="p">;</span> <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span> <span class="k">clear</span><span class="o">:</span> <span class="k">both</span><span class="p">;</span> <span class="k">visibility</span><span class="o">:</span> <span class="k">hidden</span><span class="p">;</span> <span class="k">line-height</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'><span class="nc">.clearfix</span> <span class="p">{</span> <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'> <span class="o">&lt;</span><span class="nt">font</span><span class="o">&gt;&lt;/</span><span class="nt">font</span><span class="o">&gt;</span>
+</span><span class='line'><span class="nt">html</span><span class="o">[</span><span class="nt">xmlns</span><span class="o">]</span> <span class="nc">.clearfix</span> <span class="p">{</span> <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'><span class="o">*</span> <span class="nt">html</span> <span class="nc">.clearfix</span> <span class="p">{</span> <span class="k">height</span><span class="o">:</span> <span class="m">1</span><span class="o">%</span><span class="p">;</span> <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+</div>
+
+
+<h3>3.升级版的Clearfix</h3>
+
+<p>在表现上，新版本和经典版本不存在什么差异，这些类可以有效地清除所有floats，但它们只兼容现代浏览器和传统的IE 6-8。</p>
+
+
+
+
+<div class="code-box">
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.clearfix</span><span class="nd">:before</span><span class="o">,</span> <span class="nc">.container</span><span class="nd">:after</span> <span class="p">{</span> <span class="k">content</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">;</span> <span class="k">display</span><span class="o">:</span> <span class="n">table</span><span class="p">;</span> <span class="p">}</span><span class="o">&lt;</span><span class="nt">font</span><span class="o">&gt;&lt;/</span><span class="nt">font</span><span class="o">&gt;</span>
+</span><span class='line'><span class="nc">.clearfix</span><span class="nd">:after</span> <span class="p">{</span> <span class="k">clear</span><span class="o">:</span> <span class="k">both</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'><span class="c">/* IE 6/7 */</span>
+</span><span class='line'><span class="nc">.clearfix</span> <span class="p">{</span> <span class="n">zoom</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span> <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+</div>
+
+
+<h3>4.CSS Blockquote模板</h3>
+
+<p>这段代码主要用在页面上进行分离引用或复制内容，并且给页面文字提供了默认样式。</p>
+
+
+
+
+<div class="code-box">
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">blockquote</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">background</span><span class="o">:</span> <span class="m">#f9f9f9</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">border-left</span><span class="o">:</span> <span class="m">10px</span> <span class="k">solid</span> <span class="m">#ccc</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">margin</span><span class="o">:</span> <span class="m">1.5em</span> <span class="m">10px</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">padding</span><span class="o">:</span> <span class="m">.5em</span> <span class="m">10px</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">quotes</span><span class="o">:</span> <span class="s2">&quot;\201C&quot;&quot;\201D&quot;&quot;\2018&quot;&quot;\2019&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nt">blockquote</span><span class="nd">:before</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">color</span><span class="o">:</span> <span class="m">#ccc</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">content</span><span class="o">:</span> <span class="k">open-quote</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">font-size</span><span class="o">:</span> <span class="m">4em</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">line-height</span><span class="o">:</span> <span class="m">.1em</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">margin-right</span><span class="o">:</span> <span class="m">.25em</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">vertical-align</span><span class="o">:</span> <span class="m">-.4em</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nt">blockquote</span> <span class="nt">p</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+</div>
+
+
+<h3>5.个性化的圆角代码</h3>
+
+<p>许多CSS开发者都非常熟悉圆角语法，但如何为每个角设置不同的值？不如看看下面这段代码吧！</p>
+
+
+
+
+<div class="code-box">
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nf">#container</span> <span class="p">{</span>
+</span><span class='line'>    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">4px</span> <span class="m">3px</span> <span class="m">6px</span> <span class="m">10px</span><span class="p">;</span>
+</span><span class='line'>    <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">4px</span> <span class="m">3px</span> <span class="m">6px</span> <span class="m">10px</span><span class="p">;</span>
+</span><span class='line'>    <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">4px</span> <span class="m">3px</span> <span class="m">6px</span> <span class="m">10px</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">4px</span> <span class="m">3px</span> <span class="m">6px</span> <span class="m">10px</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c">/* alternative syntax broken into each line */</span>
+</span><span class='line'><span class="nf">#container</span> <span class="p">{</span>
+</span><span class='line'>    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">border-top</span><span class="o">-</span><span class="k">left</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">4px</span><span class="p">;</span>
+</span><span class='line'>    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">border-top</span><span class="o">-</span><span class="n">rightright</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+</span><span class='line'>    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">border-bottom</span><span class="o">-</span><span class="n">rightright</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">6px</span><span class="p">;</span>
+</span><span class='line'>    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">border-bottom</span><span class="o">-</span><span class="k">left</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+</span><span class='line'>    <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">-</span><span class="n">topleft</span><span class="o">:</span> <span class="m">4px</span><span class="p">;</span>
+</span><span class='line'>    <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">-</span><span class="n">topright</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+</span><span class='line'>    <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">-</span><span class="n">bottomright</span><span class="o">:</span> <span class="m">6px</span><span class="p">;</span>
+</span><span class='line'>    <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">-</span><span class="n">bottomleft</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+</div>
+
+
+<h3>6.一般媒体查询</h3>
+
+<p>这是一段非常好的模板，用于各种零零碎碎的媒体查询，在移动设备上也可以使用，这段代码甚至可以通过使用min-device-pixel-ratio引用到视网膜设备上。</p>
+
+
+
+
+<div class="code-box">
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="c">/* Smartphones (portrait and landscape) ----------- */</span>
+</span><span class='line'><span class="k">@media</span> <span class="nt">only</span> <span class="nt">screen</span>
+</span><span class='line'><span class="nt">and</span> <span class="o">(</span><span class="nt">min-device-width</span> <span class="o">:</span> <span class="nt">320px</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-device-width</span> <span class="o">:</span> <span class="nt">480px</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c">/* Styles */</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c">/* Smartphones (landscape) ----------- */</span>
+</span><span class='line'><span class="k">@media</span> <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span> <span class="o">:</span> <span class="nt">321px</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c">/* Styles */</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c">/* Smartphones (portrait) ----------- */</span>
+</span><span class='line'><span class="k">@media</span> <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span> <span class="o">:</span> <span class="nt">320px</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c">/* Styles */</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c">/* iPads (portrait and landscape) ----------- */</span>
+</span><span class='line'><span class="k">@media</span> <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-device-width</span> <span class="o">:</span> <span class="nt">768px</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-device-width</span> <span class="o">:</span> <span class="nt">1024px</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c">/* Styles */</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">font</span><span class="o">&gt;&lt;/</span><span class="nt">font</span><span class="o">&gt;</span>
+</span><span class='line'><span class="c">/* iPads (landscape) ----------- */</span>
+</span><span class='line'><span class="k">@media</span> <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-device-width</span> <span class="o">:</span> <span class="nt">768px</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-device-width</span> <span class="o">:</span> <span class="nt">1024px</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">orientation</span> <span class="o">:</span> <span class="nt">landscape</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c">/* Styles */</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c">/* iPads (portrait) ----------- */</span>
+</span><span class='line'><span class="k">@media</span> <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-device-width</span> <span class="o">:</span> <span class="nt">768px</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-device-width</span> <span class="o">:</span> <span class="nt">1024px</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">orientation</span> <span class="o">:</span> <span class="nt">portrait</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c">/* Styles */</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c">/* Desktops and laptops ----------- */</span>
+</span><span class='line'><span class="k">@media</span> <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span> <span class="o">:</span> <span class="nt">1224px</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c">/* Styles */</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c">/* Large screens ----------- */</span>
+</span><span class='line'><span class="k">@media</span> <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span> <span class="o">:</span> <span class="nt">1824px</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c">/* Styles */</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c">/* iPhone 4 ----------- */</span>
+</span><span class='line'><span class="k">@media</span> <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">-webkit-min-device-pixel-ratio</span><span class="nd">:1</span><span class="nc">.5</span><span class="o">),</span> <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-device-pixel-ratio</span><span class="nd">:1</span><span class="nc">.5</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c">/* Styles */</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+</div>
+
+
+<h3>7.现代字体栈</h3>
+
+<p>在新网页上设计属于自己的字体栈还是件比较困难的事情，希望下面这段代码能给你带来启发和开发模板，关于更多字体栈源码，你可以访问[CSS Font Stacks](http://cssfontstack.com/) 。</p>
+
+
+
+
+<div class="code-box">
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="c">/* Times New Roman-based serif */</span>
+</span><span class='line'><span class="nt">font-family</span><span class="o">:</span> <span class="nt">Cambria</span><span class="o">,</span> <span class="s2">&quot;Hoefler Text&quot;</span><span class="o">,</span> <span class="nt">Utopia</span><span class="o">,</span> <span class="s2">&quot;Liberation Serif&quot;</span><span class="o">,</span> <span class="s2">&quot;Nimbus Roman No9 L Regular&quot;</span><span class="o">,</span> <span class="nt">Times</span><span class="o">,</span> <span class="s2">&quot;Times New Roman&quot;</span><span class="o">,</span> <span class="nt">serif</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">/* A modern Georgia-based serif */</span>
+</span><span class='line'><span class="nt">font-family</span><span class="o">:</span> <span class="nt">Constantia</span><span class="o">,</span> <span class="s2">&quot;Lucida Bright&quot;</span><span class="o">,</span> <span class="nt">Lucidabright</span><span class="o">,</span> <span class="s2">&quot;Lucida Serif&quot;</span><span class="o">,</span> <span class="nt">Lucida</span><span class="o">,</span> <span class="s2">&quot;DejaVu Serif,&quot;</span> <span class="s2">&quot;Bitstream Vera Serif&quot;</span><span class="o">,</span> <span class="s2">&quot;Liberation Serif&quot;</span><span class="o">,</span> <span class="nt">Georgia</span><span class="o">,</span> <span class="nt">serif</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">/*A more traditional Garamond-based serif */</span>
+</span><span class='line'><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;Palatino Linotype&quot;</span><span class="o">,</span> <span class="nt">Palatino</span><span class="o">,</span> <span class="nt">Palladio</span><span class="o">,</span> <span class="s2">&quot;URW Palladio L&quot;</span><span class="o">,</span> <span class="s2">&quot;Book Antiqua&quot;</span><span class="o">,</span> <span class="nt">Baskerville</span><span class="o">,</span> <span class="s2">&quot;Bookman Old Style&quot;</span><span class="o">,</span> <span class="s2">&quot;Bitstream Charter&quot;</span><span class="o">,</span> <span class="s2">&quot;Nimbus Roman No9 L&quot;</span><span class="o">,</span> <span class="nt">Garamond</span><span class="o">,</span> <span class="s2">&quot;Apple Garamond&quot;</span><span class="o">,</span> <span class="s2">&quot;ITC Garamond Narrow&quot;</span><span class="o">,</span> <span class="s2">&quot;New Century Schoolbook&quot;</span><span class="o">,</span> <span class="s2">&quot;Century Schoolbook&quot;</span><span class="o">,</span> <span class="s2">&quot;Century Schoolbook L&quot;</span><span class="o">,</span> <span class="nt">Georgia</span><span class="o">,</span> <span class="nt">serif</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">/*The Helvetica/Arial-based sans serif */</span>
+</span><span class='line'><span class="nt">font-family</span><span class="o">:</span> <span class="nt">Frutiger</span><span class="o">,</span> <span class="s2">&quot;Frutiger Linotype&quot;</span><span class="o">,</span> <span class="nt">Univers</span><span class="o">,</span> <span class="nt">Calibri</span><span class="o">,</span> <span class="s2">&quot;Gill Sans&quot;</span><span class="o">,</span> <span class="s2">&quot;Gill Sans MT&quot;</span><span class="o">,</span> <span class="s2">&quot;Myriad Pro&quot;</span><span class="o">,</span> <span class="nt">Myriad</span><span class="o">,</span> <span class="s2">&quot;DejaVu Sans Condensed&quot;</span><span class="o">,</span> <span class="s2">&quot;Liberation Sans&quot;</span><span class="o">,</span> <span class="s2">&quot;Nimbus Sans L&quot;</span><span class="o">,</span> <span class="nt">Tahoma</span><span class="o">,</span> <span class="nt">Geneva</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="nt">Helvetica</span><span class="o">,</span> <span class="nt">Arial</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">/*The Verdana-based sans serif */</span>
+</span><span class='line'><span class="nt">font-family</span><span class="o">:</span> <span class="nt">Corbel</span><span class="o">,</span> <span class="s2">&quot;Lucida Grande&quot;</span><span class="o">,</span> <span class="s2">&quot;Lucida Sans Unicode&quot;</span><span class="o">,</span> <span class="s2">&quot;Lucida Sans&quot;</span><span class="o">,</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="o">,</span> <span class="s2">&quot;Bitstream Vera Sans&quot;</span><span class="o">,</span> <span class="s2">&quot;Liberation Sans&quot;</span><span class="o">,</span> <span class="nt">Verdana</span><span class="o">,</span> <span class="s2">&quot;Verdana Ref&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">/*The Trebuchet-based sans serif */</span>
+</span><span class='line'><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;Segoe UI&quot;</span><span class="o">,</span> <span class="nt">Candara</span><span class="o">,</span> <span class="s2">&quot;Bitstream Vera Sans&quot;</span><span class="o">,</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="o">,</span> <span class="s2">&quot;Bitstream Vera Sans&quot;</span><span class="o">,</span> <span class="s2">&quot;Trebuchet MS&quot;</span><span class="o">,</span> <span class="nt">Verdana</span><span class="o">,</span> <span class="s2">&quot;Verdana Ref&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">/*The heavier “Impact” sans serif */</span>
+</span><span class='line'><span class="nt">font-family</span><span class="o">:</span> <span class="nt">Impact</span><span class="o">,</span> <span class="nt">Haettenschweiler</span><span class="o">,</span> <span class="s2">&quot;Franklin Gothic Bold&quot;</span><span class="o">,</span> <span class="nt">Charcoal</span><span class="o">,</span> <span class="s2">&quot;Helvetica Inserat&quot;</span><span class="o">,</span> <span class="s2">&quot;Bitstream Vera Sans Bold&quot;</span><span class="o">,</span> <span class="s2">&quot;Arial Black&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">/*The monospace */</span>
+</span><span class='line'><span class="nt">font-family</span><span class="o">:</span> <span class="nt">Consolas</span><span class="o">,</span> <span class="s2">&quot;Andale Mono WT&quot;</span><span class="o">,</span> <span class="s2">&quot;Andale Mono&quot;</span><span class="o">,</span> <span class="s2">&quot;Lucida Console&quot;</span><span class="o">,</span> <span class="s2">&quot;Lucida Sans Typewriter&quot;</span><span class="o">,</span> <span class="s2">&quot;DejaVu Sans Mono&quot;</span><span class="o">,</span> <span class="s2">&quot;Bitstream Vera Sans Mono&quot;</span><span class="o">,</span> <span class="s2">&quot;Liberation Mono&quot;</span><span class="o">,</span> <span class="s2">&quot;Nimbus Mono L&quot;</span><span class="o">,</span> <span class="nt">Monaco</span><span class="o">,</span> <span class="s2">&quot;Courier New&quot;</span><span class="o">,</span> <span class="nt">Courier</span><span class="o">,</span> <span class="nt">monospace</span><span class="o">;</span>
+</span></code></pre></td></tr></table></div></figure>
+</div>
+
+
+<h3>8.自定义文本选择</h3>
+
+<div class="code-box">
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">:</span><span class="nd">:selection</span> <span class="p">{</span> <span class="k">background</span><span class="o">:</span> <span class="m">#e2eae2</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'><span class="o">:</span><span class="nd">:-moz-selection</span> <span class="p">{</span> <span class="k">background</span><span class="o">:</span> <span class="m">#e2eae2</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'><span class="o">:</span><span class="nd">:-webkit-selection</span> <span class="p">{</span> <span class="k">background</span><span class="o">:</span> <span class="m">#e2eae2</span><span class="p">;</span> <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+</div>
+
+
+<h3>9.隐藏Logo上的H1文本</h3>
+
+<div class="code-box">
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">h1</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">text-indent</span><span class="o">:</span> <span class="m">-9999px</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="k">auto</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">width</span><span class="o">:</span> <span class="m">320px</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">height</span><span class="o">:</span> <span class="m">85px</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">background</span><span class="o">:</span> <span class="k">transparent</span> <span class="sx">url(&quot;images/logo.png&quot;)</span> <span class="k">no-repeat</span> <span class="k">scroll</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+</div>
 
 
 
