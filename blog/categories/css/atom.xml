@@ -4,7 +4,7 @@
   <title><![CDATA[Category: css | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-10-14T11:43:44+08:00</updated>
+  <updated>2013-10-14T12:44:26+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -18,16 +18,14 @@
     <link href="http://boia.github.com/blog/2013/10/14/css/"/>
     <updated>2013-10-14T10:46:00+08:00</updated>
     <id>http://boia.github.com/blog/2013/10/14/css</id>
-    <content type="html"><![CDATA[
-
-<h2>经典的css片段</h2>
+    <content type="html"><![CDATA[<h2>经典的css片段</h2>
 
 <ol>
 <li>CSS Resets</li>
 </ol>
 
 
-<p>根据[Eric Meyer’s reset codes](http://meyerweb.com/eric/tools/css/reset)提供的css reset方法，最好别用通配符把所有的元素的margin和padding都设为0</p>
+<p>根据[Eric Meyer’s reset codes](http://meyerweb.com/eric/tools/css/reset "Eric Meyer")提供的css reset方法，最好别用通配符把所有的元素的margin和padding都设为0</p>
 
 
 
