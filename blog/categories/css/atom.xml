@@ -4,7 +4,7 @@
   <title><![CDATA[Category: css | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-10-14T11:39:29+08:00</updated>
+  <updated>2013-10-14T11:41:44+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -32,7 +32,7 @@
 
 
 
-<div class="code">
+<div class="code-box">
 ```css
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
