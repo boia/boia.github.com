@@ -4,7 +4,7 @@
   <title><![CDATA[Category: css | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-10-14T14:58:05+08:00</updated>
+  <updated>2013-10-14T15:21:26+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -237,7 +237,7 @@ and (min-device-width : 320px) and (max-device-width : 480px) {
 
 <h3>7.现代字体栈</h3>
 
-<p>在新网页上设计属于自己的字体栈还是件比较困难的事情，希望下面这段代码能给你带来启发和开发模板，关于更多字体栈源码，你可以访问[CSS Font Stacks](http://cssfontstack.com/) 。</p>
+<p>在新网页上设计属于自己的字体栈还是件比较困难的事情，希望下面这段代码能给你带来启发和开发模板，关于更多字体栈源码，你可以访问[CSS-Font-Stacks](http://cssfontstack.com/) 。</p>
 
 
 
@@ -297,7 +297,114 @@ h1 {
 </div>
 
 
-<p>
+<h3>10.为图片创建拍立得效果边框</h3>
+
+<div class="code-box">
+```css
+img.polaroid { 
+    background:#000; /*Change this to a background image or remove*/
+    border:solid #fff;
+    border-width:6px 6px 20px 6px;
+    box-shadow:1px 1px 5px #333; /* Standard blur at 5px. Increase for more depth * 
+    -webkit-box-shadow:1px 1px 5px #333;
+    -moz-box-shadow:1px 1px 5px #333; 
+    height:200px; /*Set to height of your image or desired div*/
+    width:200px; /*Set to width of your image or desired div*/
+}
+```
+
+### 11.锚链接伪类选择器
+
+<div class="code-box">
+```css
+a:link { color: blue; }
+a:visited { color: purple; } 
+a:hover { color: red; } 
+a:active { color: yellow; }
+```
+
+### 12.CSS3的全屏背景效果
+
+<div class="code-box">
+```css
+html { 
+    background: url('images/bg.jpg') no-repeat center center fixed;  
+    -webkit-background-size: cover; 
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+```
+
+### 13.内容垂直集中
+
+<p>相对于内容在水平位置，内容在垂直方向是不好把控的，尤其当考虑到滚动条这些因素时。这段纯CSS代码可以很好的工作。</p>
+
+<div class="code-box">
+```css
+.container {
+    min-height: 6.5em;
+    display: table-cell; 
+    vertical-align: middle;
+}
+```
+
+### 14.垂直滚动条
+
+<p>这段代码将确保你的HTML元素总是稍微高于浏览器滚动条所停留的位置。 </p>
+
+<div class="code-box">
+```css
+html { height: 101% }
+```
+
+### 15.CSS3 Gradients模板
+
+<p>这段代码将确保你的HTML元素总是稍微高于浏览器滚动条所停留的位置。 </p>
+
+<div class="code-box">
+```css
+#colorbox {
+    background: #629721;
+    background-image: -webkit-gradient(linear, left top, left bottombottom, from(#83b842), to(#629721));
+    background-image: -webkit-linear-gradient(top, #83b842, #629721); 
+    background-image: -moz-linear-gradient(top, #83b842, #629721);
+    background-image: -ms-linear-gradient(top, #83b842, #629721);
+    background-image: -o-linear-gradient(top, #83b842, #629721);
+    background-image: linear-gradient(top, #83b842, #629721);
+}
+```
+
+### 16.@Font-Face模板
+
+<p>使用@font-face可以把TTF/OTF/SVG/WOFF文件嵌入到网站，并生成自定义font families。</p>
+
+<div class="code-box">
+```css
+@font-face {
+    font-family: 'MyWebFont'; 
+    src: url('webfont.eot'); /* IE9 Compat Modes */
+    src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('webfont.woff') format('woff'), /* Modern Browsers */
+    url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+body {
+    font-family: 'MyWebFont', Arial, sans-serif;
+}
+```
+
+### 17.CSS3 斑马线效果
+
+<div class="code-box">
+```css
+tbody tr:nth-child(odd) {
+    background-color: #ccc;
+}
+```
+
+[admin10000]: http://www.admin10000.com/
+
 [Ruby]:			http://www.ruby-lang.org						"Ruby"
 [git]:			http://git-scm.com/								"Git"
 [Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
@@ -333,7 +440,8 @@ h1 {
 
 [GitHub]:		https://github.com								"GitHub"
 
-</p>
+
+
 ]]></content>
   </entry>
   
