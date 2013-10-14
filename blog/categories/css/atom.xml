@@ -4,7 +4,7 @@
   <title><![CDATA[Category: css | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-10-14T12:45:41+08:00</updated>
+  <updated>2013-10-14T12:47:35+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -25,10 +25,7 @@
 </ol>
 
 
-<p>根据 [Eric Meyer’s reset codes](http://meyerweb.com/eric/tools/css/reset "Eric Meyer") 提供的css reset方法，最好别用通配符把所有的元素的margin和padding都设为0</p>
-
-
-
+<p>根据 <a href="http://meyerweb.com/eric/tools/css/reset" title="Eric Meyer">Eric Meyer’s reset codes</a> 提供的css reset方法，最好别用通配符把所有的元素的margin和padding都设为0</p>
 
 <div class="code-box">
 ```css
