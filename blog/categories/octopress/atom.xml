@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-10-14T15:21:26+08:00</updated>
+  <updated>2013-10-15T17:45:01+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -30,7 +30,7 @@
 
 <p>错误是这样的,如下图所示</p>
 
-<p><img src="/images/post/response.png" title="set response" ><br></p>
+<p>{% img /images/post/response.png set response %}<br></p>
 
 <p>杜绝一切警告和错误是一个良好coder的优秀品质，因为coder固有的强迫症，有一个警告都是不允许的事情，改之义不容缓。<br></p>
 
@@ -40,43 +40,7 @@
 
 <p>只要改成<code>if chunked? || @header['content-length'] || @status == 304 || @status == 204</code>  就行了，不要问我为什么？我真的不懂。</p>
 
-<p>
-[Ruby]:			http://www.ruby-lang.org						"Ruby"
-[git]:			http://git-scm.com/								"Git"
-[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
-[Octopress]:	http://octopress.org							"Octopress"
-[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
-[Google]:		http://www.google.com							"Google"
-[Yahoo]:		http://www.yahoo.com							"Yahoo"
-[Twitter]:		http://twitter.com/								"Twitter"
-
-[Firebug]:		http://getfirebug.com/							"Firebug"
-
-[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
-[维基百科]:		http://zh.wikipedia.org							"维基中文"
-
-[煎蛋]:			http://jandan.net								"煎蛋"
-[小众软件]:		http://appinn.com								"小众软件"
-[小众]:			http://appinn.com								"小众软件"
-[新浪微博]:		http://weibo.com								"新浪微博"
-[微博]:			http://weibo.com								"新浪微博"
-[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
-[知乎]:			http://www.zhihu.com							"知乎"
-
-[CSSer]:		http://www.csser.com/							"CSSer"
-
-[Node.JS]:		http://nodejs.org								"Node.JS"
-[NPM]:			http://search.npmjs.org/						"NPM Registry"
-[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
-[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
-[Coffee]:		http://coffeescript.org/						"CoffeeScript"
-[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
-[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
-[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
-
-[GitHub]:		https://github.com								"GitHub"
-
-</p>
+<p>{% include links %}</p>
 ]]></content>
   </entry>
   
@@ -101,52 +65,17 @@
 <br><br><br>
 
 
-<p><img src="/images/post/1.png" title="imath" ></p>
+<p>{% img /images/post/1.png imath %}</p>
 
 <br><br><br>
 
 
 <p>只要改成以下代码就可以了，在<code>convertible.rb</code>的28行
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>self.content = File.read(File.join(base, name), :encoding => "utf-8")</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+{% codeblock %}
+  self.content = File.read(File.join(base, name), :encoding => "utf-8")
+{% endcodeblock %}</p>
 
-<p>
-[Ruby]:			http://www.ruby-lang.org						"Ruby"
-[git]:			http://git-scm.com/								"Git"
-[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
-[Octopress]:	http://octopress.org							"Octopress"
-[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
-[Google]:		http://www.google.com							"Google"
-[Yahoo]:		http://www.yahoo.com							"Yahoo"
-[Twitter]:		http://twitter.com/								"Twitter"
-
-[Firebug]:		http://getfirebug.com/							"Firebug"
-
-[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
-[维基百科]:		http://zh.wikipedia.org							"维基中文"
-
-[煎蛋]:			http://jandan.net								"煎蛋"
-[小众软件]:		http://appinn.com								"小众软件"
-[小众]:			http://appinn.com								"小众软件"
-[新浪微博]:		http://weibo.com								"新浪微博"
-[微博]:			http://weibo.com								"新浪微博"
-[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
-[知乎]:			http://www.zhihu.com							"知乎"
-
-[CSSer]:		http://www.csser.com/							"CSSer"
-
-[Node.JS]:		http://nodejs.org								"Node.JS"
-[NPM]:			http://search.npmjs.org/						"NPM Registry"
-[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
-[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
-[Coffee]:		http://coffeescript.org/						"CoffeeScript"
-[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
-[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
-[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
-
-[GitHub]:		https://github.com								"GitHub"
-
-</p>
+<p>{% include links %}</p>
 ]]></content>
   </entry>
   
@@ -174,8 +103,9 @@
 
 <p>输以下命令</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&#123;% git clone https://github.com/chronon/Octopress-Flickr-Badge.git %}</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}
+  &#123;% git clone https://github.com/chronon/Octopress-Flickr-Badge.git %}
+{% endcodeblock %}</p>
 
 <h2>文件</h2>
 
@@ -202,43 +132,7 @@ flickr_tag:             # tagname - set if flickr_source is set to user_tag or a
 
 <p>flickr_user不是用户名，是用户id，你可以从<a href="http://idgettr.com/">idgettr.com</a>获得</p>
 
-<p>
-[Ruby]:			http://www.ruby-lang.org						"Ruby"
-[git]:			http://git-scm.com/								"Git"
-[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
-[Octopress]:	http://octopress.org							"Octopress"
-[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
-[Google]:		http://www.google.com							"Google"
-[Yahoo]:		http://www.yahoo.com							"Yahoo"
-[Twitter]:		http://twitter.com/								"Twitter"
-
-[Firebug]:		http://getfirebug.com/							"Firebug"
-
-[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
-[维基百科]:		http://zh.wikipedia.org							"维基中文"
-
-[煎蛋]:			http://jandan.net								"煎蛋"
-[小众软件]:		http://appinn.com								"小众软件"
-[小众]:			http://appinn.com								"小众软件"
-[新浪微博]:		http://weibo.com								"新浪微博"
-[微博]:			http://weibo.com								"新浪微博"
-[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
-[知乎]:			http://www.zhihu.com							"知乎"
-
-[CSSer]:		http://www.csser.com/							"CSSer"
-
-[Node.JS]:		http://nodejs.org								"Node.JS"
-[NPM]:			http://search.npmjs.org/						"NPM Registry"
-[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
-[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
-[Coffee]:		http://coffeescript.org/						"CoffeeScript"
-[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
-[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
-[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
-
-[GitHub]:		https://github.com								"GitHub"
-
-</p>
+<p>{% include links %}</p>
 ]]></content>
   </entry>
   
@@ -258,15 +152,17 @@ flickr_tag:             # tagname - set if flickr_source is set to user_tag or a
 
 <p>先用git命令将插件下载下来</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/ShaunaGordon/octopress-jsfiddle.git</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}
+  git clone https://github.com/ShaunaGordon/octopress-jsfiddle.git
+{% endcodeblock %}</p>
 
 <p>然后将里面的<code>jsfiddle.rb</code>拷贝到 <code>/plugins</code>中</p>
 
 <h2>一般语法</h2>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&#123;% jsfiddle shorttag [tabs] [skin] [height] [width] %}</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}
+  &#123;% jsfiddle shorttag [tabs] [skin] [height] [width] %}
+{% endcodeblock %}</p>
 
 <p>缺省值如下:</p>
 
@@ -284,54 +180,19 @@ flickr_tag:             # tagname - set if flickr_source is set to user_tag or a
 
 <p>这里我直接拿<a href="http://www.cnblogs.com/iamzhanglei/archive/2011/10/07/2199306.html">张磊</a>的代码作为测试</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&#123;% jsfiddle LHWmv result,js,html,css presentation 500px %}</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}
+  &#123;% jsfiddle LHWmv result,js,html,css presentation 500px %}
+{% endcodeblock %}</p>
 
 <h3>结果</h3>
 
-<p><iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/LHWmv/embedded/result,js,html,css/presentation/"></iframe></p>
+<p>{% jsfiddle LHWmv result,js,html,css presentation 500px %}</p>
 
 <h2>总结</h2>
 
 <p><strong>jsFiddle</strong>以前在张磊的博客看见的时候挺新颖的，现在在自己的blog里加上这个插件还是分外激动的，以后就不用上面一段代码，下面一个演示那么墨迹了。</p>
 
-<p>
-[Ruby]:			http://www.ruby-lang.org						"Ruby"
-[git]:			http://git-scm.com/								"Git"
-[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
-[Octopress]:	http://octopress.org							"Octopress"
-[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
-[Google]:		http://www.google.com							"Google"
-[Yahoo]:		http://www.yahoo.com							"Yahoo"
-[Twitter]:		http://twitter.com/								"Twitter"
-
-[Firebug]:		http://getfirebug.com/							"Firebug"
-
-[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
-[维基百科]:		http://zh.wikipedia.org							"维基中文"
-
-[煎蛋]:			http://jandan.net								"煎蛋"
-[小众软件]:		http://appinn.com								"小众软件"
-[小众]:			http://appinn.com								"小众软件"
-[新浪微博]:		http://weibo.com								"新浪微博"
-[微博]:			http://weibo.com								"新浪微博"
-[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
-[知乎]:			http://www.zhihu.com							"知乎"
-
-[CSSer]:		http://www.csser.com/							"CSSer"
-
-[Node.JS]:		http://nodejs.org								"Node.JS"
-[NPM]:			http://search.npmjs.org/						"NPM Registry"
-[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
-[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
-[Coffee]:		http://coffeescript.org/						"CoffeeScript"
-[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
-[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
-[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
-
-[GitHub]:		https://github.com								"GitHub"
-
-</p>
+<p>{% include links %}</p>
 ]]></content>
   </entry>
   
@@ -354,7 +215,7 @@ flickr_tag:             # tagname - set if flickr_source is set to user_tag or a
 <p>接着在<code>\source\_includes\custom\asides</code>中新建一个<code>weibo.html</code>，最好是放在custom下，有些人喜欢在<code>\source\_includes\asides</code>中修改或者创建，一旦主题换了，那些自己改过的都会消失，这就得不偿失了，在<code>weibo.html</code>中加入以下内容</p>
 
 <p>```
-
+{% if site.weibo_uid %}
 <section class="well">
   <h1>新浪微博</h1>
   <ul id="weibo"></p>
@@ -366,14 +227,14 @@ flickr_tag:             # tagname - set if flickr_source is set to user_tag or a
     class="share_self" 
     frameborder="0" 
     scrolling="no" 
-    src="http://widget.weibo.com/weiboshow/index.php?width=0&amp;height=550&amp;ptype=1&amp;speed=0&amp;skin=&amp;isTitle=0&amp;noborder=1&amp;isWeibo=1&amp;isFans=&amp;uid=2552329061&amp;verifier=80884619"&gt;
+    src="http://widget.weibo.com/weiboshow/index.php?width=0&amp;height=550&amp;ptype={% if site.weibo_pic %}1{% else %}0{% endif %}&amp;speed=0&amp;skin={{weibo_skin}}&amp;isTitle=0&amp;noborder=1&amp;isWeibo={% if site.weibo_show %}1{% else %}0{% endif %}&amp;isFans={{weibo_fansline}}&amp;uid={{site.weibo_uid}}&amp;verifier={{site.weibo_verifier}}"&gt;
   &lt;/iframe&gt;
 &lt;/li&gt;
 </code></pre>
 
 <p>  </ul>
 </section>
-
+{% endif %}
 ```</p>
 
 <p>最后就是在<code>_config.yml</code>中配置了</p>
@@ -390,43 +251,7 @@ weibo_skin: 10      # Please refer to http://weibo.com/tool/weiboshow
 weibo_share: true   # Whether show the sharing button
 </code></p>
 
-<p>
-[Ruby]:			http://www.ruby-lang.org						"Ruby"
-[git]:			http://git-scm.com/								"Git"
-[Jekyll]:		https://github.com/mojombo/jekyll/wiki			"Jekyll"
-[Octopress]:	http://octopress.org							"Octopress"
-[Markdown]:		http://daringfireball.net/projects/markdown/	"Markdown"
-[Google]:		http://www.google.com							"Google"
-[Yahoo]:		http://www.yahoo.com							"Yahoo"
-[Twitter]:		http://twitter.com/								"Twitter"
-
-[Firebug]:		http://getfirebug.com/							"Firebug"
-
-[Wikipedia]:	http://www.wikipedia.org						"Wikipedia"
-[维基百科]:		http://zh.wikipedia.org							"维基中文"
-
-[煎蛋]:			http://jandan.net								"煎蛋"
-[小众软件]:		http://appinn.com								"小众软件"
-[小众]:			http://appinn.com								"小众软件"
-[新浪微博]:		http://weibo.com								"新浪微博"
-[微博]:			http://weibo.com								"新浪微博"
-[墙]:			http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E	"叹息之墙"
-[知乎]:			http://www.zhihu.com							"知乎"
-
-[CSSer]:		http://www.csser.com/							"CSSer"
-
-[Node.JS]:		http://nodejs.org								"Node.JS"
-[NPM]:			http://search.npmjs.org/						"NPM Registry"
-[mocha]:		http://visionmedia.github.com/mocha/			"mocha"
-[CoffeeScript]:	http://coffeescript.org/						"CoffeeScript"
-[Coffee]:		http://coffeescript.org/						"CoffeeScript"
-[JSCoverage]:	http://siliconforks.com/jscoverage/				"JSCoverage"
-[node-jscoverage]: https://github.com/visionmedia/node-jscoverage "node-jscoverage"
-[Jasmine]:		http://pivotal.github.com/jasmine/				"Jasmine"
-
-[GitHub]:		https://github.com								"GitHub"
-
-</p>
+<p>{% include links %}</p>
 ]]></content>
   </entry>
   

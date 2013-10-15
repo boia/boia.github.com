@@ -4,7 +4,7 @@
   <title><![CDATA[Category: jQuery | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/jquery/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-10-14T15:21:26+08:00</updated>
+  <updated>2013-10-15T17:45:01+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -21,9 +21,9 @@
     <content type="html"><![CDATA[<!-- more -->
 
 
-<p><link href="/stylesheets/custom.css" media="screen,projection" rel="stylesheet" type="text/css"></p>
+<p><link href="{{ root_url }}/stylesheets/custom.css" media="screen,projection" rel="stylesheet" type="text/css"></p>
 
-<iframe class="articlebox" width="600" height="400" src="/course/jQuery/flot/examples/index.html" sandbox></iframe>
+<iframe class="articlebox" width="600" height="400" src="{{ root_url }}/course/jQuery/flot/examples/index.html" sandbox></iframe>
 
 ]]></content>
   </entry>
