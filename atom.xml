@@ -4,7 +4,7 @@
   <title><![CDATA[boia's博客]]></title>
   <link href="http://boia.github.com/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-10-14T15:21:26+08:00</updated>
+  <updated>2013-10-16T14:37:16+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -474,8 +474,10 @@
 </span><span class='line'>    <span class="k">width</span><span class="o">:</span><span class="m">200px</span><span class="p">;</span> <span class="c">/*Set to width of your image or desired div*/</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
+</div>
 
-### 11.锚链接伪类选择器
+
+<h3>11.锚链接伪类选择器</h3>
 
 <div class="code-box">
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -487,8 +489,10 @@
 </span><span class='line'><span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span> <span class="p">}</span>
 </span><span class='line'><span class="nt">a</span><span class="nd">:active</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
+</div>
 
-### 12.CSS3的全屏背景效果
+
+<h3>12.CSS3的全屏背景效果</h3>
 
 <div class="code-box">
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -506,10 +510,15 @@
 </span><span class='line'>    <span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
+</div>
 
-### 13.内容垂直集中
+
+<h3>13.内容垂直集中</h3>
 
 <p>相对于内容在水平位置，内容在垂直方向是不好把控的，尤其当考虑到滚动条这些因素时。这段纯CSS代码可以很好的工作。</p>
+
+
+
 
 <div class="code-box">
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -523,19 +532,29 @@
 </span><span class='line'>    <span class="k">vertical-align</span><span class="o">:</span> <span class="k">middle</span><span class="p">;</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
+</div>
 
-### 14.垂直滚动条
+
+<h3>14.垂直滚动条</h3>
 
 <p>这段代码将确保你的HTML元素总是稍微高于浏览器滚动条所停留的位置。 </p>
+
+
+
 
 <div class="code-box">
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">html</span> <span class="p">{</span> <span class="k">height</span><span class="o">:</span> <span class="m">101</span><span class="o">%</span> <span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
+</div>
 
-### 15.CSS3 Gradients模板
+
+<h3>15.CSS3 Gradients模板</h3>
 
 <p>这段代码将确保你的HTML元素总是稍微高于浏览器滚动条所停留的位置。 </p>
+
+
+
 
 <div class="code-box">
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -557,83 +576,9 @@
 </span><span class='line'>    <span class="k">background-image</span><span class="o">:</span> <span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="k">top</span><span class="o">,</span> <span class="m">#83b842</span><span class="o">,</span> <span class="m">#629721</span><span class="p">);</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
+</div>
 
-### 16.@Font-Face模板
 
-<p>使用@font-face可以把TTF/OTF/SVG/WOFF文件嵌入到网站，并生成自定义font families。</p>
-
-<div class="code-box">
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@font-face</span> <span class="p">{</span>
-</span><span class='line'>    <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;MyWebFont&#39;</span><span class="o">;</span>
-</span><span class='line'>    <span class="nt">src</span><span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;webfont.eot&#39;</span><span class="o">);</span> <span class="c">/* IE9 Compat Modes */</span>
-</span><span class='line'>    <span class="nt">src</span><span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;webfont.eot?#iefix&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;embedded-opentype&#39;</span><span class="o">),</span> <span class="c">/* IE6-IE8 */</span>
-</span><span class='line'>    <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;webfont.woff&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;woff&#39;</span><span class="o">),</span> <span class="c">/* Modern Browsers */</span>
-</span><span class='line'>    <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;webfont.ttf&#39;</span><span class="o">)</span>  <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;truetype&#39;</span><span class="o">),</span> <span class="c">/* Safari, Android, iOS */</span>
-</span><span class='line'>    <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;webfont.svg#svgFontName&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;svg&#39;</span><span class="o">);</span> <span class="c">/* Legacy iOS */</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nt">body</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">font-family</span><span class="o">:</span> <span class="s1">&#39;MyWebFont&#39;</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-### 17.CSS3 斑马线效果
-
-<div class="code-box">
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">tbody</span> <span class="nt">tr</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">odd</span><span class="o">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">background-color</span><span class="o">:</span> <span class="m">#ccc</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-[admin10000]: http://www.admin10000.com/
-
-[Ruby]:         http://www.ruby-lang.org                        &#8220;Ruby&#8221;
-[git]:          http://git-scm.com/                             &#8220;Git&#8221;
-[Jekyll]:       https://github.com/mojombo/jekyll/wiki          &#8220;Jekyll&#8221;
-[Octopress]:    http://octopress.org                            &#8220;Octopress&#8221;
-[Markdown]:     http://daringfireball.net/projects/markdown/    &#8220;Markdown&#8221;
-[Google]:       http://www.google.com                           &#8220;Google&#8221;
-[Yahoo]:        http://www.yahoo.com                            &#8220;Yahoo&#8221;
-[Twitter]:      http://twitter.com/                             &#8220;Twitter&#8221;
-
-[Firebug]:      http://getfirebug.com/                          &#8220;Firebug&#8221;
-
-[Wikipedia]:    http://www.wikipedia.org                        &#8220;Wikipedia&#8221;
-[维基百科]:     http://zh.wikipedia.org                         &#8220;维基中文&#8221;
-
-[煎蛋]:           http://jandan.net                               &#8220;煎蛋&#8221;
-[小众软件]:     http://appinn.com                               &#8220;小众软件&#8221;
-[小众]:           http://appinn.com                               &#8220;小众软件&#8221;
-[新浪微博]:     http://weibo.com                                &#8220;新浪微博&#8221;
-[微博]:           http://weibo.com                                &#8220;新浪微博&#8221;
-[墙]:          http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E   &#8220;叹息之墙&#8221;
-[知乎]:           http://www.zhihu.com                            &#8220;知乎&#8221;
-
-[CSSer]:        http://www.csser.com/                           &#8220;CSSer&#8221;
-
-[Node.JS]:      http://nodejs.org                               &#8220;Node.JS&#8221;
-[NPM]:          http://search.npmjs.org/                        &#8220;NPM Registry&#8221;
-[mocha]:        http://visionmedia.github.com/mocha/            &#8220;mocha&#8221;
-[CoffeeScript]: http://coffeescript.org/                        &#8220;CoffeeScript&#8221;
-[Coffee]:       http://coffeescript.org/                        &#8220;CoffeeScript&#8221;
-[JSCoverage]:   http://siliconforks.com/jscoverage/             &#8220;JSCoverage&#8221;
-[node-jscoverage]: https://github.com/visionmedia/node-jscoverage &#8220;node-jscoverage&#8221;
-[Jasmine]:      http://pivotal.github.com/jasmine/              &#8220;Jasmine&#8221;
-
-[GitHub]:       https://github.com                              &#8220;GitHub&#8221;
 
 ]]></content>
   </entry>
