@@ -4,7 +4,7 @@
   <title><![CDATA[Category: css | boia's博客]]></title>
   <link href="http://boia.github.com/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://boia.github.com/"/>
-  <updated>2013-10-16T14:37:16+08:00</updated>
+  <updated>2013-10-16T14:41:56+08:00</updated>
   <id>http://boia.github.com/</id>
   <author>
     <name><![CDATA[boia]]></name>
@@ -267,131 +267,6 @@ font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvet
    
 /*The monospace */ 
 font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
-```
-</div>
-
-
-<h3>8.自定义文本选择</h3>
-
-<div class="code-box">
-```css
-::selection { background: #e2eae2; }
-::-moz-selection { background: #e2eae2; }
-::-webkit-selection { background: #e2eae2; }
-```
-</div>
-
-
-<h3>9.隐藏Logo上的H1文本</h3>
-
-<div class="code-box">
-```css
-h1 {
-    text-indent: -9999px;  
-    margin: 0 auto;
-    width: 320px;
-    height: 85px;
-    background: transparent url("images/logo.png") no-repeat scroll; 
-}
-```
-</div>
-
-
-<h3>10.为图片创建拍立得效果边框</h3>
-
-<div class="code-box">
-```css
-img.polaroid { 
-    background:#000; /*Change this to a background image or remove*/
-    border:solid #fff;
-    border-width:6px 6px 20px 6px;
-    box-shadow:1px 1px 5px #333; /* Standard blur at 5px. Increase for more depth * 
-    -webkit-box-shadow:1px 1px 5px #333;
-    -moz-box-shadow:1px 1px 5px #333; 
-    height:200px; /*Set to height of your image or desired div*/
-    width:200px; /*Set to width of your image or desired div*/
-}
-```
-</div>
-
-
-<h3>11.锚链接伪类选择器</h3>
-
-<div class="code-box">
-```css
-a:link { color: blue; }
-a:visited { color: purple; } 
-a:hover { color: red; } 
-a:active { color: yellow; }
-```
-</div>
-
-
-<h3>12.CSS3的全屏背景效果</h3>
-
-<div class="code-box">
-```css
-html { 
-    background: url('images/bg.jpg') no-repeat center center fixed;  
-    -webkit-background-size: cover; 
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-```
-</div>
-
-
-<h3>13.内容垂直集中</h3>
-
-<p>相对于内容在水平位置，内容在垂直方向是不好把控的，尤其当考虑到滚动条这些因素时。这段纯CSS代码可以很好的工作。</p>
-
-
-
-
-<div class="code-box">
-```css
-.container {
-    min-height: 6.5em;
-    display: table-cell; 
-    vertical-align: middle;
-}
-```
-</div>
-
-
-<h3>14.垂直滚动条</h3>
-
-<p>这段代码将确保你的HTML元素总是稍微高于浏览器滚动条所停留的位置。 </p>
-
-
-
-
-<div class="code-box">
-```css
-html { height: 101% }
-```
-</div>
-
-
-<h3>15.CSS3 Gradients模板</h3>
-
-<p>这段代码将确保你的HTML元素总是稍微高于浏览器滚动条所停留的位置。 </p>
-
-
-
-
-<div class="code-box">
-```css
-#colorbox {
-    background: #629721;
-    background-image: -webkit-gradient(linear, left top, left bottombottom, from(#83b842), to(#629721));
-    background-image: -webkit-linear-gradient(top, #83b842, #629721); 
-    background-image: -moz-linear-gradient(top, #83b842, #629721);
-    background-image: -ms-linear-gradient(top, #83b842, #629721);
-    background-image: -o-linear-gradient(top, #83b842, #629721);
-    background-image: linear-gradient(top, #83b842, #629721);
-}
 ```
 </div>
 
